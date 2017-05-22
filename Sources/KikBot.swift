@@ -14,7 +14,7 @@ public class KikBot
     let apiKey: String
 	
     
-	init(username: String, apiKey: String, delegate: KikBotDelegate?)
+	public init(username: String, apiKey: String, delegate: KikBotDelegate?)
     {
         self.username = username
         self.apiKey = apiKey
@@ -22,7 +22,7 @@ public class KikBot
 		dataHandler = BotDataHandler(username: username, password: apiKey, delegate: delegate)
     }
     
-	func start(onPort port: Int, path: String)
+	public func start(onPort port: Int, path: String)
     {
         dataHandler!.port = port
 		dataHandler!.path = path
@@ -30,7 +30,7 @@ public class KikBot
 		dataHandler!.listen()
     }
 	
-	func updateConfiguration(configuration: JSON, callback: (() -> Void)?)
+	public func updateConfiguration(configuration: JSON, callback: (() -> Void)?)
     {
 		let configurationData = try? JSONSerialization.data(withJSONObject: configuration)
 		
