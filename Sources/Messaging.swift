@@ -70,23 +70,23 @@ public struct MessageSendData
 
 public struct Message
 {
-	let rawMessageJSON: [String:Any]
+	public let rawMessageJSON: [String:Any]
 	
-	let type: MessageType
-	let id: String
-	let chatId: String
-	let mention: [String]!
-	let metadata: JSON!
-	let from: KikUser
-	let readReceiptRequested: Bool!
-	let timestamp: Int
-	let participants: [String]
-	let chatType: String!
+	public let type: MessageType
+	public let id: String
+	public let chatId: String
+	public let mention: [String]!
+	public let metadata: JSON!
+	public let from: KikUser
+	public let readReceiptRequested: Bool!
+	public let timestamp: Int
+	public let participants: [String]
+	public let chatType: String!
 	
-	let body: String!
+	public let body: String!
 	
-	let pictureURL: String!
-	let pictureAttribution: [String:Any]!
+	public let pictureURL: String!
+	public let pictureAttribution: [String:Any]!
 	
 	init(messageJSON: [String:Any])
 	{
