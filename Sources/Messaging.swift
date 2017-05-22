@@ -109,12 +109,12 @@ public struct Message
 		pictureAttribution = messageJSON["attribution"] as? [String:Any]
 	}
 	
-	static func text(_ text: String) -> MessageSendData
+	public static func text(_ text: String) -> MessageSendData
 	{
 		return MessageSendData(text: text)
 	}
 	
-	static func reading() -> MessageSendData
+	public static func reading() -> MessageSendData
 	{
 		return MessageSendData(type: .readRecipt)
 	}
