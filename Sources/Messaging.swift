@@ -119,7 +119,7 @@ public struct Message
 		return MessageSendData(type: .readRecipt)
 	}
 	
-	func reply(withMessages messages: MessageSendData...)
+	public func reply(withMessages messages: MessageSendData...)
 	{
 		for message in messages
 		{
@@ -146,7 +146,7 @@ public struct Message
 		}
 	}
 	
-	func read()
+	public func read()
 	{
 		let message: JSON = [
 			"messages": [[
