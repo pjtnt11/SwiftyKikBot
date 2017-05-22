@@ -1,6 +1,6 @@
 import Foundation
 
-struct KikUser
+public struct KikUser
 {
 	let username: String
 }
