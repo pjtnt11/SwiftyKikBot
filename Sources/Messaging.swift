@@ -1,10 +1,7 @@
 import Foundation
 
-public typealias MessageJSON = [String:[[String:Any]]]
-
 fileprivate extension Dictionary
 {
-	
 	mutating func merge(with dictionary: Dictionary)
 	{
 		dictionary.forEach{updateValue($1, forKey: $0)}
@@ -55,16 +52,6 @@ public struct MessageSendData
 	init(type: MessageType)
 	{
 		self.type = type
-	}
-	
-	func addKeyboard()
-	{
-		
-	}
-	
-	func addingKeyboard() -> MessageSendData
-	{
-		return self
 	}
 }
 
@@ -144,14 +131,48 @@ public struct Message
 		}
 	}
 	
-	public func read()
+	public func reply(withText texts: String...)
 	{
-		let message: JSON = [
+		for text in texts
+		{
+			var messageJSON: MessageJSON = [
+				"messages": [[
+					"type":MessageType.text.rawValue,
+					"chatId":chatId,
+					"to":from.username,
+					]
+				]
+			]
+			
+			messageJSON["messages"]![0]["body"] = text
+			
+			dataHandler.send(message: messageJSON)
+		}
+	}
+	
+	public func markRead()
+	{
+		let message: MessageJSON = [
 			"messages": [[
 				"type":MessageType.readRecipt.rawValue,
 				"chatId":chatId,
 				"to":from.username,
 				"messageIds": [id]
+				]
+			]
+		]
+		
+		dataHandler.send(message: message)
+	}
+	
+	public func startTyping()
+	{
+		// TODO
+		let message: MessageJSON = [
+			"messages": [[
+				"type":MessageType.isTyping.rawValue,
+				"chatId":chatId,
+				"to":from.username
 				]
 			]
 		]

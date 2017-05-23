@@ -91,8 +91,8 @@ private class BotDataHandlerDelegate: NSObject, URLSessionDelegate, URLSessionTa
 	{
 		completionHandler(.allow)
 		
-		_ = response as! HTTPURLResponse
-		//print("\(urlResponse.statusCode): \(HTTPURLResponse.localizedString(forStatusCode: urlResponse.statusCode))")
+		let urlResponse = response as! HTTPURLResponse
+		print("\(urlResponse.statusCode): \(HTTPURLResponse.localizedString(forStatusCode: urlResponse.statusCode))")
 	}
 	
 	func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data)
