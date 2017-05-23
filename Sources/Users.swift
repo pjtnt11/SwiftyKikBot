@@ -11,6 +11,11 @@ public struct KikUser
 {
 	public let username: String
 	
+	public init(withUsername username: String)
+	{
+		self.username = username
+	}
+	
 	public func fetchUserProile(completionHandler: (KikUserProfile?) -> Void)
 	{
 		completionHandler(nil)
