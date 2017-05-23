@@ -84,7 +84,7 @@ public struct Message
 		chatId = messageJSON["chatId"] as! String
 		mention = messageJSON["mention"] as? [String]
 		metadata = messageJSON["metadata"] as? JSON
-		from = KikUser(username: messageJSON["from"] as! String)
+		from = KikUser(withUsername: messageJSON["from"] as! String)
 		readReceiptRequested = messageJSON["readReceiptRequested"] as? Bool
 		timestamp = messageJSON["timestamp"] as! Int
 		participants = messageJSON["participants"] as! [String]
