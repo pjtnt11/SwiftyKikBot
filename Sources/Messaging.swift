@@ -108,43 +108,48 @@ public struct Message
 	
 	public func reply(withMessages messages: MessageSendData...)
 	{
-		var messageJSON: MessageJSON = ["messages":[[:]]]
+		var messagesJSON: MessageJSON = ["messages":[]]
 		
-		for (i, message) in messages.enumerated()
+		for message in messages
 		{
-			messageJSON["messages"]![i] = [
+			var messageJSON: JSON = [
 				"type": message.type.rawValue,
-				"to": from.username
+				"to": from.username,
+				"chatId":chatId
 			]
 			
 			if message.type == .text {
-				messageJSON["messages"]![i]["body"] = message.body
+				messageJSON["body"] = message.body
 			}
 			
 			if message.type == .readRecipt {
-				messageJSON["messages"]![i]["messageIds"] = [id]
+				messageJSON["messageIds"] = [id]
 			}
 			
-			dataHandler.send(message: messageJSON)
+			messagesJSON["messages"]!.append(messageJSON as! [String : Any])
 		}
+		
+		dataHandler.send(message: messagesJSON)
 	}
 	
 	public func reply(withText texts: String...)
 	{
-		var messageJSON: MessageJSON = ["messages":[[:]]]
+		var messagesJSON: MessageJSON = ["messages":[]]
 		
-		for (i, text) in texts.enumerated()
+		for text in texts
 		{
-			messageJSON["messages"]![i] = [
+			var messageJSON: JSON = [
 				"type": MessageType.text.rawValue,
 				"to": from.username,
 				"chatId":chatId
 			]
 			
-			messageJSON["messages"]![i]["body"] = text
+			messageJSON["body"] = text
 			
-			dataHandler.send(message: messageJSON)
+			messagesJSON["messages"]!.append(messageJSON as! [String : Any])
 		}
+		
+		dataHandler.send(message: messagesJSON)
 	}
 	
 	public func markRead()
