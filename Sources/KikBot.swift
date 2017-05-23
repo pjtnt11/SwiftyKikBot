@@ -59,7 +59,7 @@ public class KikBot
 		{
 			messageJSON["messages"]![i] = [
 					"type": message.type.rawValue,
-					"to": to
+					"to": to.username
 					]
 			
 			if chatId != nil {
