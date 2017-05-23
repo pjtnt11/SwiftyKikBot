@@ -141,8 +141,6 @@ public struct Message
 			}
 			
 			dataHandler.send(message: messageJSON)
-			
-			print()
 		}
 	}
 	
