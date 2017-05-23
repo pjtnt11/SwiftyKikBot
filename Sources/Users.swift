@@ -2,5 +2,5 @@ import Foundation
 
 public struct KikUser
 {
-	let username: String
+	public let username: String
 }
