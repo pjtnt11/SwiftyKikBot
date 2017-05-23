@@ -108,23 +108,21 @@ public struct Message
 	
 	public func reply(withMessages messages: MessageSendData...)
 	{
-		for message in messages
+		var messageJSON: MessageJSON = ["messages":[[:]]]
+		
+		for (i, message) in messages.enumerated()
 		{
-			var messageJSON: MessageJSON = [
-				"messages": [[
-					"type":message.type.rawValue,
-					"chatId":chatId,
-					"to":from.username,
-					]
-				]
+			messageJSON["messages"]![i] = [
+				"type": message.type.rawValue,
+				"to": from.username
 			]
 			
 			if message.type == .text {
-				messageJSON["messages"]![0]["body"] = message.body
+				messageJSON["messages"]![i]["body"] = message.body
 			}
 			
 			if message.type == .readRecipt {
-				messageJSON["messages"]![0]["messageIds"] = [id]
+				messageJSON["messages"]![i]["messageIds"] = [id]
 			}
 			
 			dataHandler.send(message: messageJSON)
@@ -133,18 +131,17 @@ public struct Message
 	
 	public func reply(withText texts: String...)
 	{
-		for text in texts
+		var messageJSON: MessageJSON = ["messages":[[:]]]
+		
+		for (i, text) in texts.enumerated()
 		{
-			var messageJSON: MessageJSON = [
-				"messages": [[
-					"type":MessageType.text.rawValue,
-					"chatId":chatId,
-					"to":from.username,
-					]
-				]
+			messageJSON["messages"]![i] = [
+				"type": MessageType.text.rawValue,
+				"to": from.username,
+				"chatId":chatId
 			]
 			
-			messageJSON["messages"]![0]["body"] = text
+			messageJSON["messages"]![i]["body"] = text
 			
 			dataHandler.send(message: messageJSON)
 		}
@@ -167,12 +164,27 @@ public struct Message
 	
 	public func startTyping()
 	{
-		// TODO
 		let message: MessageJSON = [
 			"messages": [[
 				"type":MessageType.isTyping.rawValue,
 				"chatId":chatId,
-				"to":from.username
+				"to":from.username,
+				"isTyping":true
+				]
+			]
+		]
+		
+		dataHandler.send(message: message)
+	}
+	
+	public func stopTyping()
+	{
+		let message: MessageJSON = [
+			"messages": [[
+				"type":MessageType.isTyping.rawValue,
+				"chatId":chatId,
+				"to":from.username,
+				"isTyping":false
 				]
 			]
 		]
