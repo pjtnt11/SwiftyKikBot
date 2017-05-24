@@ -42,6 +42,7 @@ public struct MessageSendData
 {
 	let type: MessageType
 	var body: String!
+	var typeTime: Int!
 	
 	init(text: String)
 	{
@@ -52,6 +53,26 @@ public struct MessageSendData
 	init(type: MessageType)
 	{
 		self.type = type
+	}
+	
+	public mutating func add(typeTime: Int)
+	{
+		guard self.type == .text else {
+			return
+		}
+		
+		self.typeTime = typeTime
+	}
+	
+	public func adding(typeTime: Int) -> MessageSendData!
+	{
+		guard self.type == .text else {
+			return nil
+		}
+		
+		var newMessageData: MessageSendData = self
+		newMessageData.add(typeTime:typeTime)
+		return newMessageData
 	}
 }
 
@@ -120,6 +141,10 @@ public struct Message
 			
 			if message.type == .text {
 				messageJSON["body"] = message.body
+				
+				if message.typeTime != nil {
+					messageJSON["typeTime"] = message.typeTime
+				}
 			}
 			
 			if message.type == .readRecipt {
