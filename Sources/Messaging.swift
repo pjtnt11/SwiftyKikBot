@@ -1,10 +1,12 @@
 import Foundation
 
+/// An extension to `Dictionary` that adds the abillity to merge two Dictionarys
+/// together.
 fileprivate extension Dictionary
 {
 	mutating func merge(with dictionary: Dictionary)
 	{
-		dictionary.forEach{updateValue($1, forKey: $0)}
+		dictionary.forEach{ updateValue($1, forKey: $0) }
 	}
 	
 	func merged(with dictionary: Dictionary) -> Dictionary
@@ -15,6 +17,7 @@ fileprivate extension Dictionary
 	}
 }
 
+/// A enum defining the types of messages that can be sent.
 public enum MessageType: String
 {
 	case text = "text"
@@ -30,56 +33,109 @@ public enum MessageType: String
 	case friendPicker = "friend-picker"
 }
 
+/// A dictionary that defines the types of messages that can be sent with a `MessageType`.
 internal let messageTypes: [String:MessageType] = [
-	"text":.text, "link":.link, "picture":.picture, "video":.video,
-	"start-chatting":.startChatting, "scanData":.scanData,
-	"sticker":.sticker, "is-typing":.isTyping,
-	"delivery-receipt":.deliveryRecipt, "read-receip":.readRecipt,
+	"text":.text,
+	"link":.link,
+	"picture":.picture,
+	"video":.video,
+	"start-chatting":.startChatting,
+	"scanData":.scanData,
+	"sticker":.sticker,
+	"is-typing":.isTyping,
+	"delivery-receipt":.deliveryRecipt,
+	"read-receip":.readRecipt,
 	"friend-picker":.friendPicker
 ]
 
+/// A structure that contains the data to be sent as a message.
 public struct MessageSendData
 {
 	let type: MessageType
-	var body: String!
-	var typeTime: Int!
 	
+	// Properties for a text message.
+	let body: String!
+	var typeTime: Int! = nil
+	
+	// Properties for a link message.
+	let url: String!
+	var urlTitle: String! = nil
+	var urlText: String! = nil
+	var isURLForwardable: Bool! = nil
+	var kikJsData: JSON! = nil
+	var urlAttribution: JSON! = nil
+	var urlPictureURL: String! = nil
+	
+	// Properties for a picture message.
+	let pictureURL: String!
+	var pictureAttribution: String!
+	
+	// Properties for a video message.
+	let videoURL: String!
+	var loopVideo: Bool! = nil
+	var isVideoMuted: Bool! = nil
+	var autoplayVideo: Bool! = nil
+	var canVideoBeSaved: Bool! = nil
+	var videoAttribution: String! = nil
+	
+	// Properties for a is-typing message.
+	let isTyping: Bool!
+	
+	/// Creates a text message.
 	init(text: String)
 	{
 		type = .text
 		body = text
+		
+		url = nil
+		pictureURL = nil
+		videoURL = nil
+		isTyping = nil
+	}
+	
+	init(link: String)
+	{
+		self.type = .link
+		self.url = link
+		
+		body = nil
+		pictureURL = nil
+		videoURL = nil
+		isTyping = nil
+	}
+	
+	init(pictureURL: String)
+	{
+		type = .picture
+		self.pictureURL = pictureURL
+	
+		body = nil
+		url = nil
+		videoURL = nil
+		isTyping = nil
 	}
 	
 	init(type: MessageType)
 	{
 		self.type = type
-	}
-	
-	public mutating func add(typeTime: Int)
-	{
-		guard self.type == .text else {
-			return
-		}
 		
-		self.typeTime = typeTime
-	}
-	
-	public func adding(typeTime: Int) -> MessageSendData!
-	{
-		guard self.type == .text else {
-			return nil
-		}
-		
-		var newMessageData: MessageSendData = self
-		newMessageData.add(typeTime:typeTime)
-		return newMessageData
+		body = nil
+		url = nil
+		pictureURL = nil
+		videoURL = nil
+		isTyping = nil
 	}
 }
 
+/// A structure that contains the data send by a user to the bot.
+///
+/// This structure contains all of the information that is sent to the bot.
+/// It also contains methods for replying to the message, marking the message as
+/// read and other various interactions between the bot and the user.
+///
+/// -Todo: Add the ability to recieve data from more message types.
 public struct Message
 {
-	public let rawMessageJSON: [String:Any]
-	
 	public let type: MessageType
 	public let id: String
 	public let chatId: String
@@ -93,40 +149,40 @@ public struct Message
 	
 	public let body: String!
 	
-	public let pictureURL: String!
-	public let pictureAttribution: [String:Any]!
-	
-	init(messageJSON: [String:Any])
+	/// Creates a message instance with the provided data.
+	///
+	/// - Parameters:
+	///		- messageJSON: A dictionary of JSON data send from Kik containing 
+	/// the data that is used to create the instace.
+	init(messageJSON: JSON)
 	{
-		rawMessageJSON = messageJSON
-		
 		type = messageTypes[messageJSON["type"] as! String]!
 		id = messageJSON["id"] as! String
 		chatId = messageJSON["chatId"] as! String
-		mention = messageJSON["mention"] as? [String]
-		metadata = messageJSON["metadata"] as? JSON
 		from = KikUser(withUsername: messageJSON["from"] as! String)
-		readReceiptRequested = messageJSON["readReceiptRequested"] as? Bool
 		timestamp = messageJSON["timestamp"] as! Int
 		participants = messageJSON["participants"] as! [String]
+		
+		mention = messageJSON["mention"] as? [String]
+		metadata = messageJSON["metadata"] as? JSON
+		readReceiptRequested = messageJSON["readReceiptRequested"] as? Bool
 		chatType = messageJSON["chatType"] as? String
 		
 		body = messageJSON["body"] as? String
-		
-		pictureURL = messageJSON["picUrl"] as? String
-		pictureAttribution = messageJSON["attribution"] as? [String:Any]
 	}
 	
-	public static func text(_ text: String) -> MessageSendData
+	/// Returns a `MessageSendData` instance from `text`.
+	public static func makeSendData(text: String) -> MessageSendData
 	{
 		return MessageSendData(text: text)
 	}
 	
-	public static func reading() -> MessageSendData
-	{
-		return MessageSendData(type: .readRecipt)
-	}
-	
+	/// Sends `messages` to the user that sent the original message.
+	///
+	/// - Parameters:
+	///		- messages: Messages to reply with.
+	///
+	/// - Todo: Create a fuction for the setup of the send data.
 	public func reply(withMessages messages: MessageSendData...)
 	{
 		var messagesJSON: MessageJSON = ["messages":[]]
@@ -139,16 +195,41 @@ public struct Message
 				"chatId":chatId
 			]
 			
-			if message.type == .text {
+			switch message.type
+			{
+			case .text:
 				messageJSON["body"] = message.body
+				messageJSON["typeTime"] = message.typeTime ?? nil
 				
-				if message.typeTime != nil {
-					messageJSON["typeTime"] = message.typeTime
-				}
-			}
-			
-			if message.type == .readRecipt {
+			case .link:
+				messageJSON["url"] = message.url
+				messageJSON["title"] = message.urlTitle ?? nil
+				messageJSON["noForward"] = message.isURLForwardable ?? nil
+				messageJSON["kikJsData"] = message.kikJsData ?? nil
+				messageJSON["attribution"] = message.urlAttribution ?? nil
+				messageJSON["picUrl"] = message.urlPictureURL ?? nil
+				
+			case .picture:
+				messageJSON["picUrl"] = message.pictureURL
+				messageJSON["attribution"] = message.pictureAttribution ?? nil
+				
+			case .video:
+				messageJSON["videoUrl"] = message.url
+				messageJSON["loop"] = message.urlTitle ?? nil
+				messageJSON["muted"] = message.isURLForwardable ?? nil
+				messageJSON["autoplay"] = message.kikJsData ?? nil
+				messageJSON["noSave"] = message.urlAttribution ?? nil
+				messageJSON["attribution"] = message.videoAttribution ?? nil
+				
+			case .readRecipt:
 				messageJSON["messageIds"] = [id]
+				
+			case .isTyping:
+				messageJSON["isTyping"] = message.isTyping
+				
+				break
+			default:
+				return
 			}
 			
 			messagesJSON["messages"]!.append(messageJSON as! [String : Any])
@@ -157,26 +238,7 @@ public struct Message
 		dataHandler.send(message: messagesJSON)
 	}
 	
-	public func reply(withText texts: String...)
-	{
-		var messagesJSON: MessageJSON = ["messages":[]]
-		
-		for text in texts
-		{
-			var messageJSON: JSON = [
-				"type": MessageType.text.rawValue,
-				"to": from.username,
-				"chatId":chatId
-			]
-			
-			messageJSON["body"] = text
-			
-			messagesJSON["messages"]!.append(messageJSON as! [String : Any])
-		}
-		
-		dataHandler.send(message: messagesJSON)
-	}
-	
+	/// Marks the message as read.
 	public func markRead()
 	{
 		let message: MessageJSON = [
@@ -185,36 +247,6 @@ public struct Message
 				"chatId":chatId,
 				"to":from.username,
 				"messageIds": [id]
-				]
-			]
-		]
-		
-		dataHandler.send(message: message)
-	}
-	
-	public func startTyping()
-	{
-		let message: MessageJSON = [
-			"messages": [[
-				"type":MessageType.isTyping.rawValue,
-				"chatId":chatId,
-				"to":from.username,
-				"isTyping":true
-				]
-			]
-		]
-		
-		dataHandler.send(message: message)
-	}
-	
-	public func stopTyping()
-	{
-		let message: MessageJSON = [
-			"messages": [[
-				"type":MessageType.isTyping.rawValue,
-				"chatId":chatId,
-				"to":from.username,
-				"isTyping":false
 				]
 			]
 		]
