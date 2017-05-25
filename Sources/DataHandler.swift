@@ -8,7 +8,7 @@ internal class BotDataHandler
     var path: String = "/"
 	let configurationURL = URL(string: "https://api.kik.com/v1/config")!
 	let messageURL = URL(string: "https://api.kik.com/v1/message")!
-	let KikUserProfileURL = URL(string: "https://api.kik.com/v1/user/")!
+	let kikUserProfileURL = URL(string: "https://api.kik.com/v1/user/")!
 	let delegate: KikBotDelegate?
 	fileprivate let botDataHandlerDelegate = BotDataHandlerDelegate()
 	let kikSession: URLSession?
@@ -81,6 +81,26 @@ internal class BotDataHandler
 		let uploadTask = kikSession!.uploadTask(with: messageURLRequest, from: messageData)
 		uploadTask.resume()
 	}
+	
+	func getUserProfile(username: String, completionHandeler: @escaping (JSON?, Error?) -> Void)
+	{
+		var messageURLRequest = URLRequest(url: self.kikUserProfileURL.appendingPathComponent(username))
+		messageURLRequest.httpMethod = "GET"
+		messageURLRequest.addValue(AuthorizationHeader!, forHTTPHeaderField: "Authorization")
+		
+		let dataTask = kikSession!.dataTask(with: messageURLRequest) { (data, responce, error) in
+			guard error == nil else {
+				completionHandeler(nil, error)
+				return
+			}
+			
+			if data != nil {
+				completionHandeler(try! JSONSerialization.jsonObject(with: data!) as? JSON, nil)
+			}
+		}
+		
+		dataTask.resume()
+	}
 }
 
 private class BotDataHandlerDelegate: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate
@@ -97,8 +117,7 @@ private class BotDataHandlerDelegate: NSObject, URLSessionDelegate, URLSessionTa
 	
 	func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data)
 	{
-		guard let completionHandler = completionHandlers[dataTask.currentRequest!.url!] else
-		{
+		guard let completionHandler = completionHandlers[dataTask.currentRequest!.url!] else {
 			return
 		}
 		
