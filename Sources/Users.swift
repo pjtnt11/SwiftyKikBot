@@ -2,11 +2,11 @@ import Foundation
 
 public struct KikUserProfile
 {
-	let firstName: String
-	let lastName: String
-	let profilePictureURL: String?
-	let profilePictureLastModified: Int?
-	let timezone: String?
+	public let firstName: String
+	public let lastName: String
+	public let profilePictureURL: String?
+	public let profilePictureLastModified: Int?
+	public let timezone: String?
 	
 	fileprivate init(userProfileJSON: JSON)
 	{
