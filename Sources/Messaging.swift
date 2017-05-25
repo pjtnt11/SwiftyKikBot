@@ -55,28 +55,28 @@ public struct MessageSendData
 	
 	// Properties for a text message.
 	var body: String? = nil
-	var typeTime: Int? = nil
+	public var typeTime: Int? = nil
 	
 	// Properties for a link message.
 	var url: String? = nil
-	var urlTitle: String? = nil
-	var urlText: String? = nil
-	var isURLForwardable: Bool? = nil
-	var kikJsData: JSON? = nil
-	var urlAttribution: JSON? = nil
-	var urlPictureURL: String? = nil
+	public var urlTitle: String? = nil
+	public var urlText: String? = nil
+	public var isURLForwardable: Bool? = nil
+	public var kikJsData: JSON? = nil
+	public var urlAttribution: JSON? = nil
+	public var urlPictureURL: String? = nil
 	
 	// Properties for a picture message.
 	var pictureURL: String? = nil
-	var pictureAttribution: String? = nil
+	public var pictureAttribution: String? = nil
 	
 	// Properties for a video message.
 	var videoURL: String? = nil
-	var loopVideo: Bool? = nil
-	var isVideoMuted: Bool? = nil
-	var autoplayVideo: Bool? = nil
-	var canVideoBeSaved: Bool? = nil
-	var videoAttribution: String? = nil
+	public var loopVideo: Bool? = nil
+	public var isVideoMuted: Bool? = nil
+	public var autoplayVideo: Bool? = nil
+	public var canVideoBeSaved: Bool? = nil
+	public var videoAttribution: String? = nil
 	
 	// Properties for a is-typing message.
 	var isTyping: Bool? = nil
