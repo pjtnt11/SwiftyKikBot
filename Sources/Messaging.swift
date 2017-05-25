@@ -1,25 +1,13 @@
 import Foundation
 
-/// An extension to `Dictionary` that adds the abillity to merge two Dictionarys
-/// together.
-fileprivate extension Dictionary
-{
-	mutating func merge(with dictionary: Dictionary)
-	{
-		dictionary.forEach{ updateValue($1, forKey: $0) }
-	}
-	
-	func merged(with dictionary: Dictionary) -> Dictionary
-	{
-		var dictionary = self
-		dictionary.merge(with: dictionary)
-		return dictionary
-	}
+/// An error that is called when there are problems 
+public enum MessageJSONError: Error {
+	case invalidMessageType(MessageType)
+	case missingParameter(String)
 }
 
-/// A enum defining the types of messages that can be sent.
-public enum MessageType: String
-{
+/// An enum defining the types of messages that can be sent.
+public enum MessageType: String {
 	case text = "text"
 	case link = "link"
 	case picture = "picture"
@@ -35,23 +23,24 @@ public enum MessageType: String
 
 /// A dictionary that defines the types of messages that can be sent with a `MessageType`.
 internal let messageTypes: [String:MessageType] = [
-	"text":.text,
-	"link":.link,
-	"picture":.picture,
-	"video":.video,
-	"start-chatting":.startChatting,
-	"scanData":.scanData,
-	"sticker":.sticker,
-	"is-typing":.isTyping,
-	"delivery-receipt":.deliveryRecipt,
-	"read-receip":.readRecipt,
-	"friend-picker":.friendPicker
+	"text" : .text,
+	"link" : .link,
+	"picture" : .picture,
+	"video" : .video,
+	"start-chatting" : .startChatting,
+	"scanData" : .scanData,
+	"sticker" : .sticker,
+	"is-typing" : .isTyping,
+	"delivery-receipt" : .deliveryRecipt,
+	"read-receip" : .readRecipt,
+	"friend-picker" : .friendPicker
 ]
 
 /// A structure that contains the data to be sent as a message.
 public struct MessageSendData
 {
 	let type: MessageType
+	let delay: Int
 	
 	// Properties for a text message.
 	var body: String? = nil
@@ -82,24 +71,31 @@ public struct MessageSendData
 	var isTyping: Bool? = nil
 	
 	/// Creates a text message.
-	init(text: String) {
+	init(text: String, delay: Int) {
 		type = .text
 		body = text
+		self.delay = delay
 	}
 	
-	init(link: String) {
+	/// Creates a link message.
+	init(link: String, delay: Int) {
 		self.type = .link
 		self.url = link
+		self.delay = delay
 	}
 	
-	init(pictureURL: String) {
+	/// Creates a picture URL message.
+	init(pictureURL: String, delay: Int) {
 		type = .picture
 		self.pictureURL = pictureURL
+		self.delay = delay
 	}
 	
-	init(videoURL: String) {
+	/// Creates a video URL message.
+	init(videoURL: String, delay: Int) {
 		type = .video
 		self.videoURL = videoURL
+		self.delay = delay
 	}
 }
 
@@ -110,8 +106,7 @@ public struct MessageSendData
 /// read and other various interactions between the bot and the user.
 ///
 /// - Todo: Add the ability to recieve data from more message types.
-public struct Message
-{
+public class Message {
 	public let type: MessageType
 	public let id: String
 	public let chatId: String
@@ -148,52 +143,61 @@ public struct Message
 	}
 	
 	/// Returns a `MessageSendData` instance from `text`.
-	public static func makeSendData(text: String) -> MessageSendData {
-		return MessageSendData(text: text)
+	public static func makeSendData(text: String, delay: Int = 0) -> MessageSendData {
+		return MessageSendData(text: text, delay: delay)
 	}
 	
 	/// Returns a `MessageSendData` instance from `link`.
-	public static func makeSendData(link: String) -> MessageSendData {
-		return MessageSendData(link: link)
+	public static func makeSendData(link: String, delay: Int = 0) -> MessageSendData {
+		return MessageSendData(link: link, delay: delay)
 	}
 	
 	/// Returns a `MessageSendData` instance from `pictureURL`.
-	public static func makeSendData(pictureURL: String) -> MessageSendData {
-		return MessageSendData(pictureURL: pictureURL)
+	public static func makeSendData(pictureURL: String, delay: Int = 0) -> MessageSendData {
+		return MessageSendData(pictureURL: pictureURL, delay: delay)
 	}
 	
 	/// Returns a `MessageSendData` instance from `videoURL`.
-	public static func makeSendData(videoURL: String) -> MessageSendData {
-		return MessageSendData(videoURL: videoURL)
+	public static func makeSendData(videoURL: String, delay: Int = 0) -> MessageSendData {
+		return MessageSendData(videoURL: videoURL, delay: delay)
 	}
 	
 	/// Sends `messages` to the user that sent the original message.
 	///
 	/// - Parameters:
 	///		- messages: Messages to reply with.
-	///
-	/// - Todo: Create a fuction for the setup of the send data.
 	public func reply(withMessages messages: MessageSendData...)
 	{
-		var messagesJSON: MessageJSON = ["messages":[]]
+		dataHandler.send(message: try! jsonDictionary(from: messages))
+	}
+	
+	/// Returns a dictionary formated in to send to Kik.
+	private func jsonDictionary(from messages: [MessageSendData]) throws -> MessageJSONDictionary
+	{
+		var messagesJSON: MessageJSONDictionary = ["messages":[]]
 		
 		for message in messages
 		{
 			var messageJSON: JSON = [
 				"type": message.type.rawValue,
 				"to": from.username,
-				"chatId":chatId
+				"chatId":chatId,
+				"delay":message.delay
 			]
 			
 			switch message.type
 			{
 			case .text:
-				assert(message.body != nil, "You must provide body test with text messages.")
+				guard message.body != nil else {
+					throw MessageJSONError.missingParameter("body")
+				}
 				messageJSON["body"] = message.body
 				messageJSON["typeTime"] = message.typeTime
 				
 			case .link:
-				assert(message.url != nil, "You must provide a url with link messages.")
+				guard message.url != nil else {
+					throw MessageJSONError.missingParameter("url")
+				}
 				messageJSON["url"] = message.url
 				messageJSON["title"] = message.urlTitle
 				messageJSON["noForward"] = message.isURLForwardable
@@ -202,40 +206,45 @@ public struct Message
 				messageJSON["picUrl"] = message.urlPictureURL
 				
 			case .picture:
-				assert(message.pictureURL != nil, "You must provide a picture URL with picture messages.")
+				guard message.pictureURL != nil else {
+					throw MessageJSONError.missingParameter("pictureURL")
+				}
 				messageJSON["picUrl"] = message.pictureURL
 				messageJSON["attribution"] = message.pictureAttribution
 				
 			case .video:
-				assert(message.videoURL != nil, "You must provide a video URL with video messages.")
-				messageJSON["videoUrl"] = message.url
-				messageJSON["loop"] = message.urlTitle
-				messageJSON["muted"] = message.isURLForwardable
-				messageJSON["autoplay"] = message.kikJsData
-				messageJSON["noSave"] = message.urlAttribution
+				guard message.videoURL != nil else {
+					throw MessageJSONError.missingParameter("videoURL")
+				}
+				messageJSON["videoUrl"] = message.videoURL
+				messageJSON["loop"] = message.loopVideo
+				messageJSON["muted"] = message.isVideoMuted
+				messageJSON["autoplay"] = message.autoplayVideo
+				messageJSON["noSave"] = message.canVideoBeSaved
 				messageJSON["attribution"] = message.videoAttribution
+				
+			case .isTyping:
+				guard message.body != nil else {
+					throw MessageJSONError.missingParameter("body")
+				}
+				messageJSON["isTyping"] = message.isTyping
 				
 			case .readRecipt:
 				messageJSON["messageIds"] = [id]
 				
-			case .isTyping:
-				assert(message.isTyping != nil, "You must specify if `isTyping` with a is typing message.")
-				messageJSON["isTyping"] = message.isTyping
-				
 			default:
-				return
+				throw MessageJSONError.invalidMessageType(message.type)
 			}
 			
-			messagesJSON["messages"]!.append(messageJSON as! [String : Any])
+			messagesJSON["messages"]!.append(messageJSON)
 		}
 		
-		dataHandler.send(message: messagesJSON)
+		return messagesJSON
 	}
 	
 	/// Marks the message as read.
-	public func markRead()
-	{
-		let message: MessageJSON = [
+	public func markRead() {
+		let message: MessageJSONDictionary = [
 			"messages": [[
 				"type":MessageType.readRecipt.rawValue,
 				"chatId":chatId,
