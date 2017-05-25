@@ -54,76 +54,52 @@ public struct MessageSendData
 	let type: MessageType
 	
 	// Properties for a text message.
-	let body: String!
-	var typeTime: Int! = nil
+	var body: String? = nil
+	var typeTime: Int? = nil
 	
 	// Properties for a link message.
-	let url: String!
-	var urlTitle: String! = nil
-	var urlText: String! = nil
-	var isURLForwardable: Bool! = nil
-	var kikJsData: JSON! = nil
-	var urlAttribution: JSON! = nil
-	var urlPictureURL: String! = nil
+	var url: String? = nil
+	var urlTitle: String? = nil
+	var urlText: String? = nil
+	var isURLForwardable: Bool? = nil
+	var kikJsData: JSON? = nil
+	var urlAttribution: JSON? = nil
+	var urlPictureURL: String? = nil
 	
 	// Properties for a picture message.
-	let pictureURL: String!
-	var pictureAttribution: String!
+	var pictureURL: String? = nil
+	var pictureAttribution: String? = nil
 	
 	// Properties for a video message.
-	let videoURL: String!
-	var loopVideo: Bool! = nil
-	var isVideoMuted: Bool! = nil
-	var autoplayVideo: Bool! = nil
-	var canVideoBeSaved: Bool! = nil
-	var videoAttribution: String! = nil
+	var videoURL: String? = nil
+	var loopVideo: Bool? = nil
+	var isVideoMuted: Bool? = nil
+	var autoplayVideo: Bool? = nil
+	var canVideoBeSaved: Bool? = nil
+	var videoAttribution: String? = nil
 	
 	// Properties for a is-typing message.
-	let isTyping: Bool!
+	var isTyping: Bool? = nil
 	
 	/// Creates a text message.
-	init(text: String)
-	{
+	init(text: String) {
 		type = .text
 		body = text
-		
-		url = nil
-		pictureURL = nil
-		videoURL = nil
-		isTyping = nil
 	}
 	
-	init(link: String)
-	{
+	init(link: String) {
 		self.type = .link
 		self.url = link
-		
-		body = nil
-		pictureURL = nil
-		videoURL = nil
-		isTyping = nil
 	}
 	
-	init(pictureURL: String)
-	{
+	init(pictureURL: String) {
 		type = .picture
 		self.pictureURL = pictureURL
-	
-		body = nil
-		url = nil
-		videoURL = nil
-		isTyping = nil
 	}
 	
-	init(type: MessageType)
-	{
-		self.type = type
-		
-		body = nil
-		url = nil
-		pictureURL = nil
-		videoURL = nil
-		isTyping = nil
+	init(videoURL: String) {
+		type = .video
+		self.videoURL = videoURL
 	}
 }
 
@@ -133,7 +109,7 @@ public struct MessageSendData
 /// It also contains methods for replying to the message, marking the message as
 /// read and other various interactions between the bot and the user.
 ///
-/// -Todo: Add the ability to recieve data from more message types.
+/// - Todo: Add the ability to recieve data from more message types.
 public struct Message
 {
 	public let type: MessageType
@@ -172,9 +148,23 @@ public struct Message
 	}
 	
 	/// Returns a `MessageSendData` instance from `text`.
-	public static func makeSendData(text: String) -> MessageSendData
-	{
+	public static func makeSendData(text: String) -> MessageSendData {
 		return MessageSendData(text: text)
+	}
+	
+	/// Returns a `MessageSendData` instance from `link`.
+	public static func makeSendData(link: String) -> MessageSendData {
+		return MessageSendData(link: link)
+	}
+	
+	/// Returns a `MessageSendData` instance from `pictureURL`.
+	public static func makeSendData(pictureURL: String) -> MessageSendData {
+		return MessageSendData(pictureURL: pictureURL)
+	}
+	
+	/// Returns a `MessageSendData` instance from `videoURL`.
+	public static func makeSendData(videoURL: String) -> MessageSendData {
+		return MessageSendData(videoURL: videoURL)
 	}
 	
 	/// Sends `messages` to the user that sent the original message.
@@ -198,36 +188,40 @@ public struct Message
 			switch message.type
 			{
 			case .text:
+				assert(message.body != nil, "You must provide body test with text messages.")
 				messageJSON["body"] = message.body
-				messageJSON["typeTime"] = message.typeTime ?? nil
+				messageJSON["typeTime"] = message.typeTime
 				
 			case .link:
+				assert(message.url != nil, "You must provide a url with link messages.")
 				messageJSON["url"] = message.url
-				messageJSON["title"] = message.urlTitle ?? nil
-				messageJSON["noForward"] = message.isURLForwardable ?? nil
-				messageJSON["kikJsData"] = message.kikJsData ?? nil
-				messageJSON["attribution"] = message.urlAttribution ?? nil
-				messageJSON["picUrl"] = message.urlPictureURL ?? nil
+				messageJSON["title"] = message.urlTitle
+				messageJSON["noForward"] = message.isURLForwardable
+				messageJSON["kikJsData"] = message.kikJsData
+				messageJSON["attribution"] = message.urlAttribution
+				messageJSON["picUrl"] = message.urlPictureURL
 				
 			case .picture:
+				assert(message.pictureURL != nil, "You must provide a picture URL with picture messages.")
 				messageJSON["picUrl"] = message.pictureURL
-				messageJSON["attribution"] = message.pictureAttribution ?? nil
+				messageJSON["attribution"] = message.pictureAttribution
 				
 			case .video:
+				assert(message.videoURL != nil, "You must provide a video URL with video messages.")
 				messageJSON["videoUrl"] = message.url
-				messageJSON["loop"] = message.urlTitle ?? nil
-				messageJSON["muted"] = message.isURLForwardable ?? nil
-				messageJSON["autoplay"] = message.kikJsData ?? nil
-				messageJSON["noSave"] = message.urlAttribution ?? nil
-				messageJSON["attribution"] = message.videoAttribution ?? nil
+				messageJSON["loop"] = message.urlTitle
+				messageJSON["muted"] = message.isURLForwardable
+				messageJSON["autoplay"] = message.kikJsData
+				messageJSON["noSave"] = message.urlAttribution
+				messageJSON["attribution"] = message.videoAttribution
 				
 			case .readRecipt:
 				messageJSON["messageIds"] = [id]
 				
 			case .isTyping:
+				assert(message.isTyping != nil, "You must specify if `isTyping` with a is typing message.")
 				messageJSON["isTyping"] = message.isTyping
 				
-				break
 			default:
 				return
 			}
