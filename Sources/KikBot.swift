@@ -1,7 +1,7 @@
 import Foundation
 
 public typealias JSON = [AnyHashable:Any]
-public typealias MessageJSON = [String:[[String:Any]]]
+public typealias MessageJSONDictionary = [String:[[AnyHashable:Any]]]
 
 internal var dataHandler: BotDataHandler!
 
@@ -68,35 +68,4 @@ public class KikBot
 			callback!()
 		}
     }
-	
-	/// Sends one or more messages to the specifyed Kik user.
-	///
-	/// - Parameters:
-	///		- to: `KikUser` to send the messages to.
-	///		- messages: Messages to be sent.
-	///		- chatId: chatID to send the messages to.
-	///
-	/// - Note: The chatID is not required, but it makes the sending of messages more efficient.
-	public func send(to: KikUser, withMessages messages: MessageSendData..., chatId: String? = nil)
-	{
-		var messageJSON: MessageJSON = ["messages":[[:]]]
-		
-		for (i, message) in messages.enumerated()
-		{
-			messageJSON["messages"]![i] = [
-					"type": message.type.rawValue,
-					"to": to.username
-					]
-			
-			if chatId != nil {
-				messageJSON["messages"]![i]["chatId"] = chatId!
-			}
-			
-			if message.type == .text {
-				messageJSON["messages"]![i]["body"] = message.body
-			}
-		}
-		
-		dataHandler.send(message: messageJSON)
-	}
 }
