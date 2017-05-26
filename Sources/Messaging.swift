@@ -36,11 +36,102 @@ internal let messageTypes: [String:MessageType] = [
 	"friend-picker" : .friendPicker
 ]
 
+/// An enum that defines the types of chats that a message can come from.
+public enum ChatType: String {
+	case direct = "direct"
+	case `private` = "private"
+	case `public` = "public"
+}
+
+/// A dictionary that fines the types of chats that a message can come from.
+internal let chatTypes: [String:ChatType] = [
+	"direct" : .direct,
+	"private" : .private,
+	"public" : .public,
+]
+
+/// A structure tha sets the attribution for links, pictures and video.
+public struct Attribution {
+	public enum AttributionType: String {
+		case gallery
+		case camera
+		case object
+	}
+	
+	public static let attributionTypes: [String:AttributionType] = [
+		"gallery" : .gallery,
+		"camera" : .camera
+	]
+	
+	let type: AttributionType
+	let name: String?
+	let iconURL: String?
+}
+
+/// A structure that defines a keyboard.
+public struct Keyboard
+{
+	/// A structure that defines a single keyboard response
+	struct KeyboardResponse {
+		/// A enum that defines the types of messages that can be sent with keyboards
+		enum KeyboardResponseType:String {
+			case text = "text"
+			case picture = "picture"
+			case friendPicker = "friend-picker"
+		}
+		
+		var type: KeyboardResponseType
+		var metadata: Any?
+		
+		var body: String? = nil
+		
+		var pictureUrl: String? = nil
+		
+		var friendPickerMininum: Int? = nil
+		var friendPickerMaximum: Int? = nil
+		var preselectedUsers: [KikUser]? = nil
+		
+		init(text: String, metadata: Any? = nil)
+		{
+			type = .text
+			body = text
+			self.metadata = metadata
+		}
+		
+		init(pictureURL: String, metadata: Any)
+		{
+			type = .picture
+			self.pictureUrl = pictureURL
+			self.metadata = metadata
+		}
+		
+		init(minimumPicked: Int, maximumPicked: Int, preselectedUsers: [KikUser], metadata: Any?)
+		{
+			type = .friendPicker
+			self.friendPickerMininum = minimumPicked
+			self.friendPickerMaximum = maximumPicked
+		}
+	}
+	
+	var to: [KikUser]?
+	public var isHidden: Bool
+	let type = "suggested"
+	var responses: [KeyboardResponse]
+	
+	init(responses: KeyboardResponse..., to users: [KikUser]?, isHidden: Bool = false)
+	{
+		self.to = users
+		self.isHidden = isHidden
+		self.responses = responses
+	}
+}
+
 /// A structure that contains the data to be sent as a message.
 public struct MessageSendData
 {
 	let type: MessageType
 	let delay: Int
+	fileprivate var keyboards: [Keyboard]? = nil
 	
 	// Properties for a text message.
 	var body: String? = nil
@@ -97,6 +188,18 @@ public struct MessageSendData
 		self.videoURL = videoURL
 		self.delay = delay
 	}
+	
+	/// Sets the keyboards of the message
+	public mutating func setKeyboards(_ keyboards: [Keyboard]) {
+		self.keyboards = keyboards
+	}
+	
+	/// Returns a message with added keyboards.
+	public func settingKeyboards(_ keyboards: [Keyboard]) -> MessageSendData {
+		var returningSendData = self
+		returningSendData.setKeyboards(keyboards)
+		return returningSendData
+	}
 }
 
 /// A structure that contains the data send by a user to the bot.
@@ -112,13 +215,38 @@ public class Message {
 	public let chatId: String
 	public let mention: [String]!
 	public let metadata: JSON!
+	
 	public let from: KikUser
 	public let readReceiptRequested: Bool!
 	public let timestamp: Int
 	public let participants: [String]
-	public let chatType: String!
 	
-	public let body: String!
+	public let chatType: ChatType!
+	
+	public let attribution: Attribution?
+	
+	public let body: String?
+	
+	public let url: String?
+	public let urlTitle: String?
+	public let urlText: String?
+	public var urlIsForwardable: Bool?
+	public let kikJsData: JSON?
+	
+	public let pictureUrl: String?
+	
+	public let videoUrl: String?
+	
+	public let scanData: String?
+	
+	public let stickerPackId: String?
+	public let stickerUrl: String?
+	
+	public let isTyping: Bool?
+	
+	public let receiptMessageIds: [String]?
+	
+	public let pickedUsers: [KikUser]?
 	
 	/// Creates a message instance with the provided data.
 	///
@@ -130,16 +258,57 @@ public class Message {
 		type = messageTypes[messageJSON["type"] as! String]!
 		id = messageJSON["id"] as! String
 		chatId = messageJSON["chatId"] as! String
+		mention = messageJSON["mention"] as? [String]
+		metadata = messageJSON["metadata"] as? JSON
+		
 		from = KikUser(withUsername: messageJSON["from"] as! String)
+		readReceiptRequested = messageJSON["readReceiptRequested"] as? Bool
 		timestamp = messageJSON["timestamp"] as! Int
 		participants = messageJSON["participants"] as! [String]
 		
-		mention = messageJSON["mention"] as? [String]
-		metadata = messageJSON["metadata"] as? JSON
-		readReceiptRequested = messageJSON["readReceiptRequested"] as? Bool
-		chatType = messageJSON["chatType"] as? String
+		chatType = chatTypes[messageJSON["chatType"] as! String]
+		
+		if let attributionObject = messageJSON["attribution"] as? String {
+			attribution = Attribution(type: Attribution.attributionTypes[attributionObject]!, name: nil, iconURL: nil)
+		} else if let attributionObject = messageJSON["attribution"] as? JSON {
+			attribution = Attribution(type: .object, name: attributionObject["name"] as? String, iconURL: attributionObject["iconUrl"] as? String)
+		} else {
+			attribution = nil
+		}
 		
 		body = messageJSON["body"] as? String
+		
+		url = messageJSON["url"] as? String
+		urlTitle = messageJSON["title"] as? String
+		urlText = messageJSON["text"] as? String
+		kikJsData = messageJSON["kikJsData"] as? JSON
+		urlIsForwardable = (messageJSON["noForward"] as? Bool)
+		if urlIsForwardable != nil {
+			urlIsForwardable = !urlIsForwardable! // DOUBLE EXCLAMATION MARKS! xD
+		}
+		
+		pictureUrl = messageJSON["picUrl"] as? String
+		
+		videoUrl = messageJSON["videoUrl"] as? String
+		
+		scanData = messageJSON["data"] as? String
+		
+		stickerPackId = messageJSON["stickerPackId"] as? String
+		stickerUrl = messageJSON["stickerUrl"] as? String
+		
+		isTyping = messageJSON["isTyping"] as? Bool
+		
+		receiptMessageIds = messageJSON["messageIds"] as? [String]
+		
+		if let pickedUsernames = messageJSON["picked"] as? [String] {
+			var pickedKikUsers = [KikUser]()
+			for pickedUsername in pickedUsernames {
+				pickedKikUsers.append(KikUser(withUsername: pickedUsername))
+			}
+			pickedUsers = pickedKikUsers
+		} else {
+			pickedUsers = nil
+		}
 	}
 	
 	/// Returns a `MessageSendData` instance from `text`.
@@ -172,10 +341,10 @@ public class Message {
 	{
 		let messagesJSONObject = try! jsonObject(from: messages)
 		let messagesData = try! JSONSerialization.data(withJSONObject: messagesJSONObject)
-		dataHandler.send(message: messagesData)
+		dataHandler.send(messages: messagesData)
 	}
 	
-	/// Returns a dictionary formated in to send to Kik.
+	/// Returns a dictionary formatted to send to Kik.
 	///
 	/// - Parameters:
 	///		- messages: An array for `MessageSendData` to be converted into a JSON object.
@@ -191,6 +360,58 @@ public class Message {
 				"chatId":chatId,
 				"delay":message.delay
 			]
+			
+			if message.keyboards != nil {
+				var keyboardsJSONObject: [JSON] = []
+				
+				for keyboard in message.keyboards! {
+					
+					var toUserUsernames: [String]? = [String]()
+					if keyboard.to != nil {
+						for user in keyboard.to! {
+							toUserUsernames!.append(user.username)
+						}
+					} else {
+						toUserUsernames = nil
+					}
+					
+					var keyboardJSONObject: JSON = [
+						"type" : keyboard.type,
+						"hidden" : keyboard.isHidden
+					]
+					
+					keyboardJSONObject["to"] = toUserUsernames
+					
+					var responses: [JSON] = []
+					
+					for response in keyboard.responses {
+						var responseJSONObject: JSON = ["type" : response.type.rawValue]
+						
+						var preselectedUsersUsernames: [String]? = [String]()
+						if response.preselectedUsers != nil {
+							for user in response.preselectedUsers! {
+								preselectedUsersUsernames!.append(user.username)
+							}
+						} else {
+							preselectedUsersUsernames = nil
+						}
+						
+						responseJSONObject["body"] = response.body
+						responseJSONObject["picUrl"] = response.pictureUrl
+						responseJSONObject["min"] = response.friendPickerMininum
+						responseJSONObject["max"] = response.friendPickerMaximum
+						responseJSONObject["metadata"] = response.metadata
+						responseJSONObject["preselected"] = preselectedUsersUsernames
+						
+						responses.append(responseJSONObject)
+					}
+					
+					keyboardJSONObject["responses"] = responses
+					keyboardsJSONObject.append(keyboardJSONObject)
+				}
+				
+				messageJSON["keyboards"] = keyboardsJSONObject
+			}
 			
 			switch message.type
 			{
@@ -263,7 +484,7 @@ public class Message {
 			]
 			
 			let messageJSONObject = try! JSONSerialization.data(withJSONObject: message)
-			dataHandler.send(message: messageJSONObject)
+			dataHandler.send(messages: messageJSONObject)
 		}
 	}
 }
