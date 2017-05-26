@@ -1,126 +1,127 @@
 import Foundation
 import Kitura
 
+fileprivate let messageURL = URL(string: "https://api.kik.com/v1/message")!
+fileprivate let kikUserProfileURL = URL(string: "https://api.kik.com/v1/user/")!
+fileprivate let configurationURL = URL(string: "https://api.kik.com/v1/config")!
+
+/// A class that handles the connection between Kik and the bot server.
 internal class BotDataHandler
 {
-    let router = Router()
-    var port: Int = 80
-    var path: String = "/"
-	let configurationURL = URL(string: "https://api.kik.com/v1/config")!
-	let messageURL = URL(string: "https://api.kik.com/v1/message")!
-	let kikUserProfileURL = URL(string: "https://api.kik.com/v1/user/")!
-	let delegate: KikBotDelegate?
-	fileprivate let botDataHandlerDelegate = BotDataHandlerDelegate()
-	let kikSession: URLSession?
-	let AuthorizationHeader:String?
+	let router = Router()
+	var port: Int = 80
+	var path: String = "/"
 	
+	private let delegate: KikBotDelegate?
+	private let kikSession: URLSession
+	private let AuthorizationHeader:String
 	private let kikBotSessionConfiguration = URLSessionConfiguration.ephemeral
 	
-	init(username: String, password: String, delegate: KikBotDelegate?)
-	{
+	/// Creates a `BotDataHandler` instance with `username`.
+	///
+	/// - Parameters:
+	///		- username: The username of the bot.
+	///		- password: The apiKey of the bot.
+	///		- delegate: The delegate that is called when the bot recieves a message.
+	///
+	/// - Todo: Rename the parameters to be more acurate to their use
+	init(username: String, password: String, delegate: KikBotDelegate?) {
+		
 		self.delegate = delegate
 		
-		kikBotSessionConfiguration.httpCookieAcceptPolicy = .never
-		kikBotSessionConfiguration.httpShouldSetCookies = false
-		kikBotSessionConfiguration.httpMaximumConnectionsPerHost = 6
-		
 		AuthorizationHeader = "Basic \(Data("\(username):\(password)".utf8).base64EncodedString())"
-		kikSession = URLSession(configuration: kikBotSessionConfiguration, delegate: botDataHandlerDelegate, delegateQueue: nil)
+		kikSession = URLSession(configuration: kikBotSessionConfiguration, delegate: nil, delegateQueue: nil)
 	}
 	
-    func listen()
-    {
-        router.post(path) { request, response, next in
+	/// Starts listening for messages sent to the bot.
+	///
+	/// - Note: This function never returns. It should be the last line of code in your bot.
+	func listen() {
+		
+		router.post(path) { request, response, next in
 			
-			do
-			{
+			do {
 				let bodyString = try request.readString()
 				let bodyData = bodyString?.data(using: .utf8)
 				let bodyJSON = try JSONSerialization.jsonObject(with: bodyData!) as! JSON
 				let messagesJSON = bodyJSON["messages"] as! [[String:Any]]
 				
-				for messageJSON in messagesJSON
-				{
+				for messageJSON in messagesJSON {
 					let message = Message(messageJSON: messageJSON)
 					self.delegate?.newMessage(message: message)
 				}
-			}
-			catch
-			{
+			} catch {
 				print("Error!")
 			}
-		
+			
 			_ = response.send(status: .OK)
-            next()
-        }
-        
-        Kitura.addHTTPServer(onPort: port, with: router)
-        
-        Kitura.run()
-    }
+			next()
+		}
+		
+		Kitura.addHTTPServer(onPort: port, with: router)
+		
+		Kitura.run()
+	}
 	
-	func sendConfigurationUpdate(configuration: Data)
-	{
-		var configurationURLRequest = URLRequest(url: self.configurationURL)
+	/// Sends a configuration object to Kik for your bot.
+	func updateConfiguration(with configuration: Data, completionHandeler: ((Error?) -> Void)? = nil) {
+		
+		var configurationURLRequest = URLRequest(url: configurationURL)
 		configurationURLRequest.httpMethod = "POST"
 		configurationURLRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
-		configurationURLRequest.addValue(AuthorizationHeader!, forHTTPHeaderField: "Authorization")
+		configurationURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
 		
-		let uploadTask = kikSession!.uploadTask(with: configurationURLRequest, from: configuration)
+		let uploadTask = kikSession.uploadTask(with: configurationURLRequest, from: configuration) { (_, _, error) in
+			if error != nil && completionHandeler != nil {
+				completionHandeler!(error)
+			}
+		}
+		
 		uploadTask.resume()
 	}
 	
-	func send(message: JSON)
-	{
-		var messageURLRequest = URLRequest(url: self.messageURL)
+	/// Sends a message from the `message` data.
+	func send(message: Data, completionHandeler: ((Error?) -> Void)? = nil) {
+		
+		var messageURLRequest = URLRequest(url: messageURL)
 		messageURLRequest.httpMethod = "POST"
 		messageURLRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
-		messageURLRequest.addValue(AuthorizationHeader!, forHTTPHeaderField: "Authorization")
+		messageURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
 		
-		let messageData = try! JSONSerialization.data(withJSONObject: message)
-		let uploadTask = kikSession!.uploadTask(with: messageURLRequest, from: messageData)
+		let uploadTask = kikSession.uploadTask(with: messageURLRequest, from: message) { (_, _, error) in
+			if error != nil && completionHandeler != nil {
+				completionHandeler!(error)
+			}
+		}
+		
 		uploadTask.resume()
 	}
 	
-	func getUserProfile(username: String, completionHandeler: @escaping (JSON?, Error?) -> Void)
-	{
-		var messageURLRequest = URLRequest(url: self.kikUserProfileURL.appendingPathComponent(username))
-		messageURLRequest.httpMethod = "GET"
-		messageURLRequest.addValue(AuthorizationHeader!, forHTTPHeaderField: "Authorization")
+	/// Gets the profile for a specific user.
+	func getUserProfile(for username: String, completionHandeler: ((JSON?, Error?) -> Void)?) {
 		
-		let dataTask = kikSession!.dataTask(with: messageURLRequest) { (data, responce, error) in
+		var messageURLRequest = URLRequest(url: kikUserProfileURL.appendingPathComponent(username))
+		messageURLRequest.httpMethod = "GET"
+		messageURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
+		
+		let dataTask = kikSession.dataTask(with: messageURLRequest) { (data, responce, error) in
+			
 			guard error == nil else {
-				completionHandeler(nil, error)
+				if completionHandeler != nil {
+					completionHandeler!(nil, error)
+				}
+				
 				return
 			}
 			
 			if data != nil {
-				completionHandeler(try! JSONSerialization.jsonObject(with: data!) as? JSON, nil)
+				if completionHandeler != nil {
+					let profileJSONObject = try? JSONSerialization.jsonObject(with: data!)
+					completionHandeler!(profileJSONObject as? JSON, nil)
+				}
 			}
 		}
 		
 		dataTask.resume()
-	}
-}
-
-private class BotDataHandlerDelegate: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate
-{
-	var completionHandlers: [URL: (Data) -> Void] = [:]
-	
-	func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void)
-	{
-		completionHandler(.allow)
-		
-		let urlResponse = response as! HTTPURLResponse
-		print("\(urlResponse.statusCode): \(HTTPURLResponse.localizedString(forStatusCode: urlResponse.statusCode))")
-	}
-	
-	func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data)
-	{
-		guard let completionHandler = completionHandlers[dataTask.currentRequest!.url!] else {
-			return
-		}
-		
-		completionHandler(data)
 	}
 }
