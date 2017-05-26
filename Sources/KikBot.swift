@@ -46,6 +46,11 @@ public class KikBot
 		dataHandler.listen()
     }
 	
+	public func broadcast(to: [KikUser], with: MessageSendData..., callback: (() -> Void)?)
+	{
+		
+	}
+	
 	/// Updates the configuration with the configuration JSON.
 	///
 	/// - Parameters:

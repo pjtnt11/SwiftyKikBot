@@ -2,6 +2,7 @@ import Foundation
 import Kitura
 
 fileprivate let messageURL = URL(string: "https://api.kik.com/v1/message")!
+fileprivate let broadcastURL = URL(string: "https://api.kik.com/v1/broadcast")!
 fileprivate let kikUserProfileURL = URL(string: "https://api.kik.com/v1/user/")!
 fileprivate let configurationURL = URL(string: "https://api.kik.com/v1/config")!
 
@@ -81,14 +82,30 @@ internal class BotDataHandler
 	}
 	
 	/// Sends a message from the `message` data.
-	func send(message: Data, completionHandeler: ((Error?) -> Void)? = nil) {
+	func send(messages: Data, completionHandeler: ((Error?) -> Void)? = nil) {
 		
 		var messageURLRequest = URLRequest(url: messageURL)
 		messageURLRequest.httpMethod = "POST"
 		messageURLRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
 		messageURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
 		
-		let uploadTask = kikSession.uploadTask(with: messageURLRequest, from: message) { (_, _, error) in
+		let uploadTask = kikSession.uploadTask(with: messageURLRequest, from: messages) { (_, _, error) in
+			if error != nil && completionHandeler != nil {
+				completionHandeler!(error)
+			}
+		}
+		
+		uploadTask.resume()
+	}
+	
+	func broadcast(messages: Data, completionHandeler: ((Error?) -> Void)? = nil) {
+		
+		var messageURLRequest = URLRequest(url: broadcastURL)
+		messageURLRequest.httpMethod = "POST"
+		messageURLRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
+		messageURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
+		
+		let uploadTask = kikSession.uploadTask(with: messageURLRequest, from: messages) { (_, _, error) in
 			if error != nil && completionHandeler != nil {
 				completionHandeler!(error)
 			}
