@@ -52,20 +52,18 @@ public class KikBot
 	///		- configuration: Configuration dictionary to send.
 	///		- callback: Clusure to be called after the data is sent.
 	///
-	/// - Todo: Call the callback after the post request returns values.
+	/// - Todo: Check for errors.
 	public func updateConfiguration(configuration: JSON, callback: (() -> Void)?)
     {
-		guard let configurationData = try? JSONSerialization.data(withJSONObject: configuration) else
-		{
+		guard let configurationData = try? JSONSerialization.data(withJSONObject: configuration) else {
 			print("Error: Configuration Data is not valid JSON")
 			return
 		}
 		
-        dataHandler!.sendConfigurationUpdate(configuration: configurationData)
-		
-		if callback != nil
-		{
-			callback!()
+        dataHandler.updateConfiguration(with: configurationData) { (_) in
+			if callback != nil {
+				callback!()
+			}
 		}
     }
 }

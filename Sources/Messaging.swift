@@ -1,6 +1,6 @@
 import Foundation
 
-/// An error that is called when there are problems 
+/// An error that is called when there are problems
 public enum MessageJSONError: Error {
 	case invalidMessageType(MessageType)
 	case missingParameter(String)
@@ -123,7 +123,7 @@ public class Message {
 	/// Creates a message instance with the provided data.
 	///
 	/// - Parameters:
-	///		- messageJSON: A dictionary of JSON data send from Kik containing 
+	///		- messageJSON: A dictionary of JSON data send from Kik containing
 	/// the data that is used to create the instace.
 	init(messageJSON: JSON)
 	{
@@ -166,13 +166,20 @@ public class Message {
 	///
 	/// - Parameters:
 	///		- messages: Messages to reply with.
+	///
+	/// - Todo: Add error handling.
 	public func reply(withMessages messages: MessageSendData...)
 	{
-		dataHandler.send(message: try! jsonDictionary(from: messages))
+		let messagesJSONObject = try! jsonObject(from: messages)
+		let messagesData = try! JSONSerialization.data(withJSONObject: messagesJSONObject)
+		dataHandler.send(message: messagesData)
 	}
 	
 	/// Returns a dictionary formated in to send to Kik.
-	private func jsonDictionary(from messages: [MessageSendData]) throws -> MessageJSONDictionary
+	///
+	/// - Parameters:
+	///		- messages: An array for `MessageSendData` to be converted into a JSON object.
+	private func jsonObject(from messages: [MessageSendData]) throws -> MessageJSONDictionary
 	{
 		var messagesJSON: MessageJSONDictionary = ["messages":[]]
 		
@@ -244,16 +251,19 @@ public class Message {
 	
 	/// Marks the message as read.
 	public func markRead() {
-		let message: MessageJSONDictionary = [
-			"messages": [[
-				"type":MessageType.readRecipt.rawValue,
-				"chatId":chatId,
-				"to":from.username,
-				"messageIds": [id]
+		if readReceiptRequested {
+			let message: MessageJSONDictionary = [
+				"messages": [[
+					"type":MessageType.readRecipt.rawValue,
+					"chatId":chatId,
+					"to":from.username,
+					"messageIds": [id]
+					]
 				]
 			]
-		]
-		
-		dataHandler.send(message: message)
+			
+			let messageJSONObject = try! JSONSerialization.data(withJSONObject: message)
+			dataHandler.send(message: messageJSONObject)
+		}
 	}
 }

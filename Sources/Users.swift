@@ -35,7 +35,7 @@ public struct KikUser
 	
 	/// Returns the user's first name if it is available.
 	public var addressableName: String {
-		if let userProfile = self.profile {
+		if let userProfile = profile {
 			return userProfile.firstName
 		} else {
 			return username
@@ -57,7 +57,7 @@ public struct KikUser
 	///		- completionHandler: The closure to call after usr profile is fetched.
 	private func fetchUserProile(completionHandler: @escaping (KikUserProfile?) -> Void)
 	{
-		dataHandler.getUserProfile(username: username) { (json, error) in
+		dataHandler.getUserProfile(for: username) { (json, error) in
 			guard error == nil else {
 				completionHandler(nil)
 				return
