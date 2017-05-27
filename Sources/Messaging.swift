@@ -85,7 +85,7 @@ public struct Keyboard
 		
 		var body: String? = nil
 		
-		var pictureUrl: String? = nil
+		var pictureURL: String? = nil
 		
 		var friendPickerMininum: Int? = nil
 		var friendPickerMaximum: Int? = nil
@@ -101,7 +101,7 @@ public struct Keyboard
 		init(pictureURL: String, metadata: Any)
 		{
 			type = .picture
-			self.pictureUrl = pictureURL
+			self.pictureURL = pictureURL
 			self.metadata = metadata
 		}
 		
@@ -212,7 +212,7 @@ public struct MessageSendData
 public class Message {
 	public let type: MessageType
 	public let id: String
-	public let chatId: String
+	public let chatID: String
 	public let mention: [String]!
 	public let metadata: JSON!
 	
@@ -233,16 +233,16 @@ public class Message {
 	public var urlIsForwardable: Bool?
 	public let kikJsData: JSON?
 	
-	public let pictureUrl: String?
+	public let pictureURL: String?
 	
-	public let videoUrl: String?
+	public let videoURL: String?
 	
 	public let scanData: String?
 	
-	public let stickerPackId: String?
-	public let stickerUrl: String?
+	public let stickerPackID: String?
+	public let stickerURL: String?
 	
-	public let isTyping: Bool?
+	public let userIsTyping: Bool?
 	
 	public let receiptMessageIds: [String]?
 	
@@ -257,7 +257,7 @@ public class Message {
 	{
 		type = messageTypes[messageJSON["type"] as! String]!
 		id = messageJSON["id"] as! String
-		chatId = messageJSON["chatId"] as! String
+		chatID = messageJSON["chatId"] as! String
 		mention = messageJSON["mention"] as? [String]
 		metadata = messageJSON["metadata"] as? JSON
 		
@@ -266,7 +266,8 @@ public class Message {
 		timestamp = messageJSON["timestamp"] as! Int
 		participants = messageJSON["participants"] as! [String]
 		
-		chatType = chatTypes[messageJSON["chatType"] as! String]
+		let chatTypeRawValue = messageJSON["chatType"] as! String
+		chatType = chatTypes[chatTypeRawValue]
 		
 		if let attributionObject = messageJSON["attribution"] as? String {
 			attribution = Attribution(type: Attribution.attributionTypes[attributionObject]!, name: nil, iconURL: nil)
@@ -287,16 +288,16 @@ public class Message {
 			urlIsForwardable = !urlIsForwardable! // DOUBLE EXCLAMATION MARKS! xD
 		}
 		
-		pictureUrl = messageJSON["picUrl"] as? String
+		pictureURL = messageJSON["picUrl"] as? String
 		
-		videoUrl = messageJSON["videoUrl"] as? String
+		videoURL = messageJSON["videoUrl"] as? String
 		
 		scanData = messageJSON["data"] as? String
 		
-		stickerPackId = messageJSON["stickerPackId"] as? String
-		stickerUrl = messageJSON["stickerUrl"] as? String
+		stickerPackID = messageJSON["stickerPackId"] as? String
+		stickerURL = messageJSON["stickerUrl"] as? String
 		
-		isTyping = messageJSON["isTyping"] as? Bool
+		userIsTyping = messageJSON["isTyping"] as? Bool
 		
 		receiptMessageIds = messageJSON["messageIds"] as? [String]
 		
@@ -357,7 +358,7 @@ public class Message {
 			var messageJSON: JSON = [
 				"type": message.type.rawValue,
 				"to": from.username,
-				"chatId":chatId,
+				"chatId":chatID,
 				"delay":message.delay
 			]
 			
@@ -397,7 +398,7 @@ public class Message {
 						}
 						
 						responseJSONObject["body"] = response.body
-						responseJSONObject["picUrl"] = response.pictureUrl
+						responseJSONObject["picUrl"] = response.pictureURL
 						responseJSONObject["min"] = response.friendPickerMininum
 						responseJSONObject["max"] = response.friendPickerMaximum
 						responseJSONObject["metadata"] = response.metadata
@@ -476,7 +477,7 @@ public class Message {
 			let message: MessageJSONDictionary = [
 				"messages": [[
 					"type":MessageType.readRecipt.rawValue,
-					"chatId":chatId,
+					"chatId":chatID,
 					"to":from.username,
 					"messageIds": [id]
 					]
