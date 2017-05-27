@@ -73,8 +73,10 @@ internal class BotDataHandler
 		configurationURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
 		
 		let uploadTask = kikSession.uploadTask(with: configurationURLRequest, from: configuration) { (_, _, error) in
-			if error != nil && completionHandeler != nil {
+			if error == nil {
 				completionHandeler!(error)
+			} else {
+				print(error!)
 			}
 		}
 		
