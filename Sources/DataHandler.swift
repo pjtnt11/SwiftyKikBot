@@ -5,6 +5,7 @@ fileprivate let messageURL = URL(string: "https://api.kik.com/v1/message")!
 fileprivate let broadcastURL = URL(string: "https://api.kik.com/v1/broadcast")!
 fileprivate let kikUserProfileURL = URL(string: "https://api.kik.com/v1/user/")!
 fileprivate let configurationURL = URL(string: "https://api.kik.com/v1/config")!
+fileprivate let kikCodeURL = URL(string: "https://api.kik.com/v1/code")!
 
 /// A class that handles the connection between Kik and the bot server.
 internal class BotDataHandler
@@ -100,22 +101,6 @@ internal class BotDataHandler
 		uploadTask.resume()
 	}
 	
-	func broadcast(messages: Data, completionHandeler: ((Error?) -> Void)? = nil) {
-		
-		var messageURLRequest = URLRequest(url: broadcastURL)
-		messageURLRequest.httpMethod = "POST"
-		messageURLRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
-		messageURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
-		
-		let uploadTask = kikSession.uploadTask(with: messageURLRequest, from: messages) { (_, _, error) in
-			if error != nil && completionHandeler != nil {
-				completionHandeler!(error)
-			}
-		}
-		
-		uploadTask.resume()
-	}
-	
 	/// Gets the profile for a specific user.
 	func getUserProfile(for username: String, completionHandeler: ((JSON?, Error?) -> Void)?) {
 		
@@ -142,5 +127,37 @@ internal class BotDataHandler
 		}
 		
 		dataTask.resume()
+	}
+	
+	func createKikCode(withData data: Any?, color: Int, completionHandeler: @escaping ((String?, Error?) -> Void)) {
+		
+		var messageURLRequest = URLRequest(url: kikCodeURL)
+		messageURLRequest.httpMethod = "POST"
+		messageURLRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
+		messageURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
+		
+		var dataJSONObject: Data?
+		
+		if data != nil {
+			let JOSNData:JSON = ["data":data!]
+			
+			dataJSONObject = try? JSONSerialization.data(withJSONObject: JOSNData)
+		}
+		
+		let uploadTask = kikSession.uploadTask(with: messageURLRequest, from: dataJSONObject) { (data, responce, error) in
+			
+			guard error == nil else {
+				print(error!)
+				assertionFailure()
+				return
+			}
+			
+			if data != nil {
+				let responseData = try! JSONSerialization.jsonObject(with: data!) as! [String:String]
+				completionHandeler("\(kikCodeURL.appendingPathComponent(responseData["id"]!).absoluteString)?c=\(color)", nil)
+			}
+		}
+		
+		uploadTask.resume()
 	}
 }
