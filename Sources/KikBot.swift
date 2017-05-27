@@ -46,9 +46,9 @@ public class KikBot
 		dataHandler.listen()
     }
 	
-	public func broadcast(to: [KikUser], with: MessageSendData..., callback: (() -> Void)?)
+	public func createKikCode(with data: Any?, colorNumber: Int, completionHandeler: @escaping (String?, Error?) -> Void)
 	{
-		
+		dataHandler!.createKikCode(withData: data, color: colorNumber, completionHandeler: completionHandeler)
 	}
 	
 	/// Updates the configuration with the configuration JSON.
