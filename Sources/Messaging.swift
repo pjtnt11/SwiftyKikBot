@@ -32,7 +32,7 @@ internal let messageTypes: [String:MessageType] = [
 	"sticker" : .sticker,
 	"is-typing" : .isTyping,
 	"delivery-receipt" : .deliveryRecipt,
-	"read-receip" : .readRecipt,
+	"read-receipt" : .readRecipt,
 	"friend-picker" : .friendPicker
 ]
 
