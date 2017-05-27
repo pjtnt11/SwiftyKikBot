@@ -266,8 +266,12 @@ public class Message {
 		timestamp = messageJSON["timestamp"] as! Int
 		participants = messageJSON["participants"] as! [String]
 		
-		let chatTypeRawValue = messageJSON["chatType"] as! String
-		chatType = chatTypes[chatTypeRawValue]
+		let chatTypeRawValue = messageJSON["chatType"] as? String
+		if chatTypeRawValue != nil {
+			chatType = chatTypes[chatTypeRawValue!]
+		} else {
+			chatType = nil
+		}
 		
 		if let attributionObject = messageJSON["attribution"] as? String {
 			attribution = Attribution(type: Attribution.attributionTypes[attributionObject]!, name: nil, iconURL: nil)
