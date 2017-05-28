@@ -130,7 +130,7 @@ public struct Keyboard
 public struct MessageSendData
 {
 	let type: MessageType
-	let delay: Int
+	fileprivate var delay: Int = 0
 	fileprivate var keyboards: [Keyboard]? = nil
 	
 	// Properties for a text message.
@@ -162,31 +162,37 @@ public struct MessageSendData
 	var isTyping: Bool? = nil
 	
 	/// Creates a text message.
-	init(text: String, delay: Int) {
+	init(text: String) {
 		type = .text
 		body = text
-		self.delay = delay
 	}
 	
 	/// Creates a link message.
-	init(link: String, delay: Int) {
+	init(link: String) {
 		self.type = .link
 		self.url = link
-		self.delay = delay
 	}
 	
 	/// Creates a picture URL message.
-	init(pictureURL: String, delay: Int) {
+	init(pictureURL: String) {
 		type = .picture
 		self.pictureURL = pictureURL
-		self.delay = delay
 	}
 	
 	/// Creates a video URL message.
-	init(videoURL: String, delay: Int) {
+	init(videoURL: String) {
 		type = .video
 		self.videoURL = videoURL
+	}
+	
+	public mutating func add(delay: Int) {
 		self.delay = delay
+	}
+	
+	public func adding(delay: Int) -> MessageSendData {
+		var newMessage = self
+		newMessage.add(delay: delay)
+		return newMessage
 	}
 	
 	/// Sets the keyboards of the message
@@ -317,23 +323,23 @@ public struct Message {
 	}
 	
 	/// Returns a `MessageSendData` instance from `text`.
-	public static func makeSendData(text: String, delay: Int = 0) -> MessageSendData {
-		return MessageSendData(text: text, delay: delay)
+	public static func makeSendData(text: String) -> MessageSendData {
+		return MessageSendData(text: text)
 	}
 	
 	/// Returns a `MessageSendData` instance from `link`.
 	public static func makeSendData(link: String, delay: Int = 0) -> MessageSendData {
-		return MessageSendData(link: link, delay: delay)
+		return MessageSendData(link: link)
 	}
 	
 	/// Returns a `MessageSendData` instance from `pictureURL`.
-	public static func makeSendData(pictureURL: String, delay: Int = 0) -> MessageSendData {
-		return MessageSendData(pictureURL: pictureURL, delay: delay)
+	public static func makeSendData(pictureURL: String) -> MessageSendData {
+		return MessageSendData(pictureURL: pictureURL)
 	}
 	
 	/// Returns a `MessageSendData` instance from `videoURL`.
-	public static func makeSendData(videoURL: String, delay: Int = 0) -> MessageSendData {
-		return MessageSendData(videoURL: videoURL, delay: delay)
+	public static func makeSendData(videoURL: String) -> MessageSendData {
+		return MessageSendData(videoURL: videoURL)
 	}
 	
 	/// Sends `messages` to the user that sent the original message.
