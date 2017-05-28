@@ -209,7 +209,7 @@ public struct MessageSendData
 /// read and other various interactions between the bot and the user.
 ///
 /// - Todo: Add the ability to recieve data from more message types.
-public class Message {
+public struct Message {
 	public let type: MessageType
 	public let id: String
 	public let chatID: String
@@ -345,6 +345,20 @@ public class Message {
 	public func reply(withMessages messages: MessageSendData...)
 	{
 		let messagesJSONObject = try! jsonObject(from: messages)
+		let messagesData = try! JSONSerialization.data(withJSONObject: messagesJSONObject)
+		dataHandler.send(messages: messagesData)
+	}
+	
+	/// Sends `messages` to the user that sent the original message.
+	///
+	/// - Parameters:
+	///		- messages: String to reply with.
+	///
+	/// - Todo: Add error handling.
+	public func reply(withString text: String)
+	{
+		let message = Message.makeSendData(text: text)
+		let messagesJSONObject = try! jsonObject(from: [message])
 		let messagesData = try! JSONSerialization.data(withJSONObject: messagesJSONObject)
 		dataHandler.send(messages: messagesData)
 	}
