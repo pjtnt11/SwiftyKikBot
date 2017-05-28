@@ -28,7 +28,7 @@ internal let messageTypes: [String:MessageType] = [
 	"picture" : .picture,
 	"video" : .video,
 	"start-chatting" : .startChatting,
-	"scanData" : .scanData,
+	"scan-data" : .scanData,
 	"sticker" : .sticker,
 	"is-typing" : .isTyping,
 	"delivery-receipt" : .deliveryRecipt,
@@ -237,7 +237,7 @@ public class Message {
 	
 	public let videoURL: String?
 	
-	public let scanData: String?
+	public let scanData: Any?
 	
 	public let stickerPackID: String?
 	public let stickerURL: String?
@@ -296,7 +296,7 @@ public class Message {
 		
 		videoURL = messageJSON["videoUrl"] as? String
 		
-		scanData = messageJSON["data"] as? String
+		scanData = messageJSON["data"]
 		
 		stickerPackID = messageJSON["stickerPackId"] as? String
 		stickerURL = messageJSON["stickerUrl"] as? String

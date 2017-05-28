@@ -147,8 +147,8 @@ internal class BotDataHandler
 		let uploadTask = kikSession.uploadTask(with: messageURLRequest, from: dataJSONObject) { (data, responce, error) in
 			
 			guard error == nil else {
-				print(error!)
-				assertionFailure()
+				print(error.debugDescription)
+				print(error!.localizedDescription)
 				return
 			}
 			
