@@ -49,32 +49,32 @@ internal class BotDataHandler
 				let messagesJSON = bodyJSON["messages"] as! [[String:Any]]
 				
 				for messageJSON in messagesJSON {
-					let message = Message(message: messageJSON)
 					
+					let message = Message(messageJSON)
 					self.delegate?.newMessage?(message: message)
 					
 					switch message.type
 					{
 					case .text:
-						self.delegate?.newTextMessage?(message: message as! TextMessage)
+						self.delegate?.newTextMessage?(message: TextMessage(messageJSON))
 					case .link:
-						self.delegate?.newLinkMessage?(message: message as! LinkMessage)
+						self.delegate?.newLinkMessage?(message: LinkMessage(messageJSON))
 					case .picture:
-						self.delegate?.newPictureMessage?(message: message as! PictureMessage)
+						self.delegate?.newPictureMessage?(message: PictureMessage(messageJSON))
 					case .video:
-						self.delegate?.newVideoMessage?(message: message as! VideoMessage)
+						self.delegate?.newVideoMessage?(message: VideoMessage(messageJSON))
 					case .startChatting:
-						self.delegate?.newStartChattingMessage?(message: message as! StartChattingMessage)
+						self.delegate?.newStartChattingMessage?(message: StartChattingMessage(messageJSON))
 					case .scanData:
-						self.delegate?.newScanDataMessage?(message: message as! ScanDataMessage)
+						self.delegate?.newScanDataMessage?(message: ScanDataMessage(messageJSON))
 					case .sticker:
-						self.delegate?.newStickerMessage?(message: message as! StickerMessage)
+						self.delegate?.newStickerMessage?(message: StickerMessage(messageJSON))
 					case .isTyping:
-						self.delegate?.newTypingMessage?(message: message as! TypingMessage)
+						self.delegate?.newTypingMessage?(message: TypingMessage(messageJSON))
 					case .deliveryRecipt:
-						self.delegate?.newDeliveryReceiptMessage?(message: message as! DeliveryReceiptMessage)
+						self.delegate?.newDeliveryReceiptMessage?(message: DeliveryReceiptMessage(messageJSON))
 					case .readRecipt:
-						self.delegate?.newReadReceiptMessage?(message: message as! ReadReceiptMessage)
+						self.delegate?.newReadReceiptMessage?(message: ReadReceiptMessage(messageJSON))
 					default:
 						break
 					}

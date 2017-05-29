@@ -2,8 +2,8 @@ import Foundation
 
 public class StartChattingMessage: Message
 {
-	override init(message: JSON)
+	override init(_ message: JSON)
 	{
-		super.init(message: message)
+		super.init(message)
 	}
 }

@@ -121,7 +121,7 @@ public struct MessageSendData
 	/// - Parameters:
 	///		- messageJSON: A dictionary of JSON data send from Kik containing
 	/// the data that is used to create the instace.
-	init(message: JSON)
+	init(_ message: JSON)
 	{
 		type = MessageType(rawValue: message["type"] as! String)!
 		id = message["id"] as! String

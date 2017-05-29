@@ -9,7 +9,7 @@ public class LinkMessage: Message
 	let kikJsData: JSON?
 	let attribution: String
 	
-	override init(message: JSON)
+	override init(_ message: JSON)
 	{
 		url = message["url"] as! String
 		title = message["title"] as! String
@@ -18,6 +18,6 @@ public class LinkMessage: Message
 		kikJsData = message["kikJsData"] as? JSON
 		attribution = message["attribution"] as! String
 		
-		super.init(message: message)
+		super.init(message)
 	}
 }
