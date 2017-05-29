@@ -6,9 +6,19 @@ public typealias MessageJSONDictionary = [String:[[AnyHashable:Any]]]
 internal var dataHandler: BotDataHandler!
 
 /// A protocol that defines an instance to recieve Kik messages
-public protocol KikBotDelegate
+@objc public protocol KikBotDelegate
 {
-	func newMessage(message: Message) -> Void
+	@objc optional func newMessage(message: Message) -> Void
+	@objc optional func newTextMessage(message: TextMessage) -> Void
+	@objc optional func newLinkMessage(message: LinkMessage) -> Void
+	@objc optional func newPictureMessage(message: PictureMessage) -> Void
+	@objc optional func newVideoMessage(message: VideoMessage) -> Void
+	@objc optional func newStartChattingMessage(message: StartChattingMessage) -> Void
+	@objc optional func newScanDataMessage(message: ScanDataMessage) -> Void
+	@objc optional func newStickerMessage(message: StickerMessage) -> Void
+	@objc optional func newTypingMessage(message: TypingMessage) -> Void
+	@objc optional func newDeliveryReceiptMessage(message: DeliveryReceiptMessage) -> Void
+	@objc optional func newReadReceiptMessage(message: ReadReceiptMessage) -> Void
 }
 
 /// A class that supports a Kik bot.
