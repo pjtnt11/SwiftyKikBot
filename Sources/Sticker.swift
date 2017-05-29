@@ -2,8 +2,8 @@ import Foundation
 
 public class StickerMessage: Message
 {
-	let stickerPackID: String
-	let stickerURL: String
+	public let stickerPackID: String
+	public let stickerURL: String
 	
 	override init(_ message: JSON)
 	{

@@ -8,7 +8,7 @@ internal var dataHandler: BotDataHandler!
 /// A protocol that defines an instance to recieve Kik messages
 @objc public protocol KikBotDelegate
 {
-	@objc optional func newMessage(message: Message) -> Void
+	@objc optional func newMessage(message: Message, completionhandler: (_ option: MessageOption) -> Void) -> Void
 	@objc optional func newTextMessage(message: TextMessage) -> Void
 	@objc optional func newLinkMessage(message: LinkMessage) -> Void
 	@objc optional func newPictureMessage(message: PictureMessage) -> Void

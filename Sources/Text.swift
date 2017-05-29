@@ -2,7 +2,7 @@ import Foundation
 
 public class TextMessage: Message
 {
-	let body: String
+	public let body: String
 	
 	override init(_ message: JSON)
 	{

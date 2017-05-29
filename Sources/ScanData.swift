@@ -2,7 +2,7 @@ import Foundation
 
 public class ScanDataMessage: Message
 {
-	let data: String
+	public let data: String
 	
 	override init(_ message: JSON)
 	{

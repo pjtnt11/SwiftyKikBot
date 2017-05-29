@@ -7,6 +7,13 @@ fileprivate let kikUserProfileURL = URL(string: "https://api.kik.com/v1/user/")!
 fileprivate let configurationURL = URL(string: "https://api.kik.com/v1/config")!
 fileprivate let kikCodeURL = URL(string: "https://api.kik.com/v1/code")!
 
+@objc public enum MessageOption: Int
+{
+	case `continue`
+	case ignore
+	case error
+}
+
 /// A class that handles the connection between Kik and the bot server.
 internal class BotDataHandler
 {
@@ -18,6 +25,8 @@ internal class BotDataHandler
 	private let kikSession: URLSession
 	private let AuthorizationHeader:String
 	private let kikBotSessionConfiguration = URLSessionConfiguration.ephemeral
+	
+	
 	
 	/// Creates a `BotDataHandler` instance with `username`.
 	///
@@ -52,31 +61,42 @@ internal class BotDataHandler
 					
 					let message = Message(messageJSON)
 					self.delegate?.newMessage?(message: message)
-					
-					switch message.type
-					{
-					case .text:
-						self.delegate?.newTextMessage?(message: TextMessage(messageJSON))
-					case .link:
-						self.delegate?.newLinkMessage?(message: LinkMessage(messageJSON))
-					case .picture:
-						self.delegate?.newPictureMessage?(message: PictureMessage(messageJSON))
-					case .video:
-						self.delegate?.newVideoMessage?(message: VideoMessage(messageJSON))
-					case .startChatting:
-						self.delegate?.newStartChattingMessage?(message: StartChattingMessage(messageJSON))
-					case .scanData:
-						self.delegate?.newScanDataMessage?(message: ScanDataMessage(messageJSON))
-					case .sticker:
-						self.delegate?.newStickerMessage?(message: StickerMessage(messageJSON))
-					case .isTyping:
-						self.delegate?.newTypingMessage?(message: TypingMessage(messageJSON))
-					case .deliveryRecipt:
-						self.delegate?.newDeliveryReceiptMessage?(message: DeliveryReceiptMessage(messageJSON))
-					case .readRecipt:
-						self.delegate?.newReadReceiptMessage?(message: ReadReceiptMessage(messageJSON))
-					default:
-						break
+					{ option in
+						switch option
+						{
+						case .`continue`:
+							switch message.type
+							{
+							case .text:
+								self.delegate?.newTextMessage?(message: TextMessage(messageJSON))
+							case .link:
+								self.delegate?.newLinkMessage?(message: LinkMessage(messageJSON))
+							case .picture:
+								self.delegate?.newPictureMessage?(message: PictureMessage(messageJSON))
+							case .video:
+								self.delegate?.newVideoMessage?(message: VideoMessage(messageJSON))
+							case .startChatting:
+								self.delegate?.newStartChattingMessage?(message: StartChattingMessage(messageJSON))
+							case .scanData:
+								self.delegate?.newScanDataMessage?(message: ScanDataMessage(messageJSON))
+							case .sticker:
+								self.delegate?.newStickerMessage?(message: StickerMessage(messageJSON))
+							case .isTyping:
+								self.delegate?.newTypingMessage?(message: TypingMessage(messageJSON))
+							case .deliveryRecipt:
+								self.delegate?.newDeliveryReceiptMessage?(message: DeliveryReceiptMessage(messageJSON))
+							case .readRecipt:
+								self.delegate?.newReadReceiptMessage?(message: ReadReceiptMessage(messageJSON))
+							default:
+								break
+							}
+						case .ignore:
+							break
+						case .error:
+							break
+						}
+						
+						
 					}
 					
 				}
