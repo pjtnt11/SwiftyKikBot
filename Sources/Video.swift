@@ -2,8 +2,8 @@ import Foundation
 
 public class VideoMessage: Message
 {
-	let videoUrl: String
-	let attribution: String
+	public let videoUrl: String
+	public let attribution: String
 	
 	override init(_ message: JSON)
 	{

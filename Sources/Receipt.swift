@@ -2,7 +2,7 @@ import Foundation
 
 public class DeliveryReceiptMessage: Message
 {
-	let messageIDs: [String]
+	public let messageIDs: [String]
 	
 	override init(_ message: JSON)
 	{
@@ -14,7 +14,7 @@ public class DeliveryReceiptMessage: Message
 
 public class ReadReceiptMessage: Message
 {
-	let messageIDs: [String]
+	public let messageIDs: [String]
 	
 	override init(_ message: JSON)
 	{
