@@ -4,10 +4,10 @@ public class ScanDataMessage: Message
 {
 	let data: String
 	
-	override init(message: JSON)
+	override init(_ message: JSON)
 	{
 		data = message["data"] as! String
 		
-		super.init(message: message)
+		super.init(message)
 	}
 }
