@@ -49,8 +49,36 @@ internal class BotDataHandler
 				let messagesJSON = bodyJSON["messages"] as! [[String:Any]]
 				
 				for messageJSON in messagesJSON {
-					let message = Message(messageJSON: messageJSON)
-					self.delegate?.newMessage(message: message)
+					let message = Message(message: messageJSON)
+					
+					self.delegate?.newMessage?(message: message)
+					
+					switch message.type
+					{
+					case .text:
+						self.delegate?.newTextMessage?(message: message as! TextMessage)
+					case .link:
+						self.delegate?.newLinkMessage?(message: message as! LinkMessage)
+					case .picture:
+						self.delegate?.newPictureMessage?(message: message as! PictureMessage)
+					case .video:
+						self.delegate?.newVideoMessage?(message: message as! VideoMessage)
+					case .startChatting:
+						self.delegate?.newStartChattingMessage?(message: message as! StartChattingMessage)
+					case .scanData:
+						self.delegate?.newScanDataMessage?(message: message as! ScanDataMessage)
+					case .sticker:
+						self.delegate?.newStickerMessage?(message: message as! StickerMessage)
+					case .isTyping:
+						self.delegate?.newTypingMessage?(message: message as! TypingMessage)
+					case .deliveryRecipt:
+						self.delegate?.newDeliveryReceiptMessage?(message: message as! DeliveryReceiptMessage)
+					case .readRecipt:
+						self.delegate?.newReadReceiptMessage?(message: message as! ReadReceiptMessage)
+					default:
+						break
+					}
+					
 				}
 			} catch {
 				print("Error!")
