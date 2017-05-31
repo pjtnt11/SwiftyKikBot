@@ -21,6 +21,14 @@ internal var dataHandler: BotDataHandler!
 	@objc optional func newReadReceiptMessage(message: ReadReceiptMessage) -> Void
 }
 
+public extension KikBotDelegate
+{
+	func newMessage(message: Message, completionhandler: (_ option: MessageOption) -> Void) -> Void
+	{
+		completionhandler(.continue)
+	}
+}
+
 /// A class that supports a Kik bot.
 public class KikBot
 {

@@ -24,24 +24,6 @@ public struct KikUser
 {
 	public let username: String
 	
-	/// Returns the users profile if it is available.
-	public var profile: KikUserProfile? {
-		var returningProfile: KikUserProfile?
-		fetchUserProile { (profile) in
-			returningProfile = profile
-		}
-		return returningProfile
-	}
-	
-	/// Returns the user's first name if it is available.
-	public var addressableName: String {
-		if let userProfile = profile {
-			return userProfile.firstName
-		} else {
-			return username
-		}
-	}
-	
 	/// Creates a `KikUser` from the given username.
 	///
 	/// - Parameters:
@@ -55,7 +37,7 @@ public struct KikUser
 	///
 	/// - Parameters:
 	///		- completionHandler: The closure to call after usr profile is fetched.
-	private func fetchUserProile(completionHandler: @escaping (KikUserProfile?) -> Void)
+	private func fetchProile(completionHandler: @escaping (KikUserProfile?) -> Void)
 	{
 		dataHandler.getUserProfile(for: username) { (json, error) in
 			guard error == nil else {
