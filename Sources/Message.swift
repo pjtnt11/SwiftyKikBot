@@ -86,13 +86,13 @@ public struct MessageSendData
 		self.videoURL = videoURL
 	}
 	
-	public mutating func add(delay: Int) {
+	public mutating func delay(_ delay: Int) {
 		self.delay = delay
 	}
 	
-	public func adding(delay: Int) -> MessageSendData {
+	public func delayed(_ delay: Int) -> MessageSendData {
 		var newMessage = self
-		newMessage.add(delay: delay)
+		newMessage.delay(delay)
 		return newMessage
 	}
 }
