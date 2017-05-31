@@ -37,7 +37,7 @@ public struct KikUser
 	///
 	/// - Parameters:
 	///		- completionHandler: The closure to call after usr profile is fetched.
-	private func fetchProile(completionHandler: @escaping (KikUserProfile?) -> Void)
+	public func fetchProile(completionHandler: @escaping (KikUserProfile?) -> Void)
 	{
 		dataHandler.getUserProfile(for: username) { (json, error) in
 			guard error == nil else {
