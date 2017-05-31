@@ -143,20 +143,48 @@ public struct MessageSendData
 	
 	/// Marks the message as read.
 	public func markRead() {
-		if readReceiptRequested {
-			let message: MessageJSONDictionary = [
-				"messages": [[
-					"type":MessageType.readRecipt.rawValue,
-					"chatId":chatID,
-					"to":from.username,
-					"messageIds": [id]
-					]
+		let message: MessageJSONDictionary = [
+			"messages": [[
+				"type":MessageType.readRecipt.rawValue,
+				"chatId":chatID,
+				"to":from.username,
+				"messageIds": [id]
 				]
 			]
-			
-			let messageJSONObject = try! JSONSerialization.data(withJSONObject: message)
-			dataHandler.send(messages: messageJSONObject)
-		}
+		]
+		
+		let messageJSONObject = try! JSONSerialization.data(withJSONObject: message)
+		dataHandler.send(messages: messageJSONObject)
+	}
+	
+	public func startTyping() {
+		let message: MessageJSONDictionary = [
+			"messages": [[
+				"type":MessageType.isTyping.rawValue,
+				"chatId":chatID,
+				"to":from.username,
+				"isTyping": true
+				]
+			]
+		]
+		
+		let messageJSONObject = try! JSONSerialization.data(withJSONObject: message)
+		dataHandler.send(messages: messageJSONObject)
+	}
+	
+	public func stopTyping() {
+		let message: MessageJSONDictionary = [
+			"messages": [[
+				"type":MessageType.isTyping.rawValue,
+				"chatId":chatID,
+				"to":from.username,
+				"isTyping": false
+				]
+			]
+		]
+		
+		let messageJSONObject = try! JSONSerialization.data(withJSONObject: message)
+		dataHandler.send(messages: messageJSONObject)
 	}
 	
 	/// Sends `messages` to the user that sent the original message.
