@@ -1,8 +1,15 @@
 language: swift
+
 os: osx
+
 osx_image: xcode8.3
+
 xcode_project: KikBot.xcodeproj
+
 xcode_scheme: KikBot
 
-install: swift package fetch
-script: swift test
+install:
+  - swift package fetch
+  
+script:
+  - swift test
