@@ -1,7 +1,5 @@
 import Foundation
-
-public typealias JSON = [AnyHashable:Any]
-public typealias MessageJSONDictionary = [String:[[AnyHashable:Any]]]
+import SwiftyJSON
 
 internal var dataHandler: BotDataHandler!
 
@@ -64,7 +62,7 @@ public class KikBot
 		dataHandler.listen()
 	}
 	
-	public func createKikCode(with data: Any, colorNumber: Int, completionHandeler: @escaping (String?, Error?) -> Void)
+	public func createKikCode(with data: JSON, colorNumber: Int, completionHandeler: @escaping (String?, Error?) -> Void)
 	{
 		dataHandler!.createKikCode(withData: data, color: colorNumber, completionHandeler: completionHandeler)
 	}

@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 public class ScanDataMessage: Message
 {
@@ -6,7 +7,7 @@ public class ScanDataMessage: Message
 	
 	override init(_ message: JSON)
 	{
-		data = message["data"] as! String
+		data = message["data"].stringValue
 		
 		super.init(message)
 	}

@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 public class VideoMessage: Message
 {
@@ -7,8 +8,8 @@ public class VideoMessage: Message
 	
 	override init(_ message: JSON)
 	{
-		videoUrl = message["videoUrl"] as! String
-		attribution = message["attribution"] as! String
+		videoUrl = message["videoUrl"].stringValue
+		attribution = message["attribution"].stringValue
 		
 		super.init(message)
 	}

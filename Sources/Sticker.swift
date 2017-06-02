@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 public class StickerMessage: Message
 {
@@ -7,8 +8,8 @@ public class StickerMessage: Message
 	
 	override init(_ message: JSON)
 	{
-		stickerPackID = message["stickerPackId"] as! String
-		stickerURL = message["stickerUrl"] as! String
+		stickerPackID = message["stickerPackId"].stringValue
+		stickerURL = message["stickerUrl"].stringValue
 		
 		super.init(message)
 	}

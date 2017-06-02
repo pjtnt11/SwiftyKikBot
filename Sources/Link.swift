@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 public class LinkMessage: Message
 {
@@ -11,12 +12,12 @@ public class LinkMessage: Message
 	
 	override init(_ message: JSON)
 	{
-		url = message["url"] as! String
-		title = message["title"] as! String
-		text = message["text"] as! String
-		forwardable = !(message["noForward"] as! Bool)
-		kikJsData = message["kikJsData"] as? JSON
-		attribution = message["attribution"] as! String
+		url = message["url"].stringValue
+		title = message["title"].stringValue
+		text = message["text"].stringValue
+		forwardable = message["noForward"].boolValue
+		kikJsData = message["kikJsData"]
+		attribution = message["attribution"].stringValue
 		
 		super.init(message)
 	}

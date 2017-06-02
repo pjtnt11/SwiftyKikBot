@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 public class TypingMessage: Message
 {
@@ -6,7 +7,7 @@ public class TypingMessage: Message
 	
 	override init(_ message: JSON)
 	{
-		userIsTyping = message["isTyping"] as! Bool
+		userIsTyping = message["isTyping"].boolValue
 		
 		super.init(message)
 	}

@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 public class DeliveryReceiptMessage: Message
 {
@@ -6,7 +7,7 @@ public class DeliveryReceiptMessage: Message
 	
 	override init(_ message: JSON)
 	{
-		messageIDs = message["messageIds"] as! [String]
+		messageIDs = message["messageIds"].arrayObject as! [String]
 		
 		super.init(message)
 	}
@@ -18,7 +19,7 @@ public class ReadReceiptMessage: Message
 	
 	override init(_ message: JSON)
 	{
-		messageIDs = message["messageIds"] as! [String]
+		messageIDs = message["messageIds"].arrayObject as! [String]
 		
 		super.init(message)
 	}

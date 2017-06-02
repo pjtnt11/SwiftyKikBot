@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 public class TextMessage: Message
 {
@@ -6,7 +7,7 @@ public class TextMessage: Message
 	
 	override init(_ message: JSON)
 	{
-		self.body = message["body"] as! String
+		self.body = message["body"].stringValue
 		super.init(message)
 	}
 }
