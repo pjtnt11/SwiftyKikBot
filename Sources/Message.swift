@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 /// An error that is called when there are problems
 public enum MessageJSONError: Error {
@@ -44,7 +45,7 @@ public struct MessageSendData
 	public var urlText: String? = nil
 	public var isURLForwardable: Bool? = nil
 	public var kikJsData: JSON? = nil
-	public var urlAttribution: JSON? = nil
+	public var urlAttribution: String? = nil
 	public var urlPictureURL: String? = nil
 	
 	// Properties for a picture message.
@@ -106,13 +107,13 @@ public struct MessageSendData
 	public let type: MessageType
 	public let id: String
 	public let chatID: String
-	public let mention: [String]?
+	public let mention: [JSON]?
 	public let metadata: JSON?
 	
 	public let from: KikUser
 	public let readReceiptRequested: Bool!
-	public let timestamp: Int
-	public let participants: [String]
+	public let timestamp: String
+	public let participants: [JSON]
 	
 	public let chatType: ChatType!
 	
@@ -123,18 +124,18 @@ public struct MessageSendData
 	/// the data that is used to create the instace.
 	init(_ message: JSON)
 	{
-		type = MessageType(rawValue: message["type"] as! String)!
-		id = message["id"] as! String
-		chatID = message["chatId"] as! String
-		mention = message["mention"] as? [String]
-		metadata = message["metadata"] as? JSON
+		type = MessageType(rawValue: message["type"].stringValue)!
+		id = message["id"].stringValue
+		chatID = message["chatId"].stringValue
+		mention = message["mention"].arrayValue
+		metadata = message["metadata"]
 		
-		from = KikUser(withUsername: message["from"] as! String)
-		readReceiptRequested = message["readReceiptRequested"] as? Bool
-		timestamp = message["timestamp"] as! Int
-		participants = message["participants"] as! [String]
+		from = KikUser(withUsername: message["from"].stringValue)
+		readReceiptRequested = message["readReceiptRequested"].boolValue
+		timestamp = message["timestamp"].stringValue
+		participants = message["participants"].arrayValue
 		
-		if let chatType = message["chatType"] as? String {
+		if let chatType = message["chatType"].string {
 			self.chatType = ChatType(rawValue: chatType)
 		} else {
 			self.chatType = nil
@@ -143,75 +144,107 @@ public struct MessageSendData
 	
 	/// Marks the message as read.
 	public func markRead() {
-		let message: MessageJSONDictionary = [
-			"messages": [[
-				"type":MessageType.readRecipt.rawValue,
-				"chatId":chatID,
-				"to":from.username,
-				"messageIds": [id]
+		let message: JSON = [
+			"messages": [
+				[
+					"type": MessageType.readRecipt.rawValue,
+					"chatId": chatID,
+					"to": from.username,
+					"messageIds": [id]
 				]
 			]
 		]
 		
-		let messageJSONObject = try! JSONSerialization.data(withJSONObject: message)
-		dataHandler.send(messages: messageJSONObject)
+		guard let sendJSON = try? message.rawData() else {
+			print("-- ERROR! --")
+			return
+		}
+		
+		dataHandler.send(messages: sendJSON)
 	}
 	
 	public func startTyping() {
-		let message: MessageJSONDictionary = [
-			"messages": [[
-				"type":MessageType.isTyping.rawValue,
-				"chatId":chatID,
-				"to":from.username,
-				"isTyping": true
+		let message: JSON = [
+			"messages": [
+				[
+					"type": MessageType.isTyping.rawValue,
+					"chatId": chatID,
+					"to": from.username,
+					"isTyping": true
 				]
 			]
 		]
 		
-		let messageJSONObject = try! JSONSerialization.data(withJSONObject: message)
-		dataHandler.send(messages: messageJSONObject)
+		guard let sendJSON = try? message.rawData() else {
+			print("-- ERROR! --")
+			return
+		}
+		
+		dataHandler.send(messages: sendJSON)
 	}
 	
 	public func stopTyping() {
-		let message: MessageJSONDictionary = [
-			"messages": [[
-				"type":MessageType.isTyping.rawValue,
-				"chatId":chatID,
-				"to":from.username,
-				"isTyping": false
+		let message: JSON = [
+			"messages" : [
+				[
+					"type": MessageType.isTyping.rawValue,
+					"chatId": chatID,
+					"to": from.username,
+					"isTyping": false
 				]
 			]
 		]
 		
-		let messageJSONObject = try! JSONSerialization.data(withJSONObject: message)
-		dataHandler.send(messages: messageJSONObject)
+		guard let sendJSON = try? message.rawData() else {
+			print("-- ERROR! --")
+			return
+		}
+		
+		dataHandler.send(messages: sendJSON)
 	}
 	
 	/// Sends `messages` to the user that sent the original message.
 	///
 	/// - Parameters:
 	///		- messages: Messages to reply with.
-	///
-	/// - Todo: Add error handling.
 	public func reply(withMessages messages: MessageSendData...)
 	{
-		let messagesJSONObject = try! jsonObject(from: messages)
-		let messagesData = try! JSONSerialization.data(withJSONObject: messagesJSONObject)
-		dataHandler.send(messages: messagesData)
+		let sendJSON = try? jsonObject(from: messages)
+		guard sendJSON != nil else {
+			print("-- ERROR! --")
+			return
+		}
+		
+		let sendData = try? sendJSON!.rawData()
+		guard sendData != nil else {
+			print("-- ERROR! --")
+			return
+		}
+		
+		dataHandler.send(messages: sendData!)
 	}
 	
 	/// Sends `messages` to the user that sent the original message.
 	///
 	/// - Parameters:
 	///		- messages: String to reply with.
-	///
-	/// - Todo: Add error handling.
 	public func reply(withString text: String)
 	{
 		let message = Message.makeSendData(text: text)
-		let messagesJSONObject = try! jsonObject(from: [message])
-		let messagesData = try! JSONSerialization.data(withJSONObject: messagesJSONObject)
-		dataHandler.send(messages: messagesData)
+		
+		let sendJSON = try? jsonObject(from: [message])
+		guard sendJSON != nil else {
+			print("-- ERROR! --")
+			return
+		}
+		
+		let sendData = try? sendJSON!.rawData()
+		guard sendData != nil else {
+			print("-- ERROR! --")
+			return
+		}
+		
+		dataHandler.send(messages: sendData!)
 	}
 	
 	// The rest of the methods in this class have to do with sending data.
@@ -240,17 +273,19 @@ public struct MessageSendData
 	///
 	/// - Parameters:
 	///		- messages: An array for `MessageSendData` to be converted into a JSON object.
-	private func jsonObject(from messages: [MessageSendData]) throws -> MessageJSONDictionary
+	private func jsonObject(from messages: [MessageSendData]) throws -> JSON
 	{
-		var messagesJSON: MessageJSONDictionary = ["messages":[]]
+		var messagesJSON: JSON = [
+			"messages" : []
+		]
 		
-		for message in messages
+		for (i, message) in messages.enumerated()
 		{
 			var messageJSON: JSON = [
 				"type": message.type.rawValue,
 				"to": from.username,
-				"chatId":chatID,
-				"delay":message.delay
+				"chatId": chatID,
+				"delay": message.delay
 			]
 			
 			switch message.type
@@ -259,52 +294,52 @@ public struct MessageSendData
 				guard message.body != nil else {
 					throw MessageJSONError.missingParameter("body")
 				}
-				messageJSON["body"] = message.body
-				messageJSON["typeTime"] = message.typeTime
+				messageJSON["body"].string = message.body
+				messageJSON["typeTime"].int = message.typeTime
 				
 			case .link:
 				guard message.url != nil else {
 					throw MessageJSONError.missingParameter("url")
 				}
-				messageJSON["url"] = message.url
-				messageJSON["title"] = message.urlTitle
-				messageJSON["noForward"] = message.isURLForwardable
-				messageJSON["kikJsData"] = message.kikJsData
-				messageJSON["attribution"] = message.urlAttribution
-				messageJSON["picUrl"] = message.urlPictureURL
+				messageJSON["url"].string = message.url
+				messageJSON["title"].string = message.urlTitle
+				messageJSON["noForward"].bool = message.isURLForwardable
+				messageJSON["kikJsData"].dictionaryObject = message.kikJsData?.dictionaryObject
+				messageJSON["attribution"].string = message.urlAttribution
+				messageJSON["picUrl"].string = message.urlPictureURL
 				
 			case .picture:
 				guard message.pictureURL != nil else {
 					throw MessageJSONError.missingParameter("pictureURL")
 				}
-				messageJSON["picUrl"] = message.pictureURL
-				messageJSON["attribution"] = message.pictureAttribution
+				messageJSON["picUrl"].string = message.pictureURL
+				messageJSON["attribution"].string = message.pictureAttribution
 				
 			case .video:
 				guard message.videoURL != nil else {
 					throw MessageJSONError.missingParameter("videoURL")
 				}
-				messageJSON["videoUrl"] = message.videoURL
-				messageJSON["loop"] = message.loopVideo
-				messageJSON["muted"] = message.isVideoMuted
-				messageJSON["autoplay"] = message.autoplayVideo
-				messageJSON["noSave"] = message.canVideoBeSaved
-				messageJSON["attribution"] = message.videoAttribution
+				messageJSON["videoUrl"].string = message.videoURL
+				messageJSON["loop"].bool = message.loopVideo
+				messageJSON["muted"].bool = message.isVideoMuted
+				messageJSON["autoplay"].bool = message.autoplayVideo
+				messageJSON["noSave"].bool = message.canVideoBeSaved
+				messageJSON["attribution"].string = message.videoAttribution
 				
 			case .isTyping:
 				guard message.body != nil else {
 					throw MessageJSONError.missingParameter("body")
 				}
-				messageJSON["isTyping"] = message.isTyping
+				messageJSON["isTyping"].bool = message.isTyping
 				
 			case .readRecipt:
-				messageJSON["messageIds"] = [id]
+				messageJSON["messageIds"].arrayObject = [id]
 				
 			default:
 				throw MessageJSONError.invalidMessageType(message.type)
 			}
 			
-			messagesJSON["messages"]!.append(messageJSON)
+			messagesJSON["messages"][i].dictionaryObject = messageJSON.dictionary
 		}
 		
 		return messagesJSON

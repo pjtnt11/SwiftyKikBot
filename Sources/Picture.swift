@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 public class PictureMessage: Message
 {
@@ -7,8 +8,8 @@ public class PictureMessage: Message
 	
 	override init(_ message: JSON)
 	{
-		pictureUrl = message["picUrl"] as! String
-		attribution = message["attribution"] as! JSON
+		pictureUrl = message["picUrl"].stringValue
+		attribution = message["attribution"]
 		
 		super.init(message)
 	}

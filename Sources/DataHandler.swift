@@ -1,5 +1,6 @@
 import Foundation
 import Kitura
+import SwiftyJSON
 
 fileprivate let messageURL = URL(string: "https://api.kik.com/v1/message")!
 fileprivate let broadcastURL = URL(string: "https://api.kik.com/v1/broadcast")!
@@ -48,60 +49,60 @@ internal class BotDataHandler
 	///
 	/// - Note: This function never returns. It should be the last line of code in your bot.
 	func listen() {
-		
 		router.post(path) { request, response, next in
 			
-			do {
-				let bodyString = try request.readString()
-				let bodyData = bodyString?.data(using: .utf8)
-				let bodyJSON = try JSONSerialization.jsonObject(with: bodyData!) as! JSON
-				let messagesJSON = bodyJSON["messages"] as! [[String:Any]]
-				
-				for messageJSON in messagesJSON {
-					
-					let message = Message(messageJSON)
-					self.delegate?.newMessage?(message: message)
-					{ option in
-						switch option
+			var data = Data()
+			
+			guard let _ = try? request.read(into: &data) else {
+				_ = response.send(status: .internalServerError)
+				next()
+				return
+			}
+			
+			let bodyJSON = JSON(data: data)
+			let messagesJSON = bodyJSON["messages"].array
+			
+			for messageJSON in messagesJSON! {
+				let message = Message(messageJSON)
+				self.delegate?.newMessage?(message: message)
+				{ option in
+					switch option
+					{
+					case .`continue`:
+						switch message.type
 						{
-						case .`continue`:
-							switch message.type
-							{
-							case .text:
-								self.delegate?.newTextMessage?(message: TextMessage(messageJSON))
-							case .link:
-								self.delegate?.newLinkMessage?(message: LinkMessage(messageJSON))
-							case .picture:
-								self.delegate?.newPictureMessage?(message: PictureMessage(messageJSON))
-							case .video:
-								self.delegate?.newVideoMessage?(message: VideoMessage(messageJSON))
-							case .startChatting:
-								self.delegate?.newStartChattingMessage?(message: StartChattingMessage(messageJSON))
-							case .scanData:
-								self.delegate?.newScanDataMessage?(message: ScanDataMessage(messageJSON))
-							case .sticker:
-								self.delegate?.newStickerMessage?(message: StickerMessage(messageJSON))
-							case .isTyping:
-								self.delegate?.newTypingMessage?(message: TypingMessage(messageJSON))
-							case .deliveryRecipt:
-								self.delegate?.newDeliveryReceiptMessage?(message: DeliveryReceiptMessage(messageJSON))
-							case .readRecipt:
-								self.delegate?.newReadReceiptMessage?(message: ReadReceiptMessage(messageJSON))
-							default:
-								break
-							}
-						case .ignore:
-							break
-						case .error:
+						case .text:
+							self.delegate?.newTextMessage?(message: TextMessage(messageJSON))
+						case .link:
+							self.delegate?.newLinkMessage?(message: LinkMessage(messageJSON))
+						case .picture:
+							self.delegate?.newPictureMessage?(message: PictureMessage(messageJSON))
+						case .video:
+							self.delegate?.newVideoMessage?(message: VideoMessage(messageJSON))
+						case .startChatting:
+							self.delegate?.newStartChattingMessage?(message: StartChattingMessage(messageJSON))
+						case .scanData:
+							self.delegate?.newScanDataMessage?(message: ScanDataMessage(messageJSON))
+						case .sticker:
+							self.delegate?.newStickerMessage?(message: StickerMessage(messageJSON))
+						case .isTyping:
+							self.delegate?.newTypingMessage?(message: TypingMessage(messageJSON))
+						case .deliveryRecipt:
+							self.delegate?.newDeliveryReceiptMessage?(message: DeliveryReceiptMessage(messageJSON))
+						case .readRecipt:
+							self.delegate?.newReadReceiptMessage?(message: ReadReceiptMessage(messageJSON))
+						default:
 							break
 						}
-						
-						
+					case .ignore:
+						break
+					case .error:
+						break
 					}
 					
+					
 				}
-			} catch {
-				print("Error!")
+				
 			}
 			
 			_ = response.send(status: .OK)
@@ -115,17 +116,14 @@ internal class BotDataHandler
 	
 	/// Sends a configuration object to Kik for your bot.
 	func updateConfiguration(with configuration: Data, completionHandeler: ((Error?) -> Void)? = nil) {
-		
 		var configurationURLRequest = URLRequest(url: configurationURL)
 		configurationURLRequest.httpMethod = "POST"
 		configurationURLRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
 		configurationURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
 		
 		let uploadTask = kikSession.uploadTask(with: configurationURLRequest, from: configuration) { (_, _, error) in
-			if error == nil {
+			if error != nil && completionHandeler != nil {
 				completionHandeler!(error)
-			} else {
-				print(error!)
 			}
 		}
 		
@@ -134,7 +132,6 @@ internal class BotDataHandler
 	
 	/// Sends a message from the `message` data.
 	func send(messages: Data, completionHandeler: ((Error?) -> Void)? = nil) {
-		
 		var messageURLRequest = URLRequest(url: messageURL)
 		messageURLRequest.httpMethod = "POST"
 		messageURLRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
@@ -150,8 +147,7 @@ internal class BotDataHandler
 	}
 	
 	/// Gets the profile for a specific user.
-	func getUserProfile(for username: String, completionHandeler: ((JSON?, Error?) -> Void)?) {
-		
+	func getUserProfile(for username: String, completionHandeler: @escaping ((JSON?, Error?) -> Void)) {
 		var messageURLRequest = URLRequest(url: kikUserProfileURL.appendingPathComponent(username))
 		messageURLRequest.httpMethod = "GET"
 		messageURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
@@ -159,41 +155,38 @@ internal class BotDataHandler
 		let dataTask = kikSession.dataTask(with: messageURLRequest) { (data, responce, error) in
 			
 			guard error == nil else {
-				if completionHandeler != nil {
-					completionHandeler!(nil, error)
-				}
-				
+				completionHandeler(nil, error)
 				return
 			}
 			
 			if data != nil {
-				if completionHandeler != nil {
-					let profileJSONObject = try? JSONSerialization.jsonObject(with: data!)
-					completionHandeler!(profileJSONObject as? JSON, nil)
+				let profileJSON = try? JSON(data: data!)
+				guard profileJSON != nil else {
+					print("-- ERROR! --")
+					return
 				}
+				completionHandeler(profileJSON, nil)
 			}
 		}
 		
 		dataTask.resume()
 	}
 	
-	func createKikCode(withData data: Any?, color: Int, completionHandeler: @escaping ((String?, Error?) -> Void)) {
-		
+	func createKikCode(withData data: JSON = JSON([:]), color: Int, completionHandeler: @escaping ((String?, Error?) -> Void)) {
 		var messageURLRequest = URLRequest(url: kikCodeURL)
 		messageURLRequest.httpMethod = "POST"
 		messageURLRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
 		messageURLRequest.addValue(AuthorizationHeader, forHTTPHeaderField: "Authorization")
 		
-		var dataJSONObject: Data?
+		let sendJSON = JSON(["data":data])
+		let sendData = try? sendJSON.rawData()
 		
-		if data != nil {
-			let JOSNData:JSON = ["data":data!]
-			
-			dataJSONObject = try? JSONSerialization.data(withJSONObject: JOSNData)
+		guard sendData != nil else {
+			print("-- ERROR! --")
+			return
 		}
 		
-		let uploadTask = kikSession.uploadTask(with: messageURLRequest, from: dataJSONObject) { (data, responce, error) in
-			
+		let uploadTask = kikSession.uploadTask(with: messageURLRequest, from: sendData) { (data, responce, error) in
 			guard error == nil else {
 				print(error.debugDescription)
 				print(error!.localizedDescription)
@@ -201,8 +194,8 @@ internal class BotDataHandler
 			}
 			
 			if data != nil {
-				let responseData = try! JSONSerialization.jsonObject(with: data!) as! [String:String]
-				completionHandeler("\(kikCodeURL.appendingPathComponent(responseData["id"]!).absoluteString)?c=\(color)", nil)
+				let responseJSON: JSON = JSON(data: data!)
+				completionHandeler("\(kikCodeURL.appendingPathComponent(responseJSON["id"].stringValue).absoluteString)?c=\(color)", nil)
 			}
 		}
 		

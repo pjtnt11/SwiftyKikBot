@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 /// A structure that keeps the informaation of a specific user.
 public struct KikUserProfile
@@ -6,16 +7,16 @@ public struct KikUserProfile
 	public let firstName: String
 	public let lastName: String
 	public let profilePictureURL: String?
-	public let profilePictureLastModified: Int?
+	public let profilePictureLastModified: String?
 	public let timezone: String?
 	
 	fileprivate init(userProfileJSON: JSON)
 	{
-		firstName = userProfileJSON["firstName"] as! String
-		lastName = userProfileJSON["lastName"] as! String
-		profilePictureURL = userProfileJSON["profilePicUrl"] as? String
-		profilePictureLastModified = userProfileJSON["profilePicLastModified"] as? Int
-		timezone = userProfileJSON["timezone"] as? String
+		firstName = userProfileJSON["firstName"].stringValue
+		lastName = userProfileJSON["lastName"].stringValue
+		profilePictureURL = userProfileJSON["profilePicUrl"].string
+		profilePictureLastModified = userProfileJSON["profilePicLastModified"].string
+		timezone = userProfileJSON["timezone"].string
 	}
 }
 
