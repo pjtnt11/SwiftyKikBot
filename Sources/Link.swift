@@ -8,7 +8,7 @@ public class LinkMessage: Message
 	public let text: String
 	public let forwardable: Bool
 	public let kikJsData: JSON?
-	public let attribution: String
+	public let attribution: JSON
 	
 	override init(_ message: JSON)
 	{
@@ -17,7 +17,7 @@ public class LinkMessage: Message
 		text = message["text"].stringValue
 		forwardable = message["noForward"].boolValue
 		kikJsData = message["kikJsData"]
-		attribution = message["attribution"].stringValue
+		attribution = message["attribution"]
 		
 		super.init(message)
 	}

@@ -160,11 +160,7 @@ internal class BotDataHandler
 			}
 			
 			if data != nil {
-				let profileJSON = try? JSON(data: data!)
-				guard profileJSON != nil else {
-					print("-- ERROR! --")
-					return
-				}
+				let profileJSON = JSON(data: data!)
 				completionHandeler(profileJSON, nil)
 			}
 		}

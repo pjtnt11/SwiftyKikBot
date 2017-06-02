@@ -130,7 +130,7 @@
 		OBJ_338 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_143 /* SwiftyJSON.framework */; };
 		OBJ_339 /* KituraTemplateEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_144 /* KituraTemplateEngine.framework */; };
 		OBJ_340 /* Kitura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_145 /* Kitura.framework */; };
-		OBJ_354 /* KikBotServerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* KikBotServerTest.swift */; };
+		OBJ_354 /* KikBotMessageRecieveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* KikBotMessageRecieveTest.swift */; };
 		OBJ_356 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_138 /* LoggerAPI.framework */; };
 		OBJ_357 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* Socket.framework */; };
 		OBJ_358 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* SSLService.framework */; };
@@ -418,7 +418,7 @@
 		OBJ_18 /* Typing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typing.swift; sourceTree = "<group>"; };
 		OBJ_19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		OBJ_20 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		OBJ_23 /* KikBotServerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KikBotServerTest.swift; sourceTree = "<group>"; };
+		OBJ_23 /* KikBotMessageRecieveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KikBotMessageRecieveTest.swift; sourceTree = "<group>"; };
 		OBJ_27 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		OBJ_28 /* FileResourceServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileResourceServer.swift; sourceTree = "<group>"; };
 		OBJ_29 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
@@ -724,7 +724,7 @@
 		OBJ_22 /* KikBotTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* KikBotServerTest.swift */,
+				OBJ_23 /* KikBotMessageRecieveTest.swift */,
 			);
 			name = KikBotTests;
 			path = Tests/KikBotTests;
@@ -790,7 +790,7 @@
 			path = ".build/checkouts/Kitura.git-6522211175291160341/Sources/Kitura";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -799,7 +799,6 @@
 				OBJ_24 /* Dependencies */,
 				OBJ_137 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_53 /* bodyParser */ = {
@@ -1146,7 +1145,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_137 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1345,7 +1344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_354 /* KikBotServerTest.swift in Sources */,
+				OBJ_354 /* KikBotMessageRecieveTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
