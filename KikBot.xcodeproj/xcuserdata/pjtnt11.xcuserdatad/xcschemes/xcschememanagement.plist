@@ -19,37 +19,37 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Kitura.xcscheme</key>
+		<key>Kitura.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>KituraNet.xcscheme</key>
+		<key>KituraNet.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>KituraTemplateEngine.xcscheme</key>
+		<key>KituraTemplateEngine.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>LoggerAPI.xcscheme</key>
+		<key>LoggerAPI.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>SSLService.xcscheme</key>
+		<key>SSLService.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>Socket.xcscheme</key>
+		<key>Socket.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>SwiftyJSON.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>
