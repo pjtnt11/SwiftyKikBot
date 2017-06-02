@@ -107,8 +107,8 @@ public struct MessageSendData
 	public let type: MessageType
 	public let id: String
 	public let chatID: String
-	public let mention: [JSON]?
-	public let metadata: JSON?
+	public let mention: [String]?
+	public let metadata: JSON
 	
 	public let from: KikUser
 	public let readReceiptRequested: Bool!
@@ -122,12 +122,12 @@ public struct MessageSendData
 	/// - Parameters:
 	///		- messageJSON: A dictionary of JSON data send from Kik containing
 	/// the data that is used to create the instace.
-	init(_ message: JSON)
+	internal init(_ message: JSON)
 	{
 		type = MessageType(rawValue: message["type"].stringValue)!
 		id = message["id"].stringValue
 		chatID = message["chatId"].stringValue
-		mention = message["mention"].arrayValue
+		mention = message["mention"].arrayObject as? [String]
 		metadata = message["metadata"]
 		
 		from = KikUser(withUsername: message["from"].stringValue)
