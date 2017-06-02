@@ -4,10 +4,10 @@
 
 A Kik Bot Framework for Swift Servers
 
-1. [Overview](#overview)
-2. [Integration][#integration]
-3. [Usage](#usage)
-4. [Motivation][#motivation]
+1. [Overview](#Overview)
+2. [Integration](#Integration)
+3. [Usage](#Usage)
+4. [Motivation](#Motivation)
 
 ## Overview
 
