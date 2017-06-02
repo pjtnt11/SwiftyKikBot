@@ -1,4 +1,4 @@
-language: swift
+language: objective-c
 os: osx
 xcode_project: KikBot.xcodeproj
 xcode_scheme: KikBotTests
