@@ -4,11 +4,10 @@ osx_image: xcode8.3
 xcode_project: KikBot.xcodeproj
 xcode_scheme: KikBot
 install:
-  - swift package reset
-  - swift package clean
   - swift package fetch
 script:
-#  - swift test
+# - swift test
+  - xcodebuild -scheme KituraNet -project KikBot.xcodeproj test
   - xcodebuild -scheme KikBot -project KikBot.xcodeproj test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
