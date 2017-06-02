@@ -1,9 +1,11 @@
-language: objective-c
+language: swift
 os: osx
 osx_image: xcode8.3
 xcode_project: KikBot.xcodeproj
 xcode_scheme: KikBot
 install:
+  - swift package reset
+  - swift package clean
   - swift package fetch
 script:
 #  - swift test
