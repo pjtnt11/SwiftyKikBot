@@ -7,662 +7,662 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25EAAA0F1EE2521800B98B1D /* MessageRecieveParsingPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EAAA0E1EE2521800B98B1D /* MessageRecieveParsingPerformanceTest.swift */; };
-		OBJ_153 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_136 /* Logger.swift */; };
-		OBJ_160 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_131 /* Socket.swift */; };
-		OBJ_161 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_132 /* SocketProtocols.swift */; };
-		OBJ_162 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_133 /* SocketUtils.swift */; };
-		OBJ_169 /* SSLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_128 /* SSLService.swift */; };
-		OBJ_171 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* Socket.framework */; };
-		OBJ_178 /* BufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_81 /* BufferList.swift */; };
-		OBJ_179 /* ClientRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* ClientRequest.swift */; };
-		OBJ_180 /* ClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* ClientResponse.swift */; };
-		OBJ_181 /* ConnectionUpgradeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* ConnectionUpgradeFactory.swift */; };
-		OBJ_182 /* ConnectionUpgrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* ConnectionUpgrader.swift */; };
-		OBJ_183 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* Error.swift */; };
-		OBJ_184 /* HeadersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* HeadersContainer.swift */; };
-		OBJ_185 /* IncomingSocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* IncomingSocketHandler.swift */; };
-		OBJ_186 /* IncomingSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_89 /* IncomingSocketManager.swift */; };
-		OBJ_187 /* IncomingSocketProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* IncomingSocketProcessor.swift */; };
-		OBJ_188 /* ListenerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_91 /* ListenerGroup.swift */; };
-		OBJ_189 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_92 /* ServerRequest.swift */; };
-		OBJ_190 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_93 /* ServerResponse.swift */; };
-		OBJ_191 /* SPIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_94 /* SPIUtils.swift */; };
-		OBJ_192 /* FastCGI.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_96 /* FastCGI.swift */; };
-		OBJ_193 /* FastCGIRecordCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_97 /* FastCGIRecordCreate.swift */; };
-		OBJ_194 /* FastCGIRecordParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* FastCGIRecordParser.swift */; };
-		OBJ_195 /* FastCGIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* FastCGIServer.swift */; };
-		OBJ_196 /* FastCGIServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* FastCGIServerRequest.swift */; };
-		OBJ_197 /* FastCGIServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* FastCGIServerResponse.swift */; };
-		OBJ_198 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_103 /* HTTP.swift */; };
-		OBJ_199 /* HTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* HTTPServer.swift */; };
-		OBJ_200 /* HTTPServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* HTTPServerRequest.swift */; };
-		OBJ_201 /* HTTPServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_106 /* HTTPServerResponse.swift */; };
-		OBJ_202 /* IncomingHTTPSocketProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_107 /* IncomingHTTPSocketProcessor.swift */; };
-		OBJ_203 /* HTTPParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_109 /* HTTPParser.swift */; };
-		OBJ_204 /* HTTPParserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_110 /* HTTPParserStatus.swift */; };
-		OBJ_205 /* ParseResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_111 /* ParseResults.swift */; };
-		OBJ_206 /* URLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_112 /* URLParser.swift */; };
-		OBJ_207 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_114 /* Server.swift */; };
-		OBJ_208 /* ServerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_115 /* ServerDelegate.swift */; };
-		OBJ_209 /* ServerLifecycleListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_116 /* ServerLifecycleListener.swift */; };
-		OBJ_210 /* ServerMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_117 /* ServerMonitor.swift */; };
-		OBJ_211 /* ServerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_118 /* ServerState.swift */; };
-		OBJ_213 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_138 /* LoggerAPI.framework */; };
-		OBJ_214 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* Socket.framework */; };
-		OBJ_215 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* SSLService.framework */; };
-		OBJ_216 /* CHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_142 /* CHTTPParser.framework */; };
-		OBJ_227 /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_120 /* http_parser.c */; };
-		OBJ_228 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_121 /* utils.c */; };
-		OBJ_230 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_138 /* LoggerAPI.framework */; };
-		OBJ_231 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* Socket.framework */; };
-		OBJ_232 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* SSLService.framework */; };
-		OBJ_241 /* LclJSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* LclJSONSerialization.swift */; };
-		OBJ_242 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* SwiftyJSON.swift */; };
-		OBJ_249 /* TemplateEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* TemplateEngine.swift */; };
-		OBJ_256 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Error.swift */; };
-		OBJ_257 /* FileResourceServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* FileResourceServer.swift */; };
-		OBJ_258 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* Headers.swift */; };
-		OBJ_259 /* HTTPVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* HTTPVersion.swift */; };
-		OBJ_260 /* InternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* InternalError.swift */; };
-		OBJ_261 /* JSONPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* JSONPError.swift */; };
-		OBJ_262 /* Kitura.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Kitura.swift */; };
-		OBJ_263 /* LinkParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* LinkParameter.swift */; };
-		OBJ_264 /* MimeTypeAcceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* MimeTypeAcceptor.swift */; };
-		OBJ_265 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* Router.swift */; };
-		OBJ_266 /* RouteRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* RouteRegex.swift */; };
-		OBJ_267 /* RouterElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* RouterElement.swift */; };
-		OBJ_268 /* RouterElementWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* RouterElementWalker.swift */; };
-		OBJ_269 /* RouterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* RouterHandler.swift */; };
-		OBJ_270 /* RouterHTTPVerbs+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* RouterHTTPVerbs+Error.swift */; };
-		OBJ_271 /* RouterHTTPVerbs_generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* RouterHTTPVerbs_generated.swift */; };
-		OBJ_272 /* RouterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* RouterMethod.swift */; };
-		OBJ_273 /* RouterMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* RouterMiddleware.swift */; };
-		OBJ_274 /* RouterMiddlewareGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* RouterMiddlewareGenerator.swift */; };
-		OBJ_275 /* RouterMiddlewareWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* RouterMiddlewareWalker.swift */; };
-		OBJ_276 /* RouterParameterWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* RouterParameterWalker.swift */; };
-		OBJ_277 /* RouterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* RouterRequest.swift */; };
-		OBJ_278 /* RouterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* RouterResponse.swift */; };
-		OBJ_279 /* SSLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* SSLConfig.swift */; };
-		OBJ_280 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* String+Extensions.swift */; };
-		OBJ_281 /* TemplatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* TemplatingError.swift */; };
-		OBJ_282 /* BodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* BodyParser.swift */; };
-		OBJ_283 /* BodyParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* BodyParserProtocol.swift */; };
-		OBJ_284 /* JSONBodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* JSONBodyParser.swift */; };
-		OBJ_285 /* MultiPartBodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* MultiPartBodyParser.swift */; };
-		OBJ_286 /* ParsedBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* ParsedBody.swift */; };
-		OBJ_287 /* Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* Part.swift */; };
-		OBJ_288 /* RawBodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* RawBodyParser.swift */; };
-		OBJ_289 /* TextBodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* TextBodyParser.swift */; };
-		OBJ_290 /* URLEncodedBodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* URLEncodedBodyParser.swift */; };
-		OBJ_291 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* ContentType.swift */; };
-		OBJ_292 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* types.swift */; };
-		OBJ_293 /* CacheRelatedHeadersSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* CacheRelatedHeadersSetter.swift */; };
-		OBJ_294 /* CompositeHeadersSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* CompositeHeadersSetter.swift */; };
-		OBJ_295 /* FileServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* FileServer.swift */; };
-		OBJ_296 /* ResourcePathHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* ResourcePathHandler.swift */; };
-		OBJ_297 /* ResponseHeadersSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* ResponseHeadersSetter.swift */; };
-		OBJ_298 /* StaticFileServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* StaticFileServer.swift */; };
-		OBJ_300 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_138 /* LoggerAPI.framework */; };
-		OBJ_301 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* Socket.framework */; };
-		OBJ_302 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* SSLService.framework */; };
-		OBJ_303 /* CHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_142 /* CHTTPParser.framework */; };
-		OBJ_304 /* KituraNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_141 /* KituraNet.framework */; };
-		OBJ_305 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_143 /* SwiftyJSON.framework */; };
-		OBJ_306 /* KituraTemplateEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_144 /* KituraTemplateEngine.framework */; };
-		OBJ_319 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* DataHandler.swift */; };
-		OBJ_320 /* KikBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* KikBot.swift */; };
-		OBJ_321 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Link.swift */; };
-		OBJ_322 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Message.swift */; };
-		OBJ_323 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Picture.swift */; };
-		OBJ_324 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Receipt.swift */; };
-		OBJ_325 /* ScanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* ScanData.swift */; };
-		OBJ_326 /* StartChatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* StartChatting.swift */; };
-		OBJ_327 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Sticker.swift */; };
-		OBJ_328 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Text.swift */; };
-		OBJ_329 /* Typing.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Typing.swift */; };
-		OBJ_330 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* User.swift */; };
-		OBJ_331 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* Video.swift */; };
-		OBJ_333 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_138 /* LoggerAPI.framework */; };
-		OBJ_334 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* Socket.framework */; };
-		OBJ_335 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* SSLService.framework */; };
-		OBJ_336 /* CHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_142 /* CHTTPParser.framework */; };
-		OBJ_337 /* KituraNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_141 /* KituraNet.framework */; };
-		OBJ_338 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_143 /* SwiftyJSON.framework */; };
-		OBJ_339 /* KituraTemplateEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_144 /* KituraTemplateEngine.framework */; };
-		OBJ_340 /* Kitura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_145 /* Kitura.framework */; };
-		OBJ_354 /* MessageRecieveParsingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* MessageRecieveParsingTest.swift */; };
-		OBJ_356 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_138 /* LoggerAPI.framework */; };
-		OBJ_357 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* Socket.framework */; };
-		OBJ_358 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* SSLService.framework */; };
-		OBJ_359 /* CHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_142 /* CHTTPParser.framework */; };
-		OBJ_360 /* KituraNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_141 /* KituraNet.framework */; };
-		OBJ_361 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_143 /* SwiftyJSON.framework */; };
-		OBJ_362 /* KituraTemplateEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_144 /* KituraTemplateEngine.framework */; };
-		OBJ_363 /* Kitura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_145 /* Kitura.framework */; };
-		OBJ_364 /* KikBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_146 /* KikBot.framework */; };
+		OBJ_154 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_137 /* Logger.swift */; };
+		OBJ_161 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_132 /* Socket.swift */; };
+		OBJ_162 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_133 /* SocketProtocols.swift */; };
+		OBJ_163 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_134 /* SocketUtils.swift */; };
+		OBJ_170 /* SSLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_129 /* SSLService.swift */; };
+		OBJ_172 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* Socket.framework */; };
+		OBJ_179 /* BufferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* BufferList.swift */; };
+		OBJ_180 /* ClientRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* ClientRequest.swift */; };
+		OBJ_181 /* ClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* ClientResponse.swift */; };
+		OBJ_182 /* ConnectionUpgradeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* ConnectionUpgradeFactory.swift */; };
+		OBJ_183 /* ConnectionUpgrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* ConnectionUpgrader.swift */; };
+		OBJ_184 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* Error.swift */; };
+		OBJ_185 /* HeadersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* HeadersContainer.swift */; };
+		OBJ_186 /* IncomingSocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_89 /* IncomingSocketHandler.swift */; };
+		OBJ_187 /* IncomingSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* IncomingSocketManager.swift */; };
+		OBJ_188 /* IncomingSocketProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_91 /* IncomingSocketProcessor.swift */; };
+		OBJ_189 /* ListenerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_92 /* ListenerGroup.swift */; };
+		OBJ_190 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_93 /* ServerRequest.swift */; };
+		OBJ_191 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_94 /* ServerResponse.swift */; };
+		OBJ_192 /* SPIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* SPIUtils.swift */; };
+		OBJ_193 /* FastCGI.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_97 /* FastCGI.swift */; };
+		OBJ_194 /* FastCGIRecordCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* FastCGIRecordCreate.swift */; };
+		OBJ_195 /* FastCGIRecordParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* FastCGIRecordParser.swift */; };
+		OBJ_196 /* FastCGIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* FastCGIServer.swift */; };
+		OBJ_197 /* FastCGIServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* FastCGIServerRequest.swift */; };
+		OBJ_198 /* FastCGIServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_102 /* FastCGIServerResponse.swift */; };
+		OBJ_199 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* HTTP.swift */; };
+		OBJ_200 /* HTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* HTTPServer.swift */; };
+		OBJ_201 /* HTTPServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_106 /* HTTPServerRequest.swift */; };
+		OBJ_202 /* HTTPServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_107 /* HTTPServerResponse.swift */; };
+		OBJ_203 /* IncomingHTTPSocketProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_108 /* IncomingHTTPSocketProcessor.swift */; };
+		OBJ_204 /* HTTPParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_110 /* HTTPParser.swift */; };
+		OBJ_205 /* HTTPParserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_111 /* HTTPParserStatus.swift */; };
+		OBJ_206 /* ParseResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_112 /* ParseResults.swift */; };
+		OBJ_207 /* URLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_113 /* URLParser.swift */; };
+		OBJ_208 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_115 /* Server.swift */; };
+		OBJ_209 /* ServerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_116 /* ServerDelegate.swift */; };
+		OBJ_210 /* ServerLifecycleListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_117 /* ServerLifecycleListener.swift */; };
+		OBJ_211 /* ServerMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_118 /* ServerMonitor.swift */; };
+		OBJ_212 /* ServerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_119 /* ServerState.swift */; };
+		OBJ_214 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* LoggerAPI.framework */; };
+		OBJ_215 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* Socket.framework */; };
+		OBJ_216 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_141 /* SSLService.framework */; };
+		OBJ_217 /* CHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_143 /* CHTTPParser.framework */; };
+		OBJ_228 /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_121 /* http_parser.c */; };
+		OBJ_229 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_122 /* utils.c */; };
+		OBJ_231 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* LoggerAPI.framework */; };
+		OBJ_232 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* Socket.framework */; };
+		OBJ_233 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_141 /* SSLService.framework */; };
+		OBJ_242 /* LclJSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* LclJSONSerialization.swift */; };
+		OBJ_243 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* SwiftyJSON.swift */; };
+		OBJ_250 /* TemplateEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* TemplateEngine.swift */; };
+		OBJ_257 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Error.swift */; };
+		OBJ_258 /* FileResourceServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* FileResourceServer.swift */; };
+		OBJ_259 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* Headers.swift */; };
+		OBJ_260 /* HTTPVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* HTTPVersion.swift */; };
+		OBJ_261 /* InternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* InternalError.swift */; };
+		OBJ_262 /* JSONPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* JSONPError.swift */; };
+		OBJ_263 /* Kitura.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* Kitura.swift */; };
+		OBJ_264 /* LinkParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* LinkParameter.swift */; };
+		OBJ_265 /* MimeTypeAcceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* MimeTypeAcceptor.swift */; };
+		OBJ_266 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* Router.swift */; };
+		OBJ_267 /* RouteRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* RouteRegex.swift */; };
+		OBJ_268 /* RouterElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* RouterElement.swift */; };
+		OBJ_269 /* RouterElementWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* RouterElementWalker.swift */; };
+		OBJ_270 /* RouterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* RouterHandler.swift */; };
+		OBJ_271 /* RouterHTTPVerbs+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* RouterHTTPVerbs+Error.swift */; };
+		OBJ_272 /* RouterHTTPVerbs_generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* RouterHTTPVerbs_generated.swift */; };
+		OBJ_273 /* RouterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* RouterMethod.swift */; };
+		OBJ_274 /* RouterMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* RouterMiddleware.swift */; };
+		OBJ_275 /* RouterMiddlewareGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* RouterMiddlewareGenerator.swift */; };
+		OBJ_276 /* RouterMiddlewareWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* RouterMiddlewareWalker.swift */; };
+		OBJ_277 /* RouterParameterWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* RouterParameterWalker.swift */; };
+		OBJ_278 /* RouterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* RouterRequest.swift */; };
+		OBJ_279 /* RouterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* RouterResponse.swift */; };
+		OBJ_280 /* SSLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* SSLConfig.swift */; };
+		OBJ_281 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* String+Extensions.swift */; };
+		OBJ_282 /* TemplatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* TemplatingError.swift */; };
+		OBJ_283 /* BodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* BodyParser.swift */; };
+		OBJ_284 /* BodyParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* BodyParserProtocol.swift */; };
+		OBJ_285 /* JSONBodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* JSONBodyParser.swift */; };
+		OBJ_286 /* MultiPartBodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* MultiPartBodyParser.swift */; };
+		OBJ_287 /* ParsedBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* ParsedBody.swift */; };
+		OBJ_288 /* Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* Part.swift */; };
+		OBJ_289 /* RawBodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* RawBodyParser.swift */; };
+		OBJ_290 /* TextBodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* TextBodyParser.swift */; };
+		OBJ_291 /* URLEncodedBodyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* URLEncodedBodyParser.swift */; };
+		OBJ_292 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* ContentType.swift */; };
+		OBJ_293 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* types.swift */; };
+		OBJ_294 /* CacheRelatedHeadersSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* CacheRelatedHeadersSetter.swift */; };
+		OBJ_295 /* CompositeHeadersSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* CompositeHeadersSetter.swift */; };
+		OBJ_296 /* FileServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* FileServer.swift */; };
+		OBJ_297 /* ResourcePathHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* ResourcePathHandler.swift */; };
+		OBJ_298 /* ResponseHeadersSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* ResponseHeadersSetter.swift */; };
+		OBJ_299 /* StaticFileServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* StaticFileServer.swift */; };
+		OBJ_301 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* LoggerAPI.framework */; };
+		OBJ_302 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* Socket.framework */; };
+		OBJ_303 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_141 /* SSLService.framework */; };
+		OBJ_304 /* CHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_143 /* CHTTPParser.framework */; };
+		OBJ_305 /* KituraNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_142 /* KituraNet.framework */; };
+		OBJ_306 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_144 /* SwiftyJSON.framework */; };
+		OBJ_307 /* KituraTemplateEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_145 /* KituraTemplateEngine.framework */; };
+		OBJ_320 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* DataHandler.swift */; };
+		OBJ_321 /* KikBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* KikBot.swift */; };
+		OBJ_322 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Link.swift */; };
+		OBJ_323 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Message.swift */; };
+		OBJ_324 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Picture.swift */; };
+		OBJ_325 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Receipt.swift */; };
+		OBJ_326 /* ScanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* ScanData.swift */; };
+		OBJ_327 /* StartChatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* StartChatting.swift */; };
+		OBJ_328 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Sticker.swift */; };
+		OBJ_329 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Text.swift */; };
+		OBJ_330 /* Typing.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Typing.swift */; };
+		OBJ_331 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* User.swift */; };
+		OBJ_332 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* Video.swift */; };
+		OBJ_334 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* LoggerAPI.framework */; };
+		OBJ_335 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* Socket.framework */; };
+		OBJ_336 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_141 /* SSLService.framework */; };
+		OBJ_337 /* CHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_143 /* CHTTPParser.framework */; };
+		OBJ_338 /* KituraNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_142 /* KituraNet.framework */; };
+		OBJ_339 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_144 /* SwiftyJSON.framework */; };
+		OBJ_340 /* KituraTemplateEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_145 /* KituraTemplateEngine.framework */; };
+		OBJ_341 /* Kitura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_146 /* Kitura.framework */; };
+		OBJ_355 /* MessageRecieveParsingPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* MessageRecieveParsingPerformanceTest.swift */; };
+		OBJ_356 /* MessageRecieveParsingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* MessageRecieveParsingTest.swift */; };
+		OBJ_358 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* LoggerAPI.framework */; };
+		OBJ_359 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* Socket.framework */; };
+		OBJ_360 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_141 /* SSLService.framework */; };
+		OBJ_361 /* CHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_143 /* CHTTPParser.framework */; };
+		OBJ_362 /* KituraNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_142 /* KituraNet.framework */; };
+		OBJ_363 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_144 /* SwiftyJSON.framework */; };
+		OBJ_364 /* KituraTemplateEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_145 /* KituraTemplateEngine.framework */; };
+		OBJ_365 /* Kitura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_146 /* Kitura.framework */; };
+		OBJ_366 /* KikBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_147 /* KikBot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		25E338371EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FF11EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_155;
+			remoteGlobalIDString = OBJ_156;
 			remoteInfo = Socket;
 		};
-		25E338381EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FF21EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_148;
+			remoteGlobalIDString = OBJ_149;
 			remoteInfo = LoggerAPI;
 		};
-		25E338391EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FF31EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_155;
+			remoteGlobalIDString = OBJ_156;
 			remoteInfo = Socket;
 		};
-		25E3383A1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FF41EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_164;
+			remoteGlobalIDString = OBJ_165;
 			remoteInfo = SSLService;
 		};
-		25E3383B1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FF51EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_221;
+			remoteGlobalIDString = OBJ_222;
 			remoteInfo = CHTTPParser;
 		};
-		25E3383C1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FF61EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_148;
+			remoteGlobalIDString = OBJ_149;
 			remoteInfo = LoggerAPI;
 		};
-		25E3383D1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FF71EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_155;
+			remoteGlobalIDString = OBJ_156;
 			remoteInfo = Socket;
 		};
-		25E3383E1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FF81EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_164;
+			remoteGlobalIDString = OBJ_165;
 			remoteInfo = SSLService;
 		};
-		25E3383F1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FF91EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_148;
+			remoteGlobalIDString = OBJ_149;
 			remoteInfo = LoggerAPI;
 		};
-		25E338401EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FFA1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_155;
+			remoteGlobalIDString = OBJ_156;
 			remoteInfo = Socket;
 		};
-		25E338411EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FFB1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_164;
+			remoteGlobalIDString = OBJ_165;
 			remoteInfo = SSLService;
 		};
-		25E338421EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FFC1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_221;
+			remoteGlobalIDString = OBJ_222;
 			remoteInfo = CHTTPParser;
 		};
-		25E338431EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FFD1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_173;
+			remoteGlobalIDString = OBJ_174;
 			remoteInfo = KituraNet;
 		};
-		25E338441EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FFE1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_236;
+			remoteGlobalIDString = OBJ_237;
 			remoteInfo = SwiftyJSON;
 		};
-		25E338451EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		25687FFF1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_244;
+			remoteGlobalIDString = OBJ_245;
 			remoteInfo = KituraTemplateEngine;
 		};
-		25E338461EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880001EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_148;
+			remoteGlobalIDString = OBJ_149;
 			remoteInfo = LoggerAPI;
 		};
-		25E338471EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880011EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_155;
+			remoteGlobalIDString = OBJ_156;
 			remoteInfo = Socket;
 		};
-		25E338481EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880021EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_164;
+			remoteGlobalIDString = OBJ_165;
 			remoteInfo = SSLService;
 		};
-		25E338491EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880031EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_221;
+			remoteGlobalIDString = OBJ_222;
 			remoteInfo = CHTTPParser;
 		};
-		25E3384A1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880041EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_173;
+			remoteGlobalIDString = OBJ_174;
 			remoteInfo = KituraNet;
 		};
-		25E3384B1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880051EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_236;
+			remoteGlobalIDString = OBJ_237;
 			remoteInfo = SwiftyJSON;
 		};
-		25E3384C1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880061EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_244;
+			remoteGlobalIDString = OBJ_245;
 			remoteInfo = KituraTemplateEngine;
 		};
-		25E3384D1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880071EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_251;
+			remoteGlobalIDString = OBJ_252;
 			remoteInfo = Kitura;
 		};
-		25E3384E1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880081EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_148;
+			remoteGlobalIDString = OBJ_149;
 			remoteInfo = LoggerAPI;
 		};
-		25E3384F1EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880091EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_155;
+			remoteGlobalIDString = OBJ_156;
 			remoteInfo = Socket;
 		};
-		25E338501EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		2568800A1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_164;
+			remoteGlobalIDString = OBJ_165;
 			remoteInfo = SSLService;
 		};
-		25E338511EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		2568800B1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_221;
+			remoteGlobalIDString = OBJ_222;
 			remoteInfo = CHTTPParser;
 		};
-		25E338521EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		2568800C1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_173;
+			remoteGlobalIDString = OBJ_174;
 			remoteInfo = KituraNet;
 		};
-		25E338531EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		2568800D1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_236;
+			remoteGlobalIDString = OBJ_237;
 			remoteInfo = SwiftyJSON;
 		};
-		25E338541EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		2568800E1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_244;
+			remoteGlobalIDString = OBJ_245;
 			remoteInfo = KituraTemplateEngine;
 		};
-		25E338551EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		2568800F1EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_251;
+			remoteGlobalIDString = OBJ_252;
 			remoteInfo = Kitura;
 		};
-		25E338561EE18E56003E6C1C /* PBXContainerItemProxy */ = {
+		256880101EE28841006B0732 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_314;
+			remoteGlobalIDString = OBJ_315;
 			remoteInfo = KikBot;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25EAAA0E1EE2521800B98B1D /* MessageRecieveParsingPerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageRecieveParsingPerformanceTest.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
-		OBJ_100 /* FastCGIServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServerRequest.swift; sourceTree = "<group>"; };
-		OBJ_101 /* FastCGIServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServerResponse.swift; sourceTree = "<group>"; };
-		OBJ_103 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
-		OBJ_104 /* HTTPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServer.swift; sourceTree = "<group>"; };
-		OBJ_105 /* HTTPServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServerRequest.swift; sourceTree = "<group>"; };
-		OBJ_106 /* HTTPServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServerResponse.swift; sourceTree = "<group>"; };
-		OBJ_107 /* IncomingHTTPSocketProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingHTTPSocketProcessor.swift; sourceTree = "<group>"; };
-		OBJ_109 /* HTTPParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParser.swift; sourceTree = "<group>"; };
+		OBJ_100 /* FastCGIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServer.swift; sourceTree = "<group>"; };
+		OBJ_101 /* FastCGIServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServerRequest.swift; sourceTree = "<group>"; };
+		OBJ_102 /* FastCGIServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServerResponse.swift; sourceTree = "<group>"; };
+		OBJ_104 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		OBJ_105 /* HTTPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServer.swift; sourceTree = "<group>"; };
+		OBJ_106 /* HTTPServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServerRequest.swift; sourceTree = "<group>"; };
+		OBJ_107 /* HTTPServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServerResponse.swift; sourceTree = "<group>"; };
+		OBJ_108 /* IncomingHTTPSocketProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingHTTPSocketProcessor.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		OBJ_110 /* HTTPParserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParserStatus.swift; sourceTree = "<group>"; };
-		OBJ_111 /* ParseResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseResults.swift; sourceTree = "<group>"; };
-		OBJ_112 /* URLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParser.swift; sourceTree = "<group>"; };
-		OBJ_114 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
-		OBJ_115 /* ServerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDelegate.swift; sourceTree = "<group>"; };
-		OBJ_116 /* ServerLifecycleListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLifecycleListener.swift; sourceTree = "<group>"; };
-		OBJ_117 /* ServerMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMonitor.swift; sourceTree = "<group>"; };
-		OBJ_118 /* ServerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerState.swift; sourceTree = "<group>"; };
+		OBJ_110 /* HTTPParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParser.swift; sourceTree = "<group>"; };
+		OBJ_111 /* HTTPParserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParserStatus.swift; sourceTree = "<group>"; };
+		OBJ_112 /* ParseResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseResults.swift; sourceTree = "<group>"; };
+		OBJ_113 /* URLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParser.swift; sourceTree = "<group>"; };
+		OBJ_115 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		OBJ_116 /* ServerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDelegate.swift; sourceTree = "<group>"; };
+		OBJ_117 /* ServerLifecycleListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLifecycleListener.swift; sourceTree = "<group>"; };
+		OBJ_118 /* ServerMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMonitor.swift; sourceTree = "<group>"; };
+		OBJ_119 /* ServerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerState.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
-		OBJ_120 /* http_parser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = http_parser.c; sourceTree = "<group>"; };
-		OBJ_121 /* utils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
-		OBJ_123 /* CHTTPParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTTPParser.h; sourceTree = "<group>"; };
-		OBJ_124 /* http_parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = http_parser.h; sourceTree = "<group>"; };
-		OBJ_125 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
-		OBJ_126 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/pjtnt11/Documents/Hawklett/KikBot/KikBot.xcodeproj/GeneratedModuleMap/CHTTPParser/module.modulemap; sourceTree = "<group>"; };
-		OBJ_128 /* SSLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLService.swift; sourceTree = "<group>"; };
+		OBJ_121 /* http_parser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = http_parser.c; sourceTree = "<group>"; };
+		OBJ_122 /* utils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		OBJ_124 /* CHTTPParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTTPParser.h; sourceTree = "<group>"; };
+		OBJ_125 /* http_parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = http_parser.h; sourceTree = "<group>"; };
+		OBJ_126 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		OBJ_127 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/pjtnt11/Documents/Hawklett/KikBot/KikBot.xcodeproj/GeneratedModuleMap/CHTTPParser/module.modulemap; sourceTree = "<group>"; };
+		OBJ_129 /* SSLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLService.swift; sourceTree = "<group>"; };
 		OBJ_13 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
-		OBJ_131 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
-		OBJ_132 /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocols.swift; sourceTree = "<group>"; };
-		OBJ_133 /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketUtils.swift; sourceTree = "<group>"; };
-		OBJ_136 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		OBJ_138 /* LoggerAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoggerAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_139 /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_132 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		OBJ_133 /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocols.swift; sourceTree = "<group>"; };
+		OBJ_134 /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketUtils.swift; sourceTree = "<group>"; };
+		OBJ_137 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		OBJ_139 /* LoggerAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoggerAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_14 /* ScanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanData.swift; sourceTree = "<group>"; };
-		OBJ_140 /* SSLService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SSLService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_141 /* KituraNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KituraNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_142 /* CHTTPParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CHTTPParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_143 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_144 /* KituraTemplateEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KituraTemplateEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_145 /* Kitura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kitura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_146 /* KikBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KikBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_147 /* KikBotTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = KikBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_140 /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_141 /* SSLService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SSLService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_142 /* KituraNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KituraNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_143 /* CHTTPParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CHTTPParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_144 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_145 /* KituraTemplateEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KituraTemplateEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_146 /* Kitura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kitura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_147 /* KikBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KikBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_148 /* KikBotTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = KikBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_15 /* StartChatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChatting.swift; sourceTree = "<group>"; };
 		OBJ_16 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
 		OBJ_17 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		OBJ_18 /* Typing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typing.swift; sourceTree = "<group>"; };
 		OBJ_19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		OBJ_20 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		OBJ_23 /* MessageRecieveParsingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRecieveParsingTest.swift; sourceTree = "<group>"; };
-		OBJ_27 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		OBJ_28 /* FileResourceServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileResourceServer.swift; sourceTree = "<group>"; };
-		OBJ_29 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
-		OBJ_30 /* HTTPVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPVersion.swift; sourceTree = "<group>"; };
-		OBJ_31 /* InternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalError.swift; sourceTree = "<group>"; };
-		OBJ_32 /* JSONPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPError.swift; sourceTree = "<group>"; };
-		OBJ_33 /* Kitura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitura.swift; sourceTree = "<group>"; };
-		OBJ_34 /* LinkParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkParameter.swift; sourceTree = "<group>"; };
-		OBJ_35 /* MimeTypeAcceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeTypeAcceptor.swift; sourceTree = "<group>"; };
-		OBJ_36 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		OBJ_37 /* RouteRegex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegex.swift; sourceTree = "<group>"; };
-		OBJ_38 /* RouterElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterElement.swift; sourceTree = "<group>"; };
-		OBJ_39 /* RouterElementWalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterElementWalker.swift; sourceTree = "<group>"; };
-		OBJ_40 /* RouterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterHandler.swift; sourceTree = "<group>"; };
-		OBJ_41 /* RouterHTTPVerbs+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RouterHTTPVerbs+Error.swift"; sourceTree = "<group>"; };
-		OBJ_42 /* RouterHTTPVerbs_generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterHTTPVerbs_generated.swift; sourceTree = "<group>"; };
-		OBJ_43 /* RouterMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMethod.swift; sourceTree = "<group>"; };
-		OBJ_44 /* RouterMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMiddleware.swift; sourceTree = "<group>"; };
-		OBJ_45 /* RouterMiddlewareGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMiddlewareGenerator.swift; sourceTree = "<group>"; };
-		OBJ_46 /* RouterMiddlewareWalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMiddlewareWalker.swift; sourceTree = "<group>"; };
-		OBJ_47 /* RouterParameterWalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterParameterWalker.swift; sourceTree = "<group>"; };
-		OBJ_48 /* RouterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterRequest.swift; sourceTree = "<group>"; };
-		OBJ_49 /* RouterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterResponse.swift; sourceTree = "<group>"; };
-		OBJ_50 /* SSLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLConfig.swift; sourceTree = "<group>"; };
-		OBJ_51 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		OBJ_52 /* TemplatingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatingError.swift; sourceTree = "<group>"; };
-		OBJ_54 /* BodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParser.swift; sourceTree = "<group>"; };
-		OBJ_55 /* BodyParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParserProtocol.swift; sourceTree = "<group>"; };
-		OBJ_56 /* JSONBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONBodyParser.swift; sourceTree = "<group>"; };
-		OBJ_57 /* MultiPartBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPartBodyParser.swift; sourceTree = "<group>"; };
-		OBJ_58 /* ParsedBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedBody.swift; sourceTree = "<group>"; };
-		OBJ_59 /* Part.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part.swift; sourceTree = "<group>"; };
+		OBJ_23 /* MessageRecieveParsingPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRecieveParsingPerformanceTest.swift; sourceTree = "<group>"; };
+		OBJ_24 /* MessageRecieveParsingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRecieveParsingTest.swift; sourceTree = "<group>"; };
+		OBJ_28 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		OBJ_29 /* FileResourceServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileResourceServer.swift; sourceTree = "<group>"; };
+		OBJ_30 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
+		OBJ_31 /* HTTPVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPVersion.swift; sourceTree = "<group>"; };
+		OBJ_32 /* InternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalError.swift; sourceTree = "<group>"; };
+		OBJ_33 /* JSONPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPError.swift; sourceTree = "<group>"; };
+		OBJ_34 /* Kitura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitura.swift; sourceTree = "<group>"; };
+		OBJ_35 /* LinkParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkParameter.swift; sourceTree = "<group>"; };
+		OBJ_36 /* MimeTypeAcceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeTypeAcceptor.swift; sourceTree = "<group>"; };
+		OBJ_37 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		OBJ_38 /* RouteRegex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRegex.swift; sourceTree = "<group>"; };
+		OBJ_39 /* RouterElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterElement.swift; sourceTree = "<group>"; };
+		OBJ_40 /* RouterElementWalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterElementWalker.swift; sourceTree = "<group>"; };
+		OBJ_41 /* RouterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterHandler.swift; sourceTree = "<group>"; };
+		OBJ_42 /* RouterHTTPVerbs+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RouterHTTPVerbs+Error.swift"; sourceTree = "<group>"; };
+		OBJ_43 /* RouterHTTPVerbs_generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterHTTPVerbs_generated.swift; sourceTree = "<group>"; };
+		OBJ_44 /* RouterMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMethod.swift; sourceTree = "<group>"; };
+		OBJ_45 /* RouterMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMiddleware.swift; sourceTree = "<group>"; };
+		OBJ_46 /* RouterMiddlewareGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMiddlewareGenerator.swift; sourceTree = "<group>"; };
+		OBJ_47 /* RouterMiddlewareWalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMiddlewareWalker.swift; sourceTree = "<group>"; };
+		OBJ_48 /* RouterParameterWalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterParameterWalker.swift; sourceTree = "<group>"; };
+		OBJ_49 /* RouterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterRequest.swift; sourceTree = "<group>"; };
+		OBJ_50 /* RouterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterResponse.swift; sourceTree = "<group>"; };
+		OBJ_51 /* SSLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLConfig.swift; sourceTree = "<group>"; };
+		OBJ_52 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		OBJ_53 /* TemplatingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatingError.swift; sourceTree = "<group>"; };
+		OBJ_55 /* BodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParser.swift; sourceTree = "<group>"; };
+		OBJ_56 /* BodyParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParserProtocol.swift; sourceTree = "<group>"; };
+		OBJ_57 /* JSONBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONBodyParser.swift; sourceTree = "<group>"; };
+		OBJ_58 /* MultiPartBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPartBodyParser.swift; sourceTree = "<group>"; };
+		OBJ_59 /* ParsedBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedBody.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_60 /* RawBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawBodyParser.swift; sourceTree = "<group>"; };
-		OBJ_61 /* TextBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBodyParser.swift; sourceTree = "<group>"; };
-		OBJ_62 /* URLEncodedBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyParser.swift; sourceTree = "<group>"; };
-		OBJ_64 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
-		OBJ_65 /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
-		OBJ_67 /* CacheRelatedHeadersSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRelatedHeadersSetter.swift; sourceTree = "<group>"; };
-		OBJ_68 /* CompositeHeadersSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeHeadersSetter.swift; sourceTree = "<group>"; };
-		OBJ_69 /* FileServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServer.swift; sourceTree = "<group>"; };
-		OBJ_70 /* ResourcePathHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePathHandler.swift; sourceTree = "<group>"; };
-		OBJ_71 /* ResponseHeadersSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeadersSetter.swift; sourceTree = "<group>"; };
-		OBJ_72 /* StaticFileServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFileServer.swift; sourceTree = "<group>"; };
-		OBJ_75 /* TemplateEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEngine.swift; sourceTree = "<group>"; };
-		OBJ_77 /* LclJSONSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LclJSONSerialization.swift; sourceTree = "<group>"; };
-		OBJ_78 /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		OBJ_60 /* Part.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part.swift; sourceTree = "<group>"; };
+		OBJ_61 /* RawBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawBodyParser.swift; sourceTree = "<group>"; };
+		OBJ_62 /* TextBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBodyParser.swift; sourceTree = "<group>"; };
+		OBJ_63 /* URLEncodedBodyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyParser.swift; sourceTree = "<group>"; };
+		OBJ_65 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		OBJ_66 /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
+		OBJ_68 /* CacheRelatedHeadersSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRelatedHeadersSetter.swift; sourceTree = "<group>"; };
+		OBJ_69 /* CompositeHeadersSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeHeadersSetter.swift; sourceTree = "<group>"; };
+		OBJ_70 /* FileServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServer.swift; sourceTree = "<group>"; };
+		OBJ_71 /* ResourcePathHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePathHandler.swift; sourceTree = "<group>"; };
+		OBJ_72 /* ResponseHeadersSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeadersSetter.swift; sourceTree = "<group>"; };
+		OBJ_73 /* StaticFileServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFileServer.swift; sourceTree = "<group>"; };
+		OBJ_76 /* TemplateEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEngine.swift; sourceTree = "<group>"; };
+		OBJ_78 /* LclJSONSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LclJSONSerialization.swift; sourceTree = "<group>"; };
+		OBJ_79 /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		OBJ_8 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
-		OBJ_81 /* BufferList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferList.swift; sourceTree = "<group>"; };
-		OBJ_82 /* ClientRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRequest.swift; sourceTree = "<group>"; };
-		OBJ_83 /* ClientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientResponse.swift; sourceTree = "<group>"; };
-		OBJ_84 /* ConnectionUpgradeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUpgradeFactory.swift; sourceTree = "<group>"; };
-		OBJ_85 /* ConnectionUpgrader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUpgrader.swift; sourceTree = "<group>"; };
-		OBJ_86 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		OBJ_87 /* HeadersContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersContainer.swift; sourceTree = "<group>"; };
-		OBJ_88 /* IncomingSocketHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingSocketHandler.swift; sourceTree = "<group>"; };
-		OBJ_89 /* IncomingSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingSocketManager.swift; sourceTree = "<group>"; };
+		OBJ_82 /* BufferList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferList.swift; sourceTree = "<group>"; };
+		OBJ_83 /* ClientRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRequest.swift; sourceTree = "<group>"; };
+		OBJ_84 /* ClientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientResponse.swift; sourceTree = "<group>"; };
+		OBJ_85 /* ConnectionUpgradeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUpgradeFactory.swift; sourceTree = "<group>"; };
+		OBJ_86 /* ConnectionUpgrader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUpgrader.swift; sourceTree = "<group>"; };
+		OBJ_87 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		OBJ_88 /* HeadersContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersContainer.swift; sourceTree = "<group>"; };
+		OBJ_89 /* IncomingSocketHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingSocketHandler.swift; sourceTree = "<group>"; };
 		OBJ_9 /* KikBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KikBot.swift; sourceTree = "<group>"; };
-		OBJ_90 /* IncomingSocketProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingSocketProcessor.swift; sourceTree = "<group>"; };
-		OBJ_91 /* ListenerGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerGroup.swift; sourceTree = "<group>"; };
-		OBJ_92 /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
-		OBJ_93 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
-		OBJ_94 /* SPIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPIUtils.swift; sourceTree = "<group>"; };
-		OBJ_96 /* FastCGI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGI.swift; sourceTree = "<group>"; };
-		OBJ_97 /* FastCGIRecordCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIRecordCreate.swift; sourceTree = "<group>"; };
-		OBJ_98 /* FastCGIRecordParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIRecordParser.swift; sourceTree = "<group>"; };
-		OBJ_99 /* FastCGIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServer.swift; sourceTree = "<group>"; };
+		OBJ_90 /* IncomingSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingSocketManager.swift; sourceTree = "<group>"; };
+		OBJ_91 /* IncomingSocketProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingSocketProcessor.swift; sourceTree = "<group>"; };
+		OBJ_92 /* ListenerGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerGroup.swift; sourceTree = "<group>"; };
+		OBJ_93 /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
+		OBJ_94 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
+		OBJ_95 /* SPIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPIUtils.swift; sourceTree = "<group>"; };
+		OBJ_97 /* FastCGI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGI.swift; sourceTree = "<group>"; };
+		OBJ_98 /* FastCGIRecordCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIRecordCreate.swift; sourceTree = "<group>"; };
+		OBJ_99 /* FastCGIRecordParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIRecordParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_154 /* Frameworks */ = {
+		OBJ_155 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_163 /* Frameworks */ = {
+		OBJ_164 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_170 /* Frameworks */ = {
+		OBJ_171 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_171 /* Socket.framework in Frameworks */,
+				OBJ_172 /* Socket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_212 /* Frameworks */ = {
+		OBJ_213 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_213 /* LoggerAPI.framework in Frameworks */,
-				OBJ_214 /* Socket.framework in Frameworks */,
-				OBJ_215 /* SSLService.framework in Frameworks */,
-				OBJ_216 /* CHTTPParser.framework in Frameworks */,
+				OBJ_214 /* LoggerAPI.framework in Frameworks */,
+				OBJ_215 /* Socket.framework in Frameworks */,
+				OBJ_216 /* SSLService.framework in Frameworks */,
+				OBJ_217 /* CHTTPParser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_229 /* Frameworks */ = {
+		OBJ_230 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_230 /* LoggerAPI.framework in Frameworks */,
-				OBJ_231 /* Socket.framework in Frameworks */,
-				OBJ_232 /* SSLService.framework in Frameworks */,
+				OBJ_231 /* LoggerAPI.framework in Frameworks */,
+				OBJ_232 /* Socket.framework in Frameworks */,
+				OBJ_233 /* SSLService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_243 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_250 /* Frameworks */ = {
+		OBJ_244 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_299 /* Frameworks */ = {
+		OBJ_251 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_300 /* LoggerAPI.framework in Frameworks */,
-				OBJ_301 /* Socket.framework in Frameworks */,
-				OBJ_302 /* SSLService.framework in Frameworks */,
-				OBJ_303 /* CHTTPParser.framework in Frameworks */,
-				OBJ_304 /* KituraNet.framework in Frameworks */,
-				OBJ_305 /* SwiftyJSON.framework in Frameworks */,
-				OBJ_306 /* KituraTemplateEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_332 /* Frameworks */ = {
+		OBJ_300 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_333 /* LoggerAPI.framework in Frameworks */,
-				OBJ_334 /* Socket.framework in Frameworks */,
-				OBJ_335 /* SSLService.framework in Frameworks */,
-				OBJ_336 /* CHTTPParser.framework in Frameworks */,
-				OBJ_337 /* KituraNet.framework in Frameworks */,
-				OBJ_338 /* SwiftyJSON.framework in Frameworks */,
-				OBJ_339 /* KituraTemplateEngine.framework in Frameworks */,
-				OBJ_340 /* Kitura.framework in Frameworks */,
+				OBJ_301 /* LoggerAPI.framework in Frameworks */,
+				OBJ_302 /* Socket.framework in Frameworks */,
+				OBJ_303 /* SSLService.framework in Frameworks */,
+				OBJ_304 /* CHTTPParser.framework in Frameworks */,
+				OBJ_305 /* KituraNet.framework in Frameworks */,
+				OBJ_306 /* SwiftyJSON.framework in Frameworks */,
+				OBJ_307 /* KituraTemplateEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_355 /* Frameworks */ = {
+		OBJ_333 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_356 /* LoggerAPI.framework in Frameworks */,
-				OBJ_357 /* Socket.framework in Frameworks */,
-				OBJ_358 /* SSLService.framework in Frameworks */,
-				OBJ_359 /* CHTTPParser.framework in Frameworks */,
-				OBJ_360 /* KituraNet.framework in Frameworks */,
-				OBJ_361 /* SwiftyJSON.framework in Frameworks */,
-				OBJ_362 /* KituraTemplateEngine.framework in Frameworks */,
-				OBJ_363 /* Kitura.framework in Frameworks */,
-				OBJ_364 /* KikBot.framework in Frameworks */,
+				OBJ_334 /* LoggerAPI.framework in Frameworks */,
+				OBJ_335 /* Socket.framework in Frameworks */,
+				OBJ_336 /* SSLService.framework in Frameworks */,
+				OBJ_337 /* CHTTPParser.framework in Frameworks */,
+				OBJ_338 /* KituraNet.framework in Frameworks */,
+				OBJ_339 /* SwiftyJSON.framework in Frameworks */,
+				OBJ_340 /* KituraTemplateEngine.framework in Frameworks */,
+				OBJ_341 /* Kitura.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_357 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_358 /* LoggerAPI.framework in Frameworks */,
+				OBJ_359 /* Socket.framework in Frameworks */,
+				OBJ_360 /* SSLService.framework in Frameworks */,
+				OBJ_361 /* CHTTPParser.framework in Frameworks */,
+				OBJ_362 /* KituraNet.framework in Frameworks */,
+				OBJ_363 /* SwiftyJSON.framework in Frameworks */,
+				OBJ_364 /* KituraTemplateEngine.framework in Frameworks */,
+				OBJ_365 /* Kitura.framework in Frameworks */,
+				OBJ_366 /* KikBot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_102 /* HTTP */ = {
+		OBJ_103 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_103 /* HTTP.swift */,
-				OBJ_104 /* HTTPServer.swift */,
-				OBJ_105 /* HTTPServerRequest.swift */,
-				OBJ_106 /* HTTPServerResponse.swift */,
-				OBJ_107 /* IncomingHTTPSocketProcessor.swift */,
+				OBJ_104 /* HTTP.swift */,
+				OBJ_105 /* HTTPServer.swift */,
+				OBJ_106 /* HTTPServerRequest.swift */,
+				OBJ_107 /* HTTPServerResponse.swift */,
+				OBJ_108 /* IncomingHTTPSocketProcessor.swift */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
 		};
-		OBJ_108 /* HTTPParser */ = {
+		OBJ_109 /* HTTPParser */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_109 /* HTTPParser.swift */,
-				OBJ_110 /* HTTPParserStatus.swift */,
-				OBJ_111 /* ParseResults.swift */,
-				OBJ_112 /* URLParser.swift */,
+				OBJ_110 /* HTTPParser.swift */,
+				OBJ_111 /* HTTPParserStatus.swift */,
+				OBJ_112 /* ParseResults.swift */,
+				OBJ_113 /* URLParser.swift */,
 			);
 			path = HTTPParser;
 			sourceTree = "<group>";
 		};
-		OBJ_113 /* Server */ = {
+		OBJ_114 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_114 /* Server.swift */,
-				OBJ_115 /* ServerDelegate.swift */,
-				OBJ_116 /* ServerLifecycleListener.swift */,
-				OBJ_117 /* ServerMonitor.swift */,
-				OBJ_118 /* ServerState.swift */,
+				OBJ_115 /* Server.swift */,
+				OBJ_116 /* ServerDelegate.swift */,
+				OBJ_117 /* ServerLifecycleListener.swift */,
+				OBJ_118 /* ServerMonitor.swift */,
+				OBJ_119 /* ServerState.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
 		};
-		OBJ_119 /* CHTTPParser */ = {
+		OBJ_120 /* CHTTPParser */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_120 /* http_parser.c */,
-				OBJ_121 /* utils.c */,
-				OBJ_122 /* include */,
+				OBJ_121 /* http_parser.c */,
+				OBJ_122 /* utils.c */,
+				OBJ_123 /* include */,
 			);
 			name = CHTTPParser;
 			path = ".build/checkouts/Kitura-net.git--7410958935072501107/Sources/CHTTPParser";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_122 /* include */ = {
+		OBJ_123 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_123 /* CHTTPParser.h */,
-				OBJ_124 /* http_parser.h */,
-				OBJ_125 /* utils.h */,
-				OBJ_126 /* module.modulemap */,
+				OBJ_124 /* CHTTPParser.h */,
+				OBJ_125 /* http_parser.h */,
+				OBJ_126 /* utils.h */,
+				OBJ_127 /* module.modulemap */,
 			);
 			path = include;
 			sourceTree = "<group>";
 		};
-		OBJ_127 /* SSLService 0.12.35 */ = {
+		OBJ_128 /* SSLService 0.12.35 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_128 /* SSLService.swift */,
+				OBJ_129 /* SSLService.swift */,
 			);
 			name = "SSLService 0.12.35";
 			path = ".build/checkouts/BlueSSLService.git--6577639804771281610/Sources";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_129 /* CCurl 0.2.3 */ = {
+		OBJ_130 /* CCurl 0.2.3 */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -670,47 +670,47 @@
 			path = ".build/checkouts/CCurl.git-8026296523752779197";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_130 /* Socket 0.12.50 */ = {
+		OBJ_131 /* Socket 0.12.50 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_131 /* Socket.swift */,
-				OBJ_132 /* SocketProtocols.swift */,
-				OBJ_133 /* SocketUtils.swift */,
+				OBJ_132 /* Socket.swift */,
+				OBJ_133 /* SocketProtocols.swift */,
+				OBJ_134 /* SocketUtils.swift */,
 			);
 			name = "Socket 0.12.50";
 			path = ".build/checkouts/BlueSocket.git-3162807777605905816/Sources";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_134 /* LoggerAPI 1.7.0 */ = {
+		OBJ_135 /* LoggerAPI 1.7.0 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_135 /* LoggerAPI */,
+				OBJ_136 /* LoggerAPI */,
 			);
 			name = "LoggerAPI 1.7.0";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_135 /* LoggerAPI */ = {
+		OBJ_136 /* LoggerAPI */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_136 /* Logger.swift */,
+				OBJ_137 /* Logger.swift */,
 			);
 			name = LoggerAPI;
 			path = ".build/checkouts/LoggerAPI.git--6449715459278086880/Sources/LoggerAPI";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_137 /* Products */ = {
+		OBJ_138 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_138 /* LoggerAPI.framework */,
-				OBJ_139 /* Socket.framework */,
-				OBJ_140 /* SSLService.framework */,
-				OBJ_141 /* KituraNet.framework */,
-				OBJ_142 /* CHTTPParser.framework */,
-				OBJ_143 /* SwiftyJSON.framework */,
-				OBJ_144 /* KituraTemplateEngine.framework */,
-				OBJ_145 /* Kitura.framework */,
-				OBJ_146 /* KikBot.framework */,
-				OBJ_147 /* KikBotTests.xctest */,
+				OBJ_139 /* LoggerAPI.framework */,
+				OBJ_140 /* Socket.framework */,
+				OBJ_141 /* SSLService.framework */,
+				OBJ_142 /* KituraNet.framework */,
+				OBJ_143 /* CHTTPParser.framework */,
+				OBJ_144 /* SwiftyJSON.framework */,
+				OBJ_145 /* KituraTemplateEngine.framework */,
+				OBJ_146 /* Kitura.framework */,
+				OBJ_147 /* KikBot.framework */,
+				OBJ_148 /* KikBotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -726,118 +726,119 @@
 		OBJ_22 /* KikBotTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* MessageRecieveParsingTest.swift */,
-				25EAAA0E1EE2521800B98B1D /* MessageRecieveParsingPerformanceTest.swift */,
+				OBJ_23 /* MessageRecieveParsingPerformanceTest.swift */,
+				OBJ_24 /* MessageRecieveParsingTest.swift */,
 			);
 			name = KikBotTests;
 			path = Tests/KikBotTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_24 /* Dependencies */ = {
+		OBJ_25 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_25 /* Kitura 1.7.3 */,
-				OBJ_73 /* Kitura-TemplateEngine 1.7.0 */,
-				OBJ_76 /* SwiftyJSON 16.0.0 */,
-				OBJ_79 /* Kitura-net 1.7.7 */,
-				OBJ_127 /* SSLService 0.12.35 */,
-				OBJ_129 /* CCurl 0.2.3 */,
-				OBJ_130 /* Socket 0.12.50 */,
-				OBJ_134 /* LoggerAPI 1.7.0 */,
+				OBJ_26 /* Kitura 1.7.3 */,
+				OBJ_74 /* Kitura-TemplateEngine 1.7.0 */,
+				OBJ_77 /* SwiftyJSON 16.0.0 */,
+				OBJ_80 /* Kitura-net 1.7.7 */,
+				OBJ_128 /* SSLService 0.12.35 */,
+				OBJ_130 /* CCurl 0.2.3 */,
+				OBJ_131 /* Socket 0.12.50 */,
+				OBJ_135 /* LoggerAPI 1.7.0 */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		OBJ_25 /* Kitura 1.7.3 */ = {
+		OBJ_26 /* Kitura 1.7.3 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_26 /* Kitura */,
+				OBJ_27 /* Kitura */,
 			);
 			name = "Kitura 1.7.3";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_26 /* Kitura */ = {
+		OBJ_27 /* Kitura */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_27 /* Error.swift */,
-				OBJ_28 /* FileResourceServer.swift */,
-				OBJ_29 /* Headers.swift */,
-				OBJ_30 /* HTTPVersion.swift */,
-				OBJ_31 /* InternalError.swift */,
-				OBJ_32 /* JSONPError.swift */,
-				OBJ_33 /* Kitura.swift */,
-				OBJ_34 /* LinkParameter.swift */,
-				OBJ_35 /* MimeTypeAcceptor.swift */,
-				OBJ_36 /* Router.swift */,
-				OBJ_37 /* RouteRegex.swift */,
-				OBJ_38 /* RouterElement.swift */,
-				OBJ_39 /* RouterElementWalker.swift */,
-				OBJ_40 /* RouterHandler.swift */,
-				OBJ_41 /* RouterHTTPVerbs+Error.swift */,
-				OBJ_42 /* RouterHTTPVerbs_generated.swift */,
-				OBJ_43 /* RouterMethod.swift */,
-				OBJ_44 /* RouterMiddleware.swift */,
-				OBJ_45 /* RouterMiddlewareGenerator.swift */,
-				OBJ_46 /* RouterMiddlewareWalker.swift */,
-				OBJ_47 /* RouterParameterWalker.swift */,
-				OBJ_48 /* RouterRequest.swift */,
-				OBJ_49 /* RouterResponse.swift */,
-				OBJ_50 /* SSLConfig.swift */,
-				OBJ_51 /* String+Extensions.swift */,
-				OBJ_52 /* TemplatingError.swift */,
-				OBJ_53 /* bodyParser */,
-				OBJ_63 /* contentType */,
-				OBJ_66 /* staticFileServer */,
+				OBJ_28 /* Error.swift */,
+				OBJ_29 /* FileResourceServer.swift */,
+				OBJ_30 /* Headers.swift */,
+				OBJ_31 /* HTTPVersion.swift */,
+				OBJ_32 /* InternalError.swift */,
+				OBJ_33 /* JSONPError.swift */,
+				OBJ_34 /* Kitura.swift */,
+				OBJ_35 /* LinkParameter.swift */,
+				OBJ_36 /* MimeTypeAcceptor.swift */,
+				OBJ_37 /* Router.swift */,
+				OBJ_38 /* RouteRegex.swift */,
+				OBJ_39 /* RouterElement.swift */,
+				OBJ_40 /* RouterElementWalker.swift */,
+				OBJ_41 /* RouterHandler.swift */,
+				OBJ_42 /* RouterHTTPVerbs+Error.swift */,
+				OBJ_43 /* RouterHTTPVerbs_generated.swift */,
+				OBJ_44 /* RouterMethod.swift */,
+				OBJ_45 /* RouterMiddleware.swift */,
+				OBJ_46 /* RouterMiddlewareGenerator.swift */,
+				OBJ_47 /* RouterMiddlewareWalker.swift */,
+				OBJ_48 /* RouterParameterWalker.swift */,
+				OBJ_49 /* RouterRequest.swift */,
+				OBJ_50 /* RouterResponse.swift */,
+				OBJ_51 /* SSLConfig.swift */,
+				OBJ_52 /* String+Extensions.swift */,
+				OBJ_53 /* TemplatingError.swift */,
+				OBJ_54 /* bodyParser */,
+				OBJ_64 /* contentType */,
+				OBJ_67 /* staticFileServer */,
 			);
 			name = Kitura;
 			path = ".build/checkouts/Kitura.git-6522211175291160341/Sources/Kitura";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 = {
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_21 /* Tests */,
-				OBJ_24 /* Dependencies */,
-				OBJ_137 /* Products */,
+				OBJ_25 /* Dependencies */,
+				OBJ_138 /* Products */,
 			);
+			name = "";
 			sourceTree = "<group>";
 		};
-		OBJ_53 /* bodyParser */ = {
+		OBJ_54 /* bodyParser */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_54 /* BodyParser.swift */,
-				OBJ_55 /* BodyParserProtocol.swift */,
-				OBJ_56 /* JSONBodyParser.swift */,
-				OBJ_57 /* MultiPartBodyParser.swift */,
-				OBJ_58 /* ParsedBody.swift */,
-				OBJ_59 /* Part.swift */,
-				OBJ_60 /* RawBodyParser.swift */,
-				OBJ_61 /* TextBodyParser.swift */,
-				OBJ_62 /* URLEncodedBodyParser.swift */,
+				OBJ_55 /* BodyParser.swift */,
+				OBJ_56 /* BodyParserProtocol.swift */,
+				OBJ_57 /* JSONBodyParser.swift */,
+				OBJ_58 /* MultiPartBodyParser.swift */,
+				OBJ_59 /* ParsedBody.swift */,
+				OBJ_60 /* Part.swift */,
+				OBJ_61 /* RawBodyParser.swift */,
+				OBJ_62 /* TextBodyParser.swift */,
+				OBJ_63 /* URLEncodedBodyParser.swift */,
 			);
 			path = bodyParser;
 			sourceTree = "<group>";
 		};
-		OBJ_63 /* contentType */ = {
+		OBJ_64 /* contentType */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_64 /* ContentType.swift */,
-				OBJ_65 /* types.swift */,
+				OBJ_65 /* ContentType.swift */,
+				OBJ_66 /* types.swift */,
 			);
 			path = contentType;
 			sourceTree = "<group>";
 		};
-		OBJ_66 /* staticFileServer */ = {
+		OBJ_67 /* staticFileServer */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_67 /* CacheRelatedHeadersSetter.swift */,
-				OBJ_68 /* CompositeHeadersSetter.swift */,
-				OBJ_69 /* FileServer.swift */,
-				OBJ_70 /* ResourcePathHandler.swift */,
-				OBJ_71 /* ResponseHeadersSetter.swift */,
-				OBJ_72 /* StaticFileServer.swift */,
+				OBJ_68 /* CacheRelatedHeadersSetter.swift */,
+				OBJ_69 /* CompositeHeadersSetter.swift */,
+				OBJ_70 /* FileServer.swift */,
+				OBJ_71 /* ResourcePathHandler.swift */,
+				OBJ_72 /* ResponseHeadersSetter.swift */,
+				OBJ_73 /* StaticFileServer.swift */,
 			);
 			path = staticFileServer;
 			sourceTree = "<group>";
@@ -847,8 +848,8 @@
 			children = (
 				OBJ_8 /* DataHandler.swift */,
 				OBJ_9 /* KikBot.swift */,
-				OBJ_11 /* Message.swift */,
 				OBJ_10 /* Link.swift */,
+				OBJ_11 /* Message.swift */,
 				OBJ_12 /* Picture.swift */,
 				OBJ_13 /* Receipt.swift */,
 				OBJ_14 /* ScanData.swift */,
@@ -862,77 +863,77 @@
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_73 /* Kitura-TemplateEngine 1.7.0 */ = {
+		OBJ_74 /* Kitura-TemplateEngine 1.7.0 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_74 /* KituraTemplateEngine */,
+				OBJ_75 /* KituraTemplateEngine */,
 			);
 			name = "Kitura-TemplateEngine 1.7.0";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_74 /* KituraTemplateEngine */ = {
+		OBJ_75 /* KituraTemplateEngine */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_75 /* TemplateEngine.swift */,
+				OBJ_76 /* TemplateEngine.swift */,
 			);
 			name = KituraTemplateEngine;
 			path = ".build/checkouts/Kitura-TemplateEngine.git--5059963620657797085/Sources/KituraTemplateEngine";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_76 /* SwiftyJSON 16.0.0 */ = {
+		OBJ_77 /* SwiftyJSON 16.0.0 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_77 /* LclJSONSerialization.swift */,
-				OBJ_78 /* SwiftyJSON.swift */,
+				OBJ_78 /* LclJSONSerialization.swift */,
+				OBJ_79 /* SwiftyJSON.swift */,
 			);
 			name = "SwiftyJSON 16.0.0";
 			path = ".build/checkouts/SwiftyJSON.git--6955445084174387031/Source";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_79 /* Kitura-net 1.7.7 */ = {
+		OBJ_80 /* Kitura-net 1.7.7 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_80 /* KituraNet */,
-				OBJ_119 /* CHTTPParser */,
+				OBJ_81 /* KituraNet */,
+				OBJ_120 /* CHTTPParser */,
 			);
 			name = "Kitura-net 1.7.7";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_80 /* KituraNet */ = {
+		OBJ_81 /* KituraNet */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_81 /* BufferList.swift */,
-				OBJ_82 /* ClientRequest.swift */,
-				OBJ_83 /* ClientResponse.swift */,
-				OBJ_84 /* ConnectionUpgradeFactory.swift */,
-				OBJ_85 /* ConnectionUpgrader.swift */,
-				OBJ_86 /* Error.swift */,
-				OBJ_87 /* HeadersContainer.swift */,
-				OBJ_88 /* IncomingSocketHandler.swift */,
-				OBJ_89 /* IncomingSocketManager.swift */,
-				OBJ_90 /* IncomingSocketProcessor.swift */,
-				OBJ_91 /* ListenerGroup.swift */,
-				OBJ_92 /* ServerRequest.swift */,
-				OBJ_93 /* ServerResponse.swift */,
-				OBJ_94 /* SPIUtils.swift */,
-				OBJ_95 /* FastCGI */,
-				OBJ_102 /* HTTP */,
-				OBJ_108 /* HTTPParser */,
-				OBJ_113 /* Server */,
+				OBJ_82 /* BufferList.swift */,
+				OBJ_83 /* ClientRequest.swift */,
+				OBJ_84 /* ClientResponse.swift */,
+				OBJ_85 /* ConnectionUpgradeFactory.swift */,
+				OBJ_86 /* ConnectionUpgrader.swift */,
+				OBJ_87 /* Error.swift */,
+				OBJ_88 /* HeadersContainer.swift */,
+				OBJ_89 /* IncomingSocketHandler.swift */,
+				OBJ_90 /* IncomingSocketManager.swift */,
+				OBJ_91 /* IncomingSocketProcessor.swift */,
+				OBJ_92 /* ListenerGroup.swift */,
+				OBJ_93 /* ServerRequest.swift */,
+				OBJ_94 /* ServerResponse.swift */,
+				OBJ_95 /* SPIUtils.swift */,
+				OBJ_96 /* FastCGI */,
+				OBJ_103 /* HTTP */,
+				OBJ_109 /* HTTPParser */,
+				OBJ_114 /* Server */,
 			);
 			name = KituraNet;
 			path = ".build/checkouts/Kitura-net.git--7410958935072501107/Sources/KituraNet";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_95 /* FastCGI */ = {
+		OBJ_96 /* FastCGI */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_96 /* FastCGI.swift */,
-				OBJ_97 /* FastCGIRecordCreate.swift */,
-				OBJ_98 /* FastCGIRecordParser.swift */,
-				OBJ_99 /* FastCGIServer.swift */,
-				OBJ_100 /* FastCGIServerRequest.swift */,
-				OBJ_101 /* FastCGIServerResponse.swift */,
+				OBJ_97 /* FastCGI.swift */,
+				OBJ_98 /* FastCGIRecordCreate.swift */,
+				OBJ_99 /* FastCGIRecordParser.swift */,
+				OBJ_100 /* FastCGIServer.swift */,
+				OBJ_101 /* FastCGIServerRequest.swift */,
+				OBJ_102 /* FastCGIServerResponse.swift */,
 			);
 			path = FastCGI;
 			sourceTree = "<group>";
@@ -940,12 +941,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		OBJ_148 /* LoggerAPI */ = {
+		OBJ_149 /* LoggerAPI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_149 /* Build configuration list for PBXNativeTarget "LoggerAPI" */;
+			buildConfigurationList = OBJ_150 /* Build configuration list for PBXNativeTarget "LoggerAPI" */;
 			buildPhases = (
-				OBJ_152 /* Sources */,
-				OBJ_154 /* Frameworks */,
+				OBJ_153 /* Sources */,
+				OBJ_155 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -953,15 +954,15 @@
 			);
 			name = LoggerAPI;
 			productName = LoggerAPI;
-			productReference = OBJ_138 /* LoggerAPI.framework */;
+			productReference = OBJ_139 /* LoggerAPI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_155 /* Socket */ = {
+		OBJ_156 /* Socket */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_156 /* Build configuration list for PBXNativeTarget "Socket" */;
+			buildConfigurationList = OBJ_157 /* Build configuration list for PBXNativeTarget "Socket" */;
 			buildPhases = (
-				OBJ_159 /* Sources */,
-				OBJ_163 /* Frameworks */,
+				OBJ_160 /* Sources */,
+				OBJ_164 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -969,72 +970,72 @@
 			);
 			name = Socket;
 			productName = Socket;
-			productReference = OBJ_139 /* Socket.framework */;
+			productReference = OBJ_140 /* Socket.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_164 /* SSLService */ = {
+		OBJ_165 /* SSLService */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_165 /* Build configuration list for PBXNativeTarget "SSLService" */;
+			buildConfigurationList = OBJ_166 /* Build configuration list for PBXNativeTarget "SSLService" */;
 			buildPhases = (
-				OBJ_168 /* Sources */,
-				OBJ_170 /* Frameworks */,
+				OBJ_169 /* Sources */,
+				OBJ_171 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_172 /* PBXTargetDependency */,
+				OBJ_173 /* PBXTargetDependency */,
 			);
 			name = SSLService;
 			productName = SSLService;
-			productReference = OBJ_140 /* SSLService.framework */;
+			productReference = OBJ_141 /* SSLService.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_173 /* KituraNet */ = {
+		OBJ_174 /* KituraNet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_174 /* Build configuration list for PBXNativeTarget "KituraNet" */;
+			buildConfigurationList = OBJ_175 /* Build configuration list for PBXNativeTarget "KituraNet" */;
 			buildPhases = (
-				OBJ_177 /* Sources */,
-				OBJ_212 /* Frameworks */,
+				OBJ_178 /* Sources */,
+				OBJ_213 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_217 /* PBXTargetDependency */,
 				OBJ_218 /* PBXTargetDependency */,
 				OBJ_219 /* PBXTargetDependency */,
 				OBJ_220 /* PBXTargetDependency */,
+				OBJ_221 /* PBXTargetDependency */,
 			);
 			name = KituraNet;
 			productName = KituraNet;
-			productReference = OBJ_141 /* KituraNet.framework */;
+			productReference = OBJ_142 /* KituraNet.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_221 /* CHTTPParser */ = {
+		OBJ_222 /* CHTTPParser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_222 /* Build configuration list for PBXNativeTarget "CHTTPParser" */;
+			buildConfigurationList = OBJ_223 /* Build configuration list for PBXNativeTarget "CHTTPParser" */;
 			buildPhases = (
-				OBJ_225 /* ShellScript */,
-				OBJ_226 /* Sources */,
-				OBJ_229 /* Frameworks */,
+				OBJ_226 /* ShellScript */,
+				OBJ_227 /* Sources */,
+				OBJ_230 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_233 /* PBXTargetDependency */,
 				OBJ_234 /* PBXTargetDependency */,
 				OBJ_235 /* PBXTargetDependency */,
+				OBJ_236 /* PBXTargetDependency */,
 			);
 			name = CHTTPParser;
 			productName = CHTTPParser;
-			productReference = OBJ_142 /* CHTTPParser.framework */;
+			productReference = OBJ_143 /* CHTTPParser.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_236 /* SwiftyJSON */ = {
+		OBJ_237 /* SwiftyJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_237 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildConfigurationList = OBJ_238 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
 			buildPhases = (
-				OBJ_240 /* Sources */,
-				OBJ_243 /* Frameworks */,
+				OBJ_241 /* Sources */,
+				OBJ_244 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1042,15 +1043,15 @@
 			);
 			name = SwiftyJSON;
 			productName = SwiftyJSON;
-			productReference = OBJ_143 /* SwiftyJSON.framework */;
+			productReference = OBJ_144 /* SwiftyJSON.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_244 /* KituraTemplateEngine */ = {
+		OBJ_245 /* KituraTemplateEngine */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_245 /* Build configuration list for PBXNativeTarget "KituraTemplateEngine" */;
+			buildConfigurationList = OBJ_246 /* Build configuration list for PBXNativeTarget "KituraTemplateEngine" */;
 			buildPhases = (
-				OBJ_248 /* Sources */,
-				OBJ_250 /* Frameworks */,
+				OBJ_249 /* Sources */,
+				OBJ_251 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1058,43 +1059,42 @@
 			);
 			name = KituraTemplateEngine;
 			productName = KituraTemplateEngine;
-			productReference = OBJ_144 /* KituraTemplateEngine.framework */;
+			productReference = OBJ_145 /* KituraTemplateEngine.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_251 /* Kitura */ = {
+		OBJ_252 /* Kitura */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_252 /* Build configuration list for PBXNativeTarget "Kitura" */;
+			buildConfigurationList = OBJ_253 /* Build configuration list for PBXNativeTarget "Kitura" */;
 			buildPhases = (
-				OBJ_255 /* Sources */,
-				OBJ_299 /* Frameworks */,
+				OBJ_256 /* Sources */,
+				OBJ_300 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_307 /* PBXTargetDependency */,
 				OBJ_308 /* PBXTargetDependency */,
 				OBJ_309 /* PBXTargetDependency */,
 				OBJ_310 /* PBXTargetDependency */,
 				OBJ_311 /* PBXTargetDependency */,
 				OBJ_312 /* PBXTargetDependency */,
 				OBJ_313 /* PBXTargetDependency */,
+				OBJ_314 /* PBXTargetDependency */,
 			);
 			name = Kitura;
 			productName = Kitura;
-			productReference = OBJ_145 /* Kitura.framework */;
+			productReference = OBJ_146 /* Kitura.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_314 /* KikBot */ = {
+		OBJ_315 /* KikBot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_315 /* Build configuration list for PBXNativeTarget "KikBot" */;
+			buildConfigurationList = OBJ_316 /* Build configuration list for PBXNativeTarget "KikBot" */;
 			buildPhases = (
-				OBJ_318 /* Sources */,
-				OBJ_332 /* Frameworks */,
+				OBJ_319 /* Sources */,
+				OBJ_333 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_341 /* PBXTargetDependency */,
 				OBJ_342 /* PBXTargetDependency */,
 				OBJ_343 /* PBXTargetDependency */,
 				OBJ_344 /* PBXTargetDependency */,
@@ -1102,24 +1102,23 @@
 				OBJ_346 /* PBXTargetDependency */,
 				OBJ_347 /* PBXTargetDependency */,
 				OBJ_348 /* PBXTargetDependency */,
+				OBJ_349 /* PBXTargetDependency */,
 			);
 			name = KikBot;
 			productName = KikBot;
-			productReference = OBJ_146 /* KikBot.framework */;
+			productReference = OBJ_147 /* KikBot.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_349 /* KikBotTests */ = {
+		OBJ_350 /* KikBotTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_350 /* Build configuration list for PBXNativeTarget "KikBotTests" */;
+			buildConfigurationList = OBJ_351 /* Build configuration list for PBXNativeTarget "KikBotTests" */;
 			buildPhases = (
-				OBJ_353 /* Sources */,
-				OBJ_355 /* Frameworks */,
+				OBJ_354 /* Sources */,
+				OBJ_357 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_365 /* PBXTargetDependency */,
-				OBJ_366 /* PBXTargetDependency */,
 				OBJ_367 /* PBXTargetDependency */,
 				OBJ_368 /* PBXTargetDependency */,
 				OBJ_369 /* PBXTargetDependency */,
@@ -1127,10 +1126,12 @@
 				OBJ_371 /* PBXTargetDependency */,
 				OBJ_372 /* PBXTargetDependency */,
 				OBJ_373 /* PBXTargetDependency */,
+				OBJ_374 /* PBXTargetDependency */,
+				OBJ_375 /* PBXTargetDependency */,
 			);
 			name = KikBotTests;
 			productName = KikBotTests;
-			productReference = OBJ_147 /* KikBotTests.xctest */;
+			productReference = OBJ_148 /* KikBotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1148,27 +1149,27 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5;
-			productRefGroup = OBJ_137 /* Products */;
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_138 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				OBJ_148 /* LoggerAPI */,
-				OBJ_155 /* Socket */,
-				OBJ_164 /* SSLService */,
-				OBJ_173 /* KituraNet */,
-				OBJ_221 /* CHTTPParser */,
-				OBJ_236 /* SwiftyJSON */,
-				OBJ_244 /* KituraTemplateEngine */,
-				OBJ_251 /* Kitura */,
-				OBJ_314 /* KikBot */,
-				OBJ_349 /* KikBotTests */,
+				OBJ_149 /* LoggerAPI */,
+				OBJ_156 /* Socket */,
+				OBJ_165 /* SSLService */,
+				OBJ_174 /* KituraNet */,
+				OBJ_222 /* CHTTPParser */,
+				OBJ_237 /* SwiftyJSON */,
+				OBJ_245 /* KituraTemplateEngine */,
+				OBJ_252 /* Kitura */,
+				OBJ_315 /* KikBot */,
+				OBJ_350 /* KikBotTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		OBJ_225 /* ShellScript */ = {
+		OBJ_226 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 0;
 			files = (
@@ -1180,345 +1181,345 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_152 /* Sources */ = {
+		OBJ_153 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_153 /* Logger.swift in Sources */,
+				OBJ_154 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_159 /* Sources */ = {
+		OBJ_160 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_160 /* Socket.swift in Sources */,
-				OBJ_161 /* SocketProtocols.swift in Sources */,
-				OBJ_162 /* SocketUtils.swift in Sources */,
+				OBJ_161 /* Socket.swift in Sources */,
+				OBJ_162 /* SocketProtocols.swift in Sources */,
+				OBJ_163 /* SocketUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_168 /* Sources */ = {
+		OBJ_169 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_169 /* SSLService.swift in Sources */,
+				OBJ_170 /* SSLService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_177 /* Sources */ = {
+		OBJ_178 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_178 /* BufferList.swift in Sources */,
-				OBJ_179 /* ClientRequest.swift in Sources */,
-				OBJ_180 /* ClientResponse.swift in Sources */,
-				OBJ_181 /* ConnectionUpgradeFactory.swift in Sources */,
-				OBJ_182 /* ConnectionUpgrader.swift in Sources */,
-				OBJ_183 /* Error.swift in Sources */,
-				OBJ_184 /* HeadersContainer.swift in Sources */,
-				OBJ_185 /* IncomingSocketHandler.swift in Sources */,
-				OBJ_186 /* IncomingSocketManager.swift in Sources */,
-				OBJ_187 /* IncomingSocketProcessor.swift in Sources */,
-				OBJ_188 /* ListenerGroup.swift in Sources */,
-				OBJ_189 /* ServerRequest.swift in Sources */,
-				OBJ_190 /* ServerResponse.swift in Sources */,
-				OBJ_191 /* SPIUtils.swift in Sources */,
-				OBJ_192 /* FastCGI.swift in Sources */,
-				OBJ_193 /* FastCGIRecordCreate.swift in Sources */,
-				OBJ_194 /* FastCGIRecordParser.swift in Sources */,
-				OBJ_195 /* FastCGIServer.swift in Sources */,
-				OBJ_196 /* FastCGIServerRequest.swift in Sources */,
-				OBJ_197 /* FastCGIServerResponse.swift in Sources */,
-				OBJ_198 /* HTTP.swift in Sources */,
-				OBJ_199 /* HTTPServer.swift in Sources */,
-				OBJ_200 /* HTTPServerRequest.swift in Sources */,
-				OBJ_201 /* HTTPServerResponse.swift in Sources */,
-				OBJ_202 /* IncomingHTTPSocketProcessor.swift in Sources */,
-				OBJ_203 /* HTTPParser.swift in Sources */,
-				OBJ_204 /* HTTPParserStatus.swift in Sources */,
-				OBJ_205 /* ParseResults.swift in Sources */,
-				OBJ_206 /* URLParser.swift in Sources */,
-				OBJ_207 /* Server.swift in Sources */,
-				OBJ_208 /* ServerDelegate.swift in Sources */,
-				OBJ_209 /* ServerLifecycleListener.swift in Sources */,
-				OBJ_210 /* ServerMonitor.swift in Sources */,
-				OBJ_211 /* ServerState.swift in Sources */,
+				OBJ_179 /* BufferList.swift in Sources */,
+				OBJ_180 /* ClientRequest.swift in Sources */,
+				OBJ_181 /* ClientResponse.swift in Sources */,
+				OBJ_182 /* ConnectionUpgradeFactory.swift in Sources */,
+				OBJ_183 /* ConnectionUpgrader.swift in Sources */,
+				OBJ_184 /* Error.swift in Sources */,
+				OBJ_185 /* HeadersContainer.swift in Sources */,
+				OBJ_186 /* IncomingSocketHandler.swift in Sources */,
+				OBJ_187 /* IncomingSocketManager.swift in Sources */,
+				OBJ_188 /* IncomingSocketProcessor.swift in Sources */,
+				OBJ_189 /* ListenerGroup.swift in Sources */,
+				OBJ_190 /* ServerRequest.swift in Sources */,
+				OBJ_191 /* ServerResponse.swift in Sources */,
+				OBJ_192 /* SPIUtils.swift in Sources */,
+				OBJ_193 /* FastCGI.swift in Sources */,
+				OBJ_194 /* FastCGIRecordCreate.swift in Sources */,
+				OBJ_195 /* FastCGIRecordParser.swift in Sources */,
+				OBJ_196 /* FastCGIServer.swift in Sources */,
+				OBJ_197 /* FastCGIServerRequest.swift in Sources */,
+				OBJ_198 /* FastCGIServerResponse.swift in Sources */,
+				OBJ_199 /* HTTP.swift in Sources */,
+				OBJ_200 /* HTTPServer.swift in Sources */,
+				OBJ_201 /* HTTPServerRequest.swift in Sources */,
+				OBJ_202 /* HTTPServerResponse.swift in Sources */,
+				OBJ_203 /* IncomingHTTPSocketProcessor.swift in Sources */,
+				OBJ_204 /* HTTPParser.swift in Sources */,
+				OBJ_205 /* HTTPParserStatus.swift in Sources */,
+				OBJ_206 /* ParseResults.swift in Sources */,
+				OBJ_207 /* URLParser.swift in Sources */,
+				OBJ_208 /* Server.swift in Sources */,
+				OBJ_209 /* ServerDelegate.swift in Sources */,
+				OBJ_210 /* ServerLifecycleListener.swift in Sources */,
+				OBJ_211 /* ServerMonitor.swift in Sources */,
+				OBJ_212 /* ServerState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_226 /* Sources */ = {
+		OBJ_227 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_227 /* http_parser.c in Sources */,
-				OBJ_228 /* utils.c in Sources */,
+				OBJ_228 /* http_parser.c in Sources */,
+				OBJ_229 /* utils.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_240 /* Sources */ = {
+		OBJ_241 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_241 /* LclJSONSerialization.swift in Sources */,
-				OBJ_242 /* SwiftyJSON.swift in Sources */,
+				OBJ_242 /* LclJSONSerialization.swift in Sources */,
+				OBJ_243 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_248 /* Sources */ = {
+		OBJ_249 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_249 /* TemplateEngine.swift in Sources */,
+				OBJ_250 /* TemplateEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_255 /* Sources */ = {
+		OBJ_256 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_256 /* Error.swift in Sources */,
-				OBJ_257 /* FileResourceServer.swift in Sources */,
-				OBJ_258 /* Headers.swift in Sources */,
-				OBJ_259 /* HTTPVersion.swift in Sources */,
-				OBJ_260 /* InternalError.swift in Sources */,
-				OBJ_261 /* JSONPError.swift in Sources */,
-				OBJ_262 /* Kitura.swift in Sources */,
-				OBJ_263 /* LinkParameter.swift in Sources */,
-				OBJ_264 /* MimeTypeAcceptor.swift in Sources */,
-				OBJ_265 /* Router.swift in Sources */,
-				OBJ_266 /* RouteRegex.swift in Sources */,
-				OBJ_267 /* RouterElement.swift in Sources */,
-				OBJ_268 /* RouterElementWalker.swift in Sources */,
-				OBJ_269 /* RouterHandler.swift in Sources */,
-				OBJ_270 /* RouterHTTPVerbs+Error.swift in Sources */,
-				OBJ_271 /* RouterHTTPVerbs_generated.swift in Sources */,
-				OBJ_272 /* RouterMethod.swift in Sources */,
-				OBJ_273 /* RouterMiddleware.swift in Sources */,
-				OBJ_274 /* RouterMiddlewareGenerator.swift in Sources */,
-				OBJ_275 /* RouterMiddlewareWalker.swift in Sources */,
-				OBJ_276 /* RouterParameterWalker.swift in Sources */,
-				OBJ_277 /* RouterRequest.swift in Sources */,
-				OBJ_278 /* RouterResponse.swift in Sources */,
-				OBJ_279 /* SSLConfig.swift in Sources */,
-				OBJ_280 /* String+Extensions.swift in Sources */,
-				OBJ_281 /* TemplatingError.swift in Sources */,
-				OBJ_282 /* BodyParser.swift in Sources */,
-				OBJ_283 /* BodyParserProtocol.swift in Sources */,
-				OBJ_284 /* JSONBodyParser.swift in Sources */,
-				OBJ_285 /* MultiPartBodyParser.swift in Sources */,
-				OBJ_286 /* ParsedBody.swift in Sources */,
-				OBJ_287 /* Part.swift in Sources */,
-				OBJ_288 /* RawBodyParser.swift in Sources */,
-				OBJ_289 /* TextBodyParser.swift in Sources */,
-				OBJ_290 /* URLEncodedBodyParser.swift in Sources */,
-				OBJ_291 /* ContentType.swift in Sources */,
-				OBJ_292 /* types.swift in Sources */,
-				OBJ_293 /* CacheRelatedHeadersSetter.swift in Sources */,
-				OBJ_294 /* CompositeHeadersSetter.swift in Sources */,
-				OBJ_295 /* FileServer.swift in Sources */,
-				OBJ_296 /* ResourcePathHandler.swift in Sources */,
-				OBJ_297 /* ResponseHeadersSetter.swift in Sources */,
-				OBJ_298 /* StaticFileServer.swift in Sources */,
+				OBJ_257 /* Error.swift in Sources */,
+				OBJ_258 /* FileResourceServer.swift in Sources */,
+				OBJ_259 /* Headers.swift in Sources */,
+				OBJ_260 /* HTTPVersion.swift in Sources */,
+				OBJ_261 /* InternalError.swift in Sources */,
+				OBJ_262 /* JSONPError.swift in Sources */,
+				OBJ_263 /* Kitura.swift in Sources */,
+				OBJ_264 /* LinkParameter.swift in Sources */,
+				OBJ_265 /* MimeTypeAcceptor.swift in Sources */,
+				OBJ_266 /* Router.swift in Sources */,
+				OBJ_267 /* RouteRegex.swift in Sources */,
+				OBJ_268 /* RouterElement.swift in Sources */,
+				OBJ_269 /* RouterElementWalker.swift in Sources */,
+				OBJ_270 /* RouterHandler.swift in Sources */,
+				OBJ_271 /* RouterHTTPVerbs+Error.swift in Sources */,
+				OBJ_272 /* RouterHTTPVerbs_generated.swift in Sources */,
+				OBJ_273 /* RouterMethod.swift in Sources */,
+				OBJ_274 /* RouterMiddleware.swift in Sources */,
+				OBJ_275 /* RouterMiddlewareGenerator.swift in Sources */,
+				OBJ_276 /* RouterMiddlewareWalker.swift in Sources */,
+				OBJ_277 /* RouterParameterWalker.swift in Sources */,
+				OBJ_278 /* RouterRequest.swift in Sources */,
+				OBJ_279 /* RouterResponse.swift in Sources */,
+				OBJ_280 /* SSLConfig.swift in Sources */,
+				OBJ_281 /* String+Extensions.swift in Sources */,
+				OBJ_282 /* TemplatingError.swift in Sources */,
+				OBJ_283 /* BodyParser.swift in Sources */,
+				OBJ_284 /* BodyParserProtocol.swift in Sources */,
+				OBJ_285 /* JSONBodyParser.swift in Sources */,
+				OBJ_286 /* MultiPartBodyParser.swift in Sources */,
+				OBJ_287 /* ParsedBody.swift in Sources */,
+				OBJ_288 /* Part.swift in Sources */,
+				OBJ_289 /* RawBodyParser.swift in Sources */,
+				OBJ_290 /* TextBodyParser.swift in Sources */,
+				OBJ_291 /* URLEncodedBodyParser.swift in Sources */,
+				OBJ_292 /* ContentType.swift in Sources */,
+				OBJ_293 /* types.swift in Sources */,
+				OBJ_294 /* CacheRelatedHeadersSetter.swift in Sources */,
+				OBJ_295 /* CompositeHeadersSetter.swift in Sources */,
+				OBJ_296 /* FileServer.swift in Sources */,
+				OBJ_297 /* ResourcePathHandler.swift in Sources */,
+				OBJ_298 /* ResponseHeadersSetter.swift in Sources */,
+				OBJ_299 /* StaticFileServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_318 /* Sources */ = {
+		OBJ_319 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_319 /* DataHandler.swift in Sources */,
-				OBJ_320 /* KikBot.swift in Sources */,
-				OBJ_321 /* Link.swift in Sources */,
-				OBJ_322 /* Message.swift in Sources */,
-				OBJ_323 /* Picture.swift in Sources */,
-				OBJ_324 /* Receipt.swift in Sources */,
-				OBJ_325 /* ScanData.swift in Sources */,
-				OBJ_326 /* StartChatting.swift in Sources */,
-				OBJ_327 /* Sticker.swift in Sources */,
-				OBJ_328 /* Text.swift in Sources */,
-				OBJ_329 /* Typing.swift in Sources */,
-				OBJ_330 /* User.swift in Sources */,
-				OBJ_331 /* Video.swift in Sources */,
+				OBJ_320 /* DataHandler.swift in Sources */,
+				OBJ_321 /* KikBot.swift in Sources */,
+				OBJ_322 /* Link.swift in Sources */,
+				OBJ_323 /* Message.swift in Sources */,
+				OBJ_324 /* Picture.swift in Sources */,
+				OBJ_325 /* Receipt.swift in Sources */,
+				OBJ_326 /* ScanData.swift in Sources */,
+				OBJ_327 /* StartChatting.swift in Sources */,
+				OBJ_328 /* Sticker.swift in Sources */,
+				OBJ_329 /* Text.swift in Sources */,
+				OBJ_330 /* Typing.swift in Sources */,
+				OBJ_331 /* User.swift in Sources */,
+				OBJ_332 /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_353 /* Sources */ = {
+		OBJ_354 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_354 /* MessageRecieveParsingTest.swift in Sources */,
-				25EAAA0F1EE2521800B98B1D /* MessageRecieveParsingPerformanceTest.swift in Sources */,
+				OBJ_355 /* MessageRecieveParsingPerformanceTest.swift in Sources */,
+				OBJ_356 /* MessageRecieveParsingTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_172 /* PBXTargetDependency */ = {
+		OBJ_173 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_155 /* Socket */;
-			targetProxy = 25E338371EE18E56003E6C1C /* PBXContainerItemProxy */;
-		};
-		OBJ_217 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = OBJ_148 /* LoggerAPI */;
-			targetProxy = 25E338381EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_156 /* Socket */;
+			targetProxy = 25687FF11EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_218 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_155 /* Socket */;
-			targetProxy = 25E338391EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_149 /* LoggerAPI */;
+			targetProxy = 25687FF21EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_219 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_164 /* SSLService */;
-			targetProxy = 25E3383A1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_156 /* Socket */;
+			targetProxy = 25687FF31EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_220 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_221 /* CHTTPParser */;
-			targetProxy = 25E3383B1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_165 /* SSLService */;
+			targetProxy = 25687FF41EE28841006B0732 /* PBXContainerItemProxy */;
 		};
-		OBJ_233 /* PBXTargetDependency */ = {
+		OBJ_221 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_148 /* LoggerAPI */;
-			targetProxy = 25E3383C1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_222 /* CHTTPParser */;
+			targetProxy = 25687FF51EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_234 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_155 /* Socket */;
-			targetProxy = 25E3383D1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_149 /* LoggerAPI */;
+			targetProxy = 25687FF61EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_235 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_164 /* SSLService */;
-			targetProxy = 25E3383E1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_156 /* Socket */;
+			targetProxy = 25687FF71EE28841006B0732 /* PBXContainerItemProxy */;
 		};
-		OBJ_307 /* PBXTargetDependency */ = {
+		OBJ_236 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_148 /* LoggerAPI */;
-			targetProxy = 25E3383F1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_165 /* SSLService */;
+			targetProxy = 25687FF81EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_308 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_155 /* Socket */;
-			targetProxy = 25E338401EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_149 /* LoggerAPI */;
+			targetProxy = 25687FF91EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_309 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_164 /* SSLService */;
-			targetProxy = 25E338411EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_156 /* Socket */;
+			targetProxy = 25687FFA1EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_310 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_221 /* CHTTPParser */;
-			targetProxy = 25E338421EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_165 /* SSLService */;
+			targetProxy = 25687FFB1EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_311 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_173 /* KituraNet */;
-			targetProxy = 25E338431EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_222 /* CHTTPParser */;
+			targetProxy = 25687FFC1EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_312 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_236 /* SwiftyJSON */;
-			targetProxy = 25E338441EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_174 /* KituraNet */;
+			targetProxy = 25687FFD1EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_313 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_244 /* KituraTemplateEngine */;
-			targetProxy = 25E338451EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_237 /* SwiftyJSON */;
+			targetProxy = 25687FFE1EE28841006B0732 /* PBXContainerItemProxy */;
 		};
-		OBJ_341 /* PBXTargetDependency */ = {
+		OBJ_314 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_148 /* LoggerAPI */;
-			targetProxy = 25E338461EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_245 /* KituraTemplateEngine */;
+			targetProxy = 25687FFF1EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_342 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_155 /* Socket */;
-			targetProxy = 25E338471EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_149 /* LoggerAPI */;
+			targetProxy = 256880001EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_343 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_164 /* SSLService */;
-			targetProxy = 25E338481EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_156 /* Socket */;
+			targetProxy = 256880011EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_344 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_221 /* CHTTPParser */;
-			targetProxy = 25E338491EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_165 /* SSLService */;
+			targetProxy = 256880021EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_345 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_173 /* KituraNet */;
-			targetProxy = 25E3384A1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_222 /* CHTTPParser */;
+			targetProxy = 256880031EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_346 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_236 /* SwiftyJSON */;
-			targetProxy = 25E3384B1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_174 /* KituraNet */;
+			targetProxy = 256880041EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_347 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_244 /* KituraTemplateEngine */;
-			targetProxy = 25E3384C1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_237 /* SwiftyJSON */;
+			targetProxy = 256880051EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_348 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_251 /* Kitura */;
-			targetProxy = 25E3384D1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_245 /* KituraTemplateEngine */;
+			targetProxy = 256880061EE28841006B0732 /* PBXContainerItemProxy */;
 		};
-		OBJ_365 /* PBXTargetDependency */ = {
+		OBJ_349 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_148 /* LoggerAPI */;
-			targetProxy = 25E3384E1EE18E56003E6C1C /* PBXContainerItemProxy */;
-		};
-		OBJ_366 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = OBJ_155 /* Socket */;
-			targetProxy = 25E3384F1EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_252 /* Kitura */;
+			targetProxy = 256880071EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_367 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_164 /* SSLService */;
-			targetProxy = 25E338501EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_149 /* LoggerAPI */;
+			targetProxy = 256880081EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_368 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_221 /* CHTTPParser */;
-			targetProxy = 25E338511EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_156 /* Socket */;
+			targetProxy = 256880091EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_369 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_173 /* KituraNet */;
-			targetProxy = 25E338521EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_165 /* SSLService */;
+			targetProxy = 2568800A1EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_370 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_236 /* SwiftyJSON */;
-			targetProxy = 25E338531EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_222 /* CHTTPParser */;
+			targetProxy = 2568800B1EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_371 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_244 /* KituraTemplateEngine */;
-			targetProxy = 25E338541EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_174 /* KituraNet */;
+			targetProxy = 2568800C1EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_372 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_251 /* Kitura */;
-			targetProxy = 25E338551EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_237 /* SwiftyJSON */;
+			targetProxy = 2568800D1EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 		OBJ_373 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_314 /* KikBot */;
-			targetProxy = 25E338561EE18E56003E6C1C /* PBXContainerItemProxy */;
+			target = OBJ_245 /* KituraTemplateEngine */;
+			targetProxy = 2568800E1EE28841006B0732 /* PBXContainerItemProxy */;
+		};
+		OBJ_374 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_252 /* Kitura */;
+			targetProxy = 2568800F1EE28841006B0732 /* PBXContainerItemProxy */;
+		};
+		OBJ_375 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_315 /* KikBot */;
+			targetProxy = 256880101EE28841006B0732 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_150 /* Debug */ = {
+		OBJ_151 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1539,7 +1540,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_151 /* Release */ = {
+		OBJ_152 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1560,7 +1561,7 @@
 			};
 			name = Release;
 		};
-		OBJ_157 /* Debug */ = {
+		OBJ_158 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1581,7 +1582,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_158 /* Release */ = {
+		OBJ_159 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1602,7 +1603,7 @@
 			};
 			name = Release;
 		};
-		OBJ_166 /* Debug */ = {
+		OBJ_167 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1623,7 +1624,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_167 /* Release */ = {
+		OBJ_168 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1644,7 +1645,7 @@
 			};
 			name = Release;
 		};
-		OBJ_175 /* Debug */ = {
+		OBJ_176 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1671,7 +1672,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_176 /* Release */ = {
+		OBJ_177 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1698,7 +1699,7 @@
 			};
 			name = Release;
 		};
-		OBJ_223 /* Debug */ = {
+		OBJ_224 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = NO;
@@ -1724,7 +1725,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_224 /* Release */ = {
+		OBJ_225 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = NO;
@@ -1750,7 +1751,7 @@
 			};
 			name = Release;
 		};
-		OBJ_238 /* Debug */ = {
+		OBJ_239 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1771,7 +1772,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_239 /* Release */ = {
+		OBJ_240 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1792,7 +1793,7 @@
 			};
 			name = Release;
 		};
-		OBJ_246 /* Debug */ = {
+		OBJ_247 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1813,7 +1814,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_247 /* Release */ = {
+		OBJ_248 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1834,7 +1835,7 @@
 			};
 			name = Release;
 		};
-		OBJ_253 /* Debug */ = {
+		OBJ_254 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1861,7 +1862,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_254 /* Release */ = {
+		OBJ_255 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1911,7 +1912,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_316 /* Debug */ = {
+		OBJ_317 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1938,7 +1939,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_317 /* Release */ = {
+		OBJ_318 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1965,7 +1966,7 @@
 			};
 			name = Release;
 		};
-		OBJ_351 /* Debug */ = {
+		OBJ_352 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -1988,7 +1989,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_352 /* Release */ = {
+		OBJ_353 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -2035,38 +2036,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_149 /* Build configuration list for PBXNativeTarget "LoggerAPI" */ = {
+		OBJ_150 /* Build configuration list for PBXNativeTarget "LoggerAPI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_150 /* Debug */,
-				OBJ_151 /* Release */,
+				OBJ_151 /* Debug */,
+				OBJ_152 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_156 /* Build configuration list for PBXNativeTarget "Socket" */ = {
+		OBJ_157 /* Build configuration list for PBXNativeTarget "Socket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_157 /* Debug */,
-				OBJ_158 /* Release */,
+				OBJ_158 /* Debug */,
+				OBJ_159 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_165 /* Build configuration list for PBXNativeTarget "SSLService" */ = {
+		OBJ_166 /* Build configuration list for PBXNativeTarget "SSLService" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_166 /* Debug */,
-				OBJ_167 /* Release */,
+				OBJ_167 /* Debug */,
+				OBJ_168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_174 /* Build configuration list for PBXNativeTarget "KituraNet" */ = {
+		OBJ_175 /* Build configuration list for PBXNativeTarget "KituraNet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_175 /* Debug */,
-				OBJ_176 /* Release */,
+				OBJ_176 /* Debug */,
+				OBJ_177 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -2080,56 +2081,56 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_222 /* Build configuration list for PBXNativeTarget "CHTTPParser" */ = {
+		OBJ_223 /* Build configuration list for PBXNativeTarget "CHTTPParser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_223 /* Debug */,
-				OBJ_224 /* Release */,
+				OBJ_224 /* Debug */,
+				OBJ_225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_237 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+		OBJ_238 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_238 /* Debug */,
-				OBJ_239 /* Release */,
+				OBJ_239 /* Debug */,
+				OBJ_240 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_245 /* Build configuration list for PBXNativeTarget "KituraTemplateEngine" */ = {
+		OBJ_246 /* Build configuration list for PBXNativeTarget "KituraTemplateEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_246 /* Debug */,
-				OBJ_247 /* Release */,
+				OBJ_247 /* Debug */,
+				OBJ_248 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_252 /* Build configuration list for PBXNativeTarget "Kitura" */ = {
+		OBJ_253 /* Build configuration list for PBXNativeTarget "Kitura" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_253 /* Debug */,
-				OBJ_254 /* Release */,
+				OBJ_254 /* Debug */,
+				OBJ_255 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_315 /* Build configuration list for PBXNativeTarget "KikBot" */ = {
+		OBJ_316 /* Build configuration list for PBXNativeTarget "KikBot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_316 /* Debug */,
-				OBJ_317 /* Release */,
+				OBJ_317 /* Debug */,
+				OBJ_318 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_350 /* Build configuration list for PBXNativeTarget "KikBotTests" */ = {
+		OBJ_351 /* Build configuration list for PBXNativeTarget "KikBotTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_351 /* Debug */,
-				OBJ_352 /* Release */,
+				OBJ_352 /* Debug */,
+				OBJ_353 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
