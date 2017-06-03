@@ -7,6 +7,6 @@ install:
   - swift package fetch
 script:
 # - swift test
-  - travis_retry xcodebuild -scheme KikBot -project KikBot.xcodeproj test
+  - travis_retry xcodebuild -scheme KikBot -project KikBot.xcodeproj test | xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash)
