@@ -6,9 +6,9 @@ xcode_scheme: KikBot
 install:
   - swift package fetch
 script:
-# - swift test
-  - xcodebuild -project KikBot.xcodeproj -list
-  - xcodebuild -scheme KituraNet -project KikBot.xcodeproj build
-  - xcodebuild -scheme KikBot -project KikBot.xcodeproj test
+  - swift test
+# - xcodebuild -project KikBot.xcodeproj -list
+# - xcodebuild -scheme KituraNet -project KikBot.xcodeproj build
+# - xcodebuild -scheme KikBot -project KikBot.xcodeproj test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
