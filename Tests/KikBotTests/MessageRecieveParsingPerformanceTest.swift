@@ -2,7 +2,7 @@ import XCTest
 import SwiftyJSON
 @testable import KikBot
 
-class KikBotTests: XCTestCase
+class MessageRecieveParsingPerformanceTest: XCTestCase
 {
 	func testSimpleMessageParse()
 	{
@@ -18,16 +18,18 @@ class KikBotTests: XCTestCase
 			"chatType": "direct"
 			] as [String:Any?])
 		
-		let textMessage = TextMessage(messageJSON)
-		XCTAssertEqual(textMessage.chatID, "b3be3bc15dbe59931666c06290abd944aaa769bb2ecaaf859bfb65678880afab")
-		XCTAssertEqual(textMessage.type, .text)
-		XCTAssertEqual(textMessage.from.username, "laura")
-		XCTAssertEqual(textMessage.participants, ["laura"])
-		XCTAssertEqual(textMessage.id, "6d8d060c-3ae4-46fc-bb18-6e7ba3182c0f")
-		XCTAssertEqual(textMessage.timestamp, "1399303478832")
-		XCTAssertNil(textMessage.metadata.dictionary)
-		XCTAssertNil(textMessage.mention)
-		XCTAssertEqual(textMessage.chatType, .direct)
+		self.measure {
+			let textMessage = TextMessage(messageJSON)
+			XCTAssertEqual(textMessage.chatID, "b3be3bc15dbe59931666c06290abd944aaa769bb2ecaaf859bfb65678880afab")
+			XCTAssertEqual(textMessage.type, .text)
+			XCTAssertEqual(textMessage.from.username, "laura")
+			XCTAssertEqual(textMessage.participants, ["laura"])
+			XCTAssertEqual(textMessage.id, "6d8d060c-3ae4-46fc-bb18-6e7ba3182c0f")
+			XCTAssertEqual(textMessage.timestamp, "1399303478832")
+			XCTAssertNil(textMessage.metadata.dictionary)
+			XCTAssertNil(textMessage.mention)
+			XCTAssertEqual(textMessage.chatType, .direct)
+		}
 	}
 	
 	func testSimpleTextMessageParse()
@@ -46,8 +48,10 @@ class KikBotTests: XCTestCase
 			"chatType": "direct"
 			] as [String:Any?])
 		
-		let textMessage = TextMessage(messageJSON)
-		XCTAssertEqual(textMessage.body, "Hi!")
+		self.measure {
+			let textMessage = TextMessage(messageJSON)
+			XCTAssertEqual(textMessage.body, "Hi!")
+		}
 	}
 	
 	func testSimpleLinkMessageParse()
@@ -71,11 +75,13 @@ class KikBotTests: XCTestCase
 			"chatType": "direct"
 			] as [String:Any?])
 		
-		let linkMessage = LinkMessage(messageJSON)
-		XCTAssertEqual(linkMessage.url, "http://mywebpage.com")
-		XCTAssertEqual(linkMessage.attribution["name"].stringValue, "My App")
-		XCTAssertEqual(linkMessage.attribution["iconUrl"].stringValue, "http://example.kik.com/anicon.png")
-		XCTAssertEqual(linkMessage.forwardable, true)
+		self.measure {
+			let linkMessage = LinkMessage(messageJSON)
+			XCTAssertEqual(linkMessage.url, "http://mywebpage.com")
+			XCTAssertEqual(linkMessage.attribution["name"].stringValue, "My App")
+			XCTAssertEqual(linkMessage.attribution["iconUrl"].stringValue, "http://example.kik.com/anicon.png")
+			XCTAssertEqual(linkMessage.forwardable, true)
+		}
 	}
 	
 	func testSimplePictureMessageParse()
@@ -98,16 +104,11 @@ class KikBotTests: XCTestCase
 			"chatType": "direct"
 			] as [String:Any?])
 		
-		let pictureMessage = PictureMessage(messageJSON)
-		XCTAssertEqual(pictureMessage.pictureURL, "http://example.kik.com/apicture.jpg")
-		XCTAssertEqual(pictureMessage.attribution["name"].stringValue, "A Title")
-		XCTAssertEqual(pictureMessage.attribution["iconUrl"].stringValue, "http://example.kik.com/anicon.png")
+		self.measure {
+			let pictureMessage = PictureMessage(messageJSON)
+			XCTAssertEqual(pictureMessage.pictureURL, "http://example.kik.com/apicture.jpg")
+			XCTAssertEqual(pictureMessage.attribution["name"].stringValue, "A Title")
+			XCTAssertEqual(pictureMessage.attribution["iconUrl"].stringValue, "http://example.kik.com/anicon.png")
+		}
 	}
-	
-	static var allTests = [
-		("Test Simple Message Parse", testSimpleMessageParse),
-		("Test Simple Text Message Parse", testSimpleTextMessageParse),
-		("Test Simple Link Message Parse", testSimpleLinkMessageParse),
-		("Test Simple Picture Message Parse", testSimplePictureMessageParse)
-	]
 }

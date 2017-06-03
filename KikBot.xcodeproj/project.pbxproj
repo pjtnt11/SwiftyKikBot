@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25EAAA0F1EE2521800B98B1D /* MessageRecieveParsingPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EAAA0E1EE2521800B98B1D /* MessageRecieveParsingPerformanceTest.swift */; };
 		OBJ_153 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_136 /* Logger.swift */; };
 		OBJ_160 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_131 /* Socket.swift */; };
 		OBJ_161 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_132 /* SocketProtocols.swift */; };
@@ -130,7 +131,7 @@
 		OBJ_338 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_143 /* SwiftyJSON.framework */; };
 		OBJ_339 /* KituraTemplateEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_144 /* KituraTemplateEngine.framework */; };
 		OBJ_340 /* Kitura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_145 /* Kitura.framework */; };
-		OBJ_354 /* KikBotMessageRecieveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* KikBotMessageRecieveTest.swift */; };
+		OBJ_354 /* MessageRecieveParsingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* MessageRecieveParsingTest.swift */; };
 		OBJ_356 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_138 /* LoggerAPI.framework */; };
 		OBJ_357 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* Socket.framework */; };
 		OBJ_358 /* SSLService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* SSLService.framework */; };
@@ -370,6 +371,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25EAAA0E1EE2521800B98B1D /* MessageRecieveParsingPerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageRecieveParsingPerformanceTest.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		OBJ_100 /* FastCGIServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServerRequest.swift; sourceTree = "<group>"; };
 		OBJ_101 /* FastCGIServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServerResponse.swift; sourceTree = "<group>"; };
@@ -418,7 +420,7 @@
 		OBJ_18 /* Typing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typing.swift; sourceTree = "<group>"; };
 		OBJ_19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		OBJ_20 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		OBJ_23 /* KikBotMessageRecieveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KikBotMessageRecieveTest.swift; sourceTree = "<group>"; };
+		OBJ_23 /* MessageRecieveParsingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRecieveParsingTest.swift; sourceTree = "<group>"; };
 		OBJ_27 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		OBJ_28 /* FileResourceServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileResourceServer.swift; sourceTree = "<group>"; };
 		OBJ_29 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
@@ -724,7 +726,8 @@
 		OBJ_22 /* KikBotTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* KikBotMessageRecieveTest.swift */,
+				OBJ_23 /* MessageRecieveParsingTest.swift */,
+				25EAAA0E1EE2521800B98B1D /* MessageRecieveParsingPerformanceTest.swift */,
 			);
 			name = KikBotTests;
 			path = Tests/KikBotTests;
@@ -1344,7 +1347,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_354 /* KikBotMessageRecieveTest.swift in Sources */,
+				OBJ_354 /* MessageRecieveParsingTest.swift in Sources */,
+				25EAAA0F1EE2521800B98B1D /* MessageRecieveParsingPerformanceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

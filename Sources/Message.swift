@@ -207,8 +207,7 @@ public struct MessageSendData
 	///
 	/// - Parameters:
 	///		- messages: Messages to reply with.
-	public func reply(withMessages messages: MessageSendData...)
-	{
+	public func reply(withMessages messages: [MessageSendData]) {
 		let sendJSON = try? jsonObject(from: messages)
 		guard sendJSON != nil else {
 			print("-- ERROR! --")
@@ -227,9 +226,16 @@ public struct MessageSendData
 	/// Sends `messages` to the user that sent the original message.
 	///
 	/// - Parameters:
+	///		- messages: Messages to reply with.
+	public func reply(withMessages messages: MessageSendData...) {
+		reply(withMessages: messages)
+	}
+	
+	/// Sends `messages` to the user that sent the original message.
+	///
+	/// - Parameters:
 	///		- messages: String to reply with.
-	public func reply(withString text: String)
-	{
+	public func reply(withString text: String) {
 		let message = Message.makeSendData(text: text)
 		
 		let sendJSON = try? jsonObject(from: [message])
