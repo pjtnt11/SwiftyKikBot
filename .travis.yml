@@ -3,12 +3,12 @@ os: osx
 osx_image: xcode8.3
 xcode_project: KikBot.xcodeproj
 xcode_scheme: KikBot
+before_install:
+  - brew update
 install:
   - swift package fetch
 script:
-# - swift test
-  - xcodebuild -project KikBot.xcodeproj -list
-  - xcodebuild -scheme KituraNet -project KikBot.xcodeproj build
-  - xcodebuild -scheme KikBot -project KikBot.xcodeproj test
+  - swift test
+# - travis_retry xcodebuild -project KikBot.xcodeproj -scheme KikBot test | xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash)
