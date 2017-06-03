@@ -1,6 +1,5 @@
 # SwiftyKikBot
 [![Build Status](https://travis-ci.org/pjtnt11/SwiftyKikBot.svg?branch=master)](https://travis-ci.org/pjtnt11/SwiftyKikBot)
-[![codecov](https://codecov.io/gh/pjtnt11/SwiftyKikBot/branch/master/graph/badge.svg)](https://codecov.io/gh/pjtnt11/SwiftyKikBot)
 
 A Kik Bot Framework for Swift Servers
 
