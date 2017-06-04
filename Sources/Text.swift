@@ -17,7 +17,7 @@ public class TextSendMessage: SendMessage {
 			super.rawJSON["typeTime"].int = typeTime
 		}
 	}
-	
+
 	init(body: String) {
 		self.body = body
 		super.init(type: .text)

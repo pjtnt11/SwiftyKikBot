@@ -46,6 +46,7 @@ public class SendMessage
 }
 
 fileprivate extension JSON {
+	
 	mutating func merge(with mergingJSON: JSON) {
 		for (key, value):(String, JSON) in mergingJSON {
 			self.dictionaryObject?[key] = value.object
