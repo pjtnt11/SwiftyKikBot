@@ -7,6 +7,6 @@ before_install:
   - brew update
 script:
 # - swift test
-  - xcodebuild -scheme KikBot -project KikBot.xcodeproj -sdk MacOSX10.12.sdk -destination 'platform=macOS' build test
+  - xcodebuild -scheme KikBot -project KikBot.xcodeproj build-for-testing test | xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash)
