@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25A82F3B1EE3D56A00815C5E /* MessageSendCreationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A82F3A1EE3D56A00815C5E /* MessageSendCreationTest.swift */; };
 		OBJ_154 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_137 /* Logger.swift */; };
 		OBJ_161 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_132 /* Socket.swift */; };
 		OBJ_162 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_133 /* SocketProtocols.swift */; };
@@ -130,7 +131,6 @@
 		OBJ_339 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_144 /* SwiftyJSON.framework */; };
 		OBJ_340 /* KituraTemplateEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_145 /* KituraTemplateEngine.framework */; };
 		OBJ_341 /* Kitura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_146 /* Kitura.framework */; };
-		OBJ_355 /* MessageRecieveParsingPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* MessageRecieveParsingPerformanceTest.swift */; };
 		OBJ_356 /* MessageRecieveParsingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* MessageRecieveParsingTest.swift */; };
 		OBJ_358 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_139 /* LoggerAPI.framework */; };
 		OBJ_359 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_140 /* Socket.framework */; };
@@ -371,6 +371,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25A82F3A1EE3D56A00815C5E /* MessageSendCreationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSendCreationTest.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		OBJ_100 /* FastCGIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServer.swift; sourceTree = "<group>"; };
 		OBJ_101 /* FastCGIServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServerRequest.swift; sourceTree = "<group>"; };
@@ -420,7 +421,6 @@
 		OBJ_18 /* Typing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typing.swift; sourceTree = "<group>"; };
 		OBJ_19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		OBJ_20 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		OBJ_23 /* MessageRecieveParsingPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRecieveParsingPerformanceTest.swift; sourceTree = "<group>"; };
 		OBJ_24 /* MessageRecieveParsingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRecieveParsingTest.swift; sourceTree = "<group>"; };
 		OBJ_28 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		OBJ_29 /* FileResourceServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileResourceServer.swift; sourceTree = "<group>"; };
@@ -726,7 +726,7 @@
 		OBJ_22 /* KikBotTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* MessageRecieveParsingPerformanceTest.swift */,
+				25A82F3A1EE3D56A00815C5E /* MessageSendCreationTest.swift */,
 				OBJ_24 /* MessageRecieveParsingTest.swift */,
 			);
 			name = KikBotTests;
@@ -793,7 +793,7 @@
 			path = ".build/checkouts/Kitura.git-6522211175291160341/Sources/Kitura";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -802,7 +802,6 @@
 				OBJ_25 /* Dependencies */,
 				OBJ_138 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_54 /* bodyParser */ = {
@@ -1149,7 +1148,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_138 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1348,7 +1347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_355 /* MessageRecieveParsingPerformanceTest.swift in Sources */,
+				25A82F3B1EE3D56A00815C5E /* MessageSendCreationTest.swift in Sources */,
 				OBJ_356 /* MessageRecieveParsingTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
