@@ -6,7 +6,7 @@ xcode_scheme: KikBot
 before_install:
   - brew update
 script:
-# - swift test
-  - xcodebuild -scheme KikBot -project KikBot.xcodeproj build-for-testing test | xcpretty
+  - swift test
+  - xcodebuild -scheme KikBot -project KikBot.xcodeproj build-for-testing test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
