@@ -1,8 +1,10 @@
-language: swift
+language: objective-c
 os: osx
 osx_image: xcode8.3
+xcode_sdk: iphonesimulator10.2
 xcode_project: KikBot.xcodeproj
 xcode_scheme: KikBot
+
 before_install:
   - brew update
 script:
