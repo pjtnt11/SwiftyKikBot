@@ -32,8 +32,8 @@ public enum ChatType: String {
 /// A structure that contains the data to be sent as a message.
 public class SendMessage
 {
-	let type: MessageType
-	var delay: Int = 0
+	public let type: MessageType
+	public var delay: Int = 0
 	public internal(set) var rawJSON = JSON([:])
 	
 	init(type: MessageType) {

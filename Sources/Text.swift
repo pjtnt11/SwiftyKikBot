@@ -11,8 +11,8 @@ public class TextMessage: Message {
 }
 
 public class TextSendMessage: SendMessage {
-	let body: String
-	var typeTime = 0
+	public let body: String
+	public var typeTime = 0
 	
 	init(body: String) {
 		self.body = body
