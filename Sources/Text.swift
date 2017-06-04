@@ -12,7 +12,11 @@ public class TextMessage: Message {
 
 public class TextSendMessage: SendMessage {
 	public let body: String
-	public var typeTime = 0
+	public var typeTime = 0 {
+		didSet {
+			super.rawJSON["typeTime"].int = typeTime
+		}
+	}
 	
 	init(body: String) {
 		self.body = body

@@ -33,7 +33,11 @@ public enum ChatType: String {
 public class SendMessage
 {
 	public let type: MessageType
-	public var delay: Int = 0
+	public var delay: Int = 0 {
+		didSet {
+			rawJSON["delay"].int = delay
+		}
+	}
 	public internal(set) var rawJSON = JSON([:])
 	
 	init(type: MessageType) {
