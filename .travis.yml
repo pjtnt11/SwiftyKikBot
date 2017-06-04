@@ -7,6 +7,6 @@ before_install:
   - brew update
 script:
 # - swift test
-  - xcodebuild -scheme KikBot -project KikBot.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=9.1' build test
+  - xcodebuild -scheme KikBot -project KikBot.xcodeproj -sdk iphonesimulator -destination 'platform=macOS, arch:x86_64' build test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
