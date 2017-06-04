@@ -160,7 +160,7 @@ fileprivate extension JSON {
 		for message in messages {
 			var messageJSON: JSON = JSON(["chatId": chatID, "to": from.username])
 			messageJSON.merge(with: message.rawJSON)
-			sendJSON["messages"].arrayObject?.append(messageJSON)
+			sendJSON["messages"].arrayObject?.append(messageJSON.object)
 		}
 		guard let sendData = try? sendJSON.rawData() else {
 			print("ERROR")
