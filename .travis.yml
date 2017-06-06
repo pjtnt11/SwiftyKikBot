@@ -1,4 +1,4 @@
-language: objective-c
+language: swift
 os: osx
 osx_image: xcode8.3
 xcode_sdk: iphonesimulator10.2
