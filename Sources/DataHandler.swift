@@ -50,7 +50,6 @@ internal class BotDataHandler
 	/// - Note: This function never returns. It should be the last line of code in your bot.
 	func listen() {
 		router.post(path) { request, response, next in
-			
 			var data = Data()
 			
 			guard let _ = try? request.read(into: &data) else {

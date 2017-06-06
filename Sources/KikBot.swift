@@ -74,9 +74,9 @@ public class KikBot
 	///		- callback: Clusure to be called after the data is sent.
 	///
 	/// - Todo: Check for errors.
-	public func updateConfiguration(configuration: JSON, callback: (() -> Void)?)
+	public func updateConfiguration(configuration: JSON, callback: (() -> Void)? = nil)
 	{
-		guard let configurationData = try? JSONSerialization.data(withJSONObject: configuration) else {
+		guard let configurationData = try? configuration.rawData() else {
 			print("Error: Configuration Data is not valid JSON")
 			return
 		}
