@@ -44,7 +44,7 @@ public class SendMessage
 		self.type = type
 	}
 	
-	func setDelay(_ delay: Int, relitiveTo relitiveMessage: SendMessage) {
+	public func setDelay(_ delay: Int, relitiveTo relitiveMessage: SendMessage) {
 		self.delay = delay + relitiveMessage.delay
 	}
 }
