@@ -6,22 +6,22 @@ internal var dataHandler: BotDataHandler!
 /// A protocol that defines an instance to recieve Kik messages
 @objc public protocol KikBotDelegate
 {
-	@objc optional func newMessage(message: Message, completionhandler: (_ option: MessageOption) -> Void) -> Void
-	@objc optional func newTextMessage(message: TextMessage) -> Void
-	@objc optional func newLinkMessage(message: LinkMessage) -> Void
-	@objc optional func newPictureMessage(message: PictureMessage) -> Void
-	@objc optional func newVideoMessage(message: VideoMessage) -> Void
-	@objc optional func newStartChattingMessage(message: StartChattingMessage) -> Void
-	@objc optional func newScanDataMessage(message: ScanDataMessage) -> Void
-	@objc optional func newStickerMessage(message: StickerMessage) -> Void
-	@objc optional func newTypingMessage(message: TypingMessage) -> Void
-	@objc optional func newDeliveryReceiptMessage(message: DeliveryReceiptMessage) -> Void
-	@objc optional func newReadReceiptMessage(message: ReadReceiptMessage) -> Void
+	@objc optional func didReceiveMessage(message: Message, completionhandler: (_ option: MessageOption) -> Void) -> Void
+	@objc optional func didReceiveTextMessage(message: TextMessage) -> Void
+	@objc optional func didReceiveLinkMessage(message: LinkMessage) -> Void
+	@objc optional func didReceivePictureMessage(message: PictureMessage) -> Void
+	@objc optional func didReceiveVideoMessage(message: VideoMessage) -> Void
+	@objc optional func didReceiveStartChattingMessage(message: StartChattingMessage) -> Void
+	@objc optional func didReceiveScanDataMessage(message: ScanDataMessage) -> Void
+	@objc optional func didReceiveStickerMessage(message: StickerMessage) -> Void
+	@objc optional func didReceiveTypingMessage(message: TypingMessage) -> Void
+	@objc optional func didReceiveDeliveryReceiptMessage(message: DeliveryReceiptMessage) -> Void
+	@objc optional func didReceiveReadReceiptMessage(message: ReadReceiptMessage) -> Void
 }
 
 public extension KikBotDelegate
 {
-	func newMessage(message: Message, completionhandler: (_ option: MessageOption) -> Void) -> Void
+	func didReceiveMessage(message: Message, completionhandler: (_ option: MessageOption) -> Void) -> Void
 	{
 		completionhandler(.continue)
 	}
