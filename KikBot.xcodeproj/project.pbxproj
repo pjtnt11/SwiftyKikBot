@@ -596,6 +596,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25ECE55C1EE8F41C00A6197D /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* Message.swift */,
+				OBJ_17 /* Text.swift */,
+				OBJ_10 /* Link.swift */,
+				OBJ_12 /* Picture.swift */,
+				OBJ_20 /* Video.swift */,
+				OBJ_15 /* StartChatting.swift */,
+				OBJ_14 /* ScanData.swift */,
+				OBJ_16 /* Sticker.swift */,
+				OBJ_18 /* Typing.swift */,
+				OBJ_13 /* Receipt.swift */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
 		OBJ_103 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -847,17 +864,8 @@
 			children = (
 				OBJ_8 /* DataHandler.swift */,
 				OBJ_9 /* KikBot.swift */,
-				OBJ_10 /* Link.swift */,
-				OBJ_11 /* Message.swift */,
-				OBJ_12 /* Picture.swift */,
-				OBJ_13 /* Receipt.swift */,
-				OBJ_14 /* ScanData.swift */,
-				OBJ_15 /* StartChatting.swift */,
-				OBJ_16 /* Sticker.swift */,
-				OBJ_17 /* Text.swift */,
-				OBJ_18 /* Typing.swift */,
 				OBJ_19 /* User.swift */,
-				OBJ_20 /* Video.swift */,
+				25ECE55C1EE8F41C00A6197D /* Message */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;

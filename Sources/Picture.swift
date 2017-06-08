@@ -12,3 +12,17 @@ public class PictureMessage: Message {
 		super.init(message)
 	}
 }
+
+public class PictureSendMessage: SendMessage {
+	public let pictureURL: String
+	
+	init(pictureURL: String) {
+		self.pictureURL = pictureURL
+		super.init(type: .picture)
+		super.rawJSON = JSON([
+			"type": MessageType.picture.rawValue,
+			"delay": super.delay,
+			"picUrl": self.pictureURL,
+		])
+	}
+}

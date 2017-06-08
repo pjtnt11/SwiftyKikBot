@@ -8,12 +8,33 @@ class MessageSendCreationTest: XCTestCase {
 		sendData.delay = 1750
 		sendData.typeTime = 1000
 		
-		let exspectedJSON = JSON(["delay": 1750, "typeTime": 1000, "type": "text", "body": "Hi there!"])
+		let exespectedJSON = JSON([
+			"type": "text",
+			"body": "Hi there!",
+			"typeTime": 1000,
+			"delay": 1750
+			])
 		
+		XCTAssertEqual(sendData.type, .text)
 		XCTAssertEqual(sendData.body, "Hi there!")
 		XCTAssertEqual(sendData.typeTime, 1000)
 		XCTAssertEqual(sendData.delay, 1750)
-		XCTAssertEqual(sendData.type, .text)
-		XCTAssertEqual(sendData.rawJSON, exspectedJSON)
+		XCTAssertEqual(sendData.rawJSON, exespectedJSON)
+	}
+	
+	func testSimplePictureMessage() {
+		let sendData = Message.makeSendData(pictureURL: "http://via.placeholder.com/500x500")
+		sendData.delay = 1000
+		
+		let exespectedJSON = JSON([
+			"type": "picture",
+			"picUrl": "http://via.placeholder.com/500x500",
+			"delay": 1000
+			])
+		
+		XCTAssertEqual(sendData.type, .picture)
+		XCTAssertEqual(sendData.pictureURL, "http://via.placeholder.com/500x500")
+		XCTAssertEqual(sendData.delay, 1000)
+		XCTAssertEqual(sendData.rawJSON, exespectedJSON)
 	}
 }

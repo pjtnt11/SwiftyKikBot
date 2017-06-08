@@ -43,6 +43,10 @@ public class SendMessage
 	init(type: MessageType) {
 		self.type = type
 	}
+	
+	func setDelay(_ delay: Int, relitiveTo relitiveMessage: SendMessage) {
+		self.delay = delay + relitiveMessage.delay
+	}
 }
 
 fileprivate extension JSON {
@@ -175,8 +179,13 @@ fileprivate extension JSON {
 		dataHandler.send(messages: sendData)
 	}
 	
-	/// Returns a `MessageSendData` instance from `text`.
+	/// Returns a `TextSendMessage` instance from `body`.
 	public static func makeSendData(body: String) -> TextSendMessage {
 		return TextSendMessage(body: body)
+	}
+	
+	/// Returns a `PictureSendMessage` instance from the 'pictureURL`
+	public static func makeSendData(pictureURL: String) -> PictureSendMessage {
+		return PictureSendMessage(pictureURL: pictureURL)
 	}
 }
