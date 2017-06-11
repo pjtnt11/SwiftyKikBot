@@ -16,8 +16,7 @@ fileprivate let kikCodeURL = URL(string: "https://api.kik.com/v1/code")!
 }
 
 /// A class that handles the connection between Kik and the bot server.
-internal class BotDataHandler
-{
+internal class BotDataHandler {
 	let router = Router()
 	var port: Int = 80
 	var path: String = "/"

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25A82F3B1EE3D56A00815C5E /* MessageSendCreationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A82F3A1EE3D56A00815C5E /* MessageSendCreationTest.swift */; };
+		25B080F01EECE42300F67A28 /* MessageReplyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B080EF1EECE42300F67A28 /* MessageReplyTest.swift */; };
 		OBJ_154 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_137 /* Logger.swift */; };
 		OBJ_161 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_132 /* Socket.swift */; };
 		OBJ_162 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_133 /* SocketProtocols.swift */; };
@@ -372,6 +373,7 @@
 
 /* Begin PBXFileReference section */
 		25A82F3A1EE3D56A00815C5E /* MessageSendCreationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSendCreationTest.swift; sourceTree = "<group>"; };
+		25B080EF1EECE42300F67A28 /* MessageReplyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageReplyTest.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		OBJ_100 /* FastCGIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServer.swift; sourceTree = "<group>"; };
 		OBJ_101 /* FastCGIServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCGIServerRequest.swift; sourceTree = "<group>"; };
@@ -743,6 +745,7 @@
 		OBJ_22 /* KikBotTests */ = {
 			isa = PBXGroup;
 			children = (
+				25B080EF1EECE42300F67A28 /* MessageReplyTest.swift */,
 				25A82F3A1EE3D56A00815C5E /* MessageSendCreationTest.swift */,
 				OBJ_24 /* MessageRecieveParsingTest.swift */,
 			);
@@ -862,9 +865,9 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* DataHandler.swift */,
 				OBJ_9 /* KikBot.swift */,
 				OBJ_19 /* User.swift */,
+				OBJ_8 /* DataHandler.swift */,
 				25ECE55C1EE8F41C00A6197D /* Message */,
 			);
 			path = Sources;
@@ -1357,6 +1360,7 @@
 			files = (
 				25A82F3B1EE3D56A00815C5E /* MessageSendCreationTest.swift in Sources */,
 				OBJ_356 /* MessageRecieveParsingTest.swift in Sources */,
+				25B080F01EECE42300F67A28 /* MessageReplyTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

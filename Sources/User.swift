@@ -1,28 +1,28 @@
 import Foundation
 import SwiftyJSON
 
-/// A structure that keeps the informaation of a specific user.
-public struct KikUserProfile {
-	public let firstName: String
-	public let lastName: String
-	public let profilePictureURL: String?
-	public let profilePictureLastModified: String?
-	public let timezone: String?
-
-	fileprivate init(userProfileJSON: JSON) {
-		firstName = userProfileJSON["firstName"].stringValue
-		lastName = userProfileJSON["lastName"].stringValue
-		profilePictureURL = userProfileJSON["profilePicUrl"].string
-		profilePictureLastModified = userProfileJSON["profilePicLastModified"].string
-		timezone = userProfileJSON["timezone"].string
-	}
-}
-
 /// A stucture that keeps the information of a KikUser.
 public struct KikUser
 {
 	public let username: String
 
+	/// A structure that keeps the informaation of a specific user.
+	public struct Profile {
+		public let firstName: String
+		public let lastName: String
+		public let profilePictureURL: String?
+		public let profilePictureLastModified: String?
+		public let timezone: String?
+		
+		fileprivate init(userProfileJSON: JSON) {
+			firstName = userProfileJSON["firstName"].stringValue
+			lastName = userProfileJSON["lastName"].stringValue
+			profilePictureURL = userProfileJSON["profilePicUrl"].string
+			profilePictureLastModified = userProfileJSON["profilePicLastModified"].string
+			timezone = userProfileJSON["timezone"].string
+		}
+	}
+	
 	/// Creates a `KikUser` from the given username.
 	///
 	/// - Parameters:
@@ -35,7 +35,7 @@ public struct KikUser
 	///
 	/// - Parameters:
 	///		- completionHandler: The closure to call after usr profile is fetched.
-	public func fetchProile(completionHandler: @escaping (KikUserProfile?) -> Void) {
+	public func fetchProile(completionHandler: @escaping (Profile?) -> Void) {
 		dataHandler.getUserProfile(for: username) { (json, error) in
 			guard error == nil else {
 				completionHandler(nil)
@@ -43,7 +43,7 @@ public struct KikUser
 			}
 
 			if json != nil {
-				completionHandler(KikUserProfile(userProfileJSON: json!))
+				completionHandler(Profile(userProfileJSON: json!))
 			}
 		}
 	}

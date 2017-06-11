@@ -29,28 +29,7 @@ public enum ChatType: String {
 	case `public` = "public"
 }
 
-/// A structure that contains the data to be sent as a message.
-public class SendMessage
-{
-	public let type: MessageType
-	public var delay: Int = 0 {
-		didSet {
-			rawJSON["delay"].int = delay
-		}
-	}
-	public internal(set) var rawJSON = JSON([:])
-	
-	init(type: MessageType) {
-		self.type = type
-	}
-	
-	public func setDelay(_ delay: Int, relitiveTo relitiveMessage: SendMessage) {
-		self.delay = delay + relitiveMessage.delay
-	}
-}
-
 fileprivate extension JSON {
-	
 	mutating func merge(with mergingJSON: JSON) {
 		for (key, value):(String, JSON) in mergingJSON {
 			self.dictionaryObject?[key] = value.object
@@ -164,21 +143,6 @@ fileprivate extension JSON {
 		dataHandler.send(messages: sendJSON)
 	}
 	
-	public func reply(withMessages messages: [SendMessage]) {
-		var sendJSON:JSON = JSON(["messages": []])
-		for message in messages {
-			var messageJSON: JSON = JSON(["chatId": chatID, "to": from.username])
-			messageJSON.merge(with: message.rawJSON)
-			sendJSON["messages"].arrayObject?.append(messageJSON.object)
-		}
-		guard let sendData = try? sendJSON.rawData() else {
-			print("ERROR")
-			return
-		}
-		
-		dataHandler.send(messages: sendData)
-	}
-	
 	/// Returns a `TextSendMessage` instance from `body`.
 	public static func makeSendData(body: String) -> TextSendMessage {
 		return TextSendMessage(body: body)
@@ -187,5 +151,52 @@ fileprivate extension JSON {
 	/// Returns a `PictureSendMessage` instance from the 'pictureURL`
 	public static func makeSendData(pictureURL: String) -> PictureSendMessage {
 		return PictureSendMessage(pictureURL: pictureURL)
+	}
+	
+	public func reply(withMessages messages: [SendMessage]) {
+		var sendJSON:JSON = JSON(["messages": []])
+		for message in messages {
+			var messageJSON: JSON = JSON(["chatId": chatID, "to": from.username])
+			messageJSON.merge(with: message.rawJSON)
+			sendJSON["messages"].arrayObject?.append(messageJSON.object)
+		}
+		
+		guard let sendData = try? sendJSON.rawData() else {
+			print("ERROR")
+			return
+		}
+		
+		dataHandler.send(messages: sendData)
+	}
+	
+	public func reply(withMessages messages: SendMessage...) {
+		reply(withMessages: messages)
+	}
+	
+	public func reply(withText text: String, delay: Int = 0, typeTime: Int = 0) {
+		let sendMessage = Message.makeSendData(body: text)
+		sendMessage.delay = delay
+		sendMessage.typeTime = typeTime
+		reply(withMessages: sendMessage)
+	}
+}
+
+/// A structure that contains the data to be sent as a message.
+public class SendMessage
+{
+	public let type: MessageType
+	public var delay: Int = 0 {
+		didSet {
+			rawJSON["delay"].int = delay
+		}
+	}
+	public internal(set) var rawJSON = JSON([:])
+	
+	init(type: MessageType) {
+		self.type = type
+	}
+	
+	public func setDelay(_ delay: Int, relitiveTo relitiveMessage: SendMessage) {
+		self.delay = delay + relitiveMessage.delay
 	}
 }

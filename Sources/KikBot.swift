@@ -4,8 +4,7 @@ import SwiftyJSON
 internal var dataHandler: BotDataHandler!
 
 /// A protocol that defines an instance to recieve Kik messages
-@objc public protocol KikBotDelegate
-{
+@objc public protocol KikBotDelegate {
 	@objc optional func didReceiveMessage(message: Message, completionhandler: (_ option: MessageOption) -> Void) -> Void
 	@objc optional func didReceiveTextMessage(message: TextMessage) -> Void
 	@objc optional func didReceiveLinkMessage(message: LinkMessage) -> Void
@@ -19,17 +18,14 @@ internal var dataHandler: BotDataHandler!
 	@objc optional func didReceiveReadReceiptMessage(message: ReadReceiptMessage) -> Void
 }
 
-public extension KikBotDelegate
-{
-	func didReceiveMessage(message: Message, completionhandler: (_ option: MessageOption) -> Void) -> Void
-	{
+public extension KikBotDelegate {
+	func didReceiveMessage(message: Message, completionhandler: (_ option: MessageOption) -> Void) -> Void {
 		completionhandler(.continue)
 	}
 }
 
 /// A class that supports a Kik bot.
-public class KikBot
-{
+open class KikBot {
 	let username: String
 	let apiKey: String
 	
@@ -39,8 +35,7 @@ public class KikBot
 	///		- username: The username of the bot
 	///		- apiKey: The apiKey of the bot
 	///		- delegate: The delegate to be called to handle new messages
-	public init(username: String, apiKey: String, delegate: KikBotDelegate?)
-	{
+	public init(username: String, apiKey: String, delegate: KikBotDelegate?) {
 		self.username = username
 		self.apiKey = apiKey
 		
@@ -54,16 +49,14 @@ public class KikBot
 	///		- path: path that the bot should listen on.
 	///
 	/// - Note: This method never returns. Make sure it is the last line of code.
-	public func start(onPort port: Int, path: String)
-	{
+	open func start(onPort port: Int, path: String) {
 		dataHandler.port = port
 		dataHandler.path = path
 		
 		dataHandler.listen()
 	}
 	
-	public func createKikCode(with data: JSON, colorNumber: Int, completionHandeler: @escaping (String?, Error?) -> Void)
-	{
+	open func createKikCode(with data: JSON, colorNumber: Int, completionHandeler: @escaping (String?, Error?) -> Void) {
 		dataHandler!.createKikCode(withData: data, color: colorNumber, completionHandeler: completionHandeler)
 	}
 	
@@ -74,8 +67,7 @@ public class KikBot
 	///		- callback: Clusure to be called after the data is sent.
 	///
 	/// - Todo: Check for errors.
-	public func updateConfiguration(configuration: JSON, callback: (() -> Void)? = nil)
-	{
+	open func updateConfiguration(configuration: JSON, callback: (() -> Void)? = nil) {
 		guard let configurationData = try? configuration.rawData() else {
 			print("Error: Configuration Data is not valid JSON")
 			return
